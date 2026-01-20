@@ -3,25 +3,93 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-gray-50 text-gray-900 antialiased;
+    @apply bg-dark-950 text-dark-100 antialiased;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-600;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-gold-500/30 text-white;
   }
 }
 
 @layer components {
+  /* Dark theme prose styling */
   .prose-custom {
-    @apply prose prose-lg max-w-none;
-    @apply prose-headings:font-bold prose-headings:text-gray-900;
-    @apply prose-p:text-gray-700 prose-p:leading-relaxed;
-    @apply prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline;
-    @apply prose-img:rounded-lg prose-img:shadow-md;
+    @apply prose prose-lg max-w-none prose-invert;
+    @apply prose-headings:font-bold prose-headings:text-white;
+    @apply prose-p:text-dark-300 prose-p:leading-relaxed;
+    @apply prose-a:text-gold-400 prose-a:no-underline hover:prose-a:text-gold-300;
+    @apply prose-strong:text-white;
+    @apply prose-code:text-gold-400 prose-code:bg-dark-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none;
+    @apply prose-img:rounded-xl prose-img:shadow-2xl;
+    @apply prose-blockquote:border-gold-500 prose-blockquote:text-dark-300;
+    @apply prose-hr:border-dark-700;
   }
 
+  /* Video container */
   .video-container {
-    @apply relative w-full aspect-video rounded-lg overflow-hidden shadow-lg;
+    @apply relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-dark-800;
   }
 
   .video-container iframe {
     @apply absolute top-0 left-0 w-full h-full;
+  }
+
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  /* Glow effects */
+  .glow-gold {
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.15);
+  }
+
+  .glow-gold-sm {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.1);
+  }
+}
+
+/* Animation keyframes */
+@keyframes gradient-pulse {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: scale(1.05);
   }
 }
