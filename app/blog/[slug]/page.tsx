@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props) {
   if (!post) return { title: 'Post Not Found' }
 
   return {
-    title: `${post.title} | Algorithmic Faith`,
+    title: post.title,
     description: post.excerpt,
   }
 }

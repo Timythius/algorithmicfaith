@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Vault | Algorithmic Faith',
+  title: 'Vault',
   description: 'Tools, guides, and resources for faith creators navigating algorithms and AI',
 }
 

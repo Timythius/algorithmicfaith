@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'About | Algorithmic Faith',
+  title: 'About',
   description: 'The story behind Algorithmic Faith — why I started spotlighting faith creators in the algorithm age',
 }
 

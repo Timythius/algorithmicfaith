@@ -1,7 +1,7 @@
 import CreatorCard from '@/components/CreatorCard'
 
 export const metadata = {
-  title: 'Creators | Algorithmic Faith',
+  title: 'Creators',
   description: 'Faith creators making waves on YouTube, TikTok, and beyond',
 }
 
