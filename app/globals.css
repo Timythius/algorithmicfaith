@@ -199,6 +199,31 @@
     radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.92) 100%);
 }
 
+.window-assembly {
+  width: 540px;
+  max-width: 92vw;
+}
+
+/* Arched ALGORITHMIC inscription that hugs the top of the rose */
+.title-arch {
+  width: 100%;
+  height: auto;
+  /* a subtle warm glow as if backlit by the glass */
+  filter: drop-shadow(0 0 18px rgba(245, 209, 104, 0.18));
+}
+
+/* Carved FAITH lintel below the rose */
+.faith-lintel {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.7));
+}
+.faith-lintel svg {
+  width: 100%;
+  height: auto;
+}
+
 .rose-stage {
   width: 540px;
   max-width: 92vw;
@@ -253,6 +278,52 @@
   vertical-align: middle;
 }
 
+/* ---------- Mobile-only fixed lancet bar ---------- */
+.mobile-lancet-bar {
+  background:
+    linear-gradient(180deg, rgba(10,7,5,0.72) 0%, rgba(10,7,5,0.96) 60%, #0a0705 100%);
+  border-top: 1px solid #3a2510;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.mobile-lancet-bar svg {
+  width: 36px;
+  height: 56px;
+  filter: drop-shadow(0 0 6px rgba(245, 209, 104, 0.18));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.mobile-lancet-link:active svg {
+  transform: translateY(-2px);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(245, 209, 104, 0.5));
+}
+.mobile-lancet-label {
+  display: block;
+  margin-top: 2px;
+  text-align: center;
+  font-family: var(--font-cinzel), Georgia, serif;
+  font-size: 8px;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #e3c389;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.95);
+  max-height: 18px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 0 2px;
+}
+
+/* On mobile, push the page bottom up so the fixed bar never covers the CTAs */
+@media (max-width: 639px) {
+  .cathedral-hero {
+    padding-bottom: 96px;
+  }
+}
+
 /* ---------- Lite mode overrides ---------- */
 
 html[data-lite="true"] .cathedral-wall,
@@ -268,6 +339,11 @@ html[data-lite="true"] .cathedral-hero {
 
 html[data-lite="true"] .lancet-row {
   display: none;
+}
+
+html[data-lite="true"] .mobile-lancet-bar {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 html[data-lite="true"] *,

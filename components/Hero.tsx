@@ -5,16 +5,25 @@
  *   • dark warm stone background with faint granite noise texture
  *   • coloured caustic light spill on the wall below the rose, as if
  *     the glass were casting it
+ *   • arched "ALGORITHMIC" inscription hugging the top of the rose
  *   • centered rose window
- *   • title in Cinzel below the rose, with an illuminated drop cap
- *   • a row of 5 lancet windows below the title, each in its own color
+ *   • carved "FAITH" stone lintel directly beneath the rose
+ *   • a row of 5 lancet windows below the lintel, each in its own color
  *   • CTAs at the bottom
  */
 
+import Link from 'next/link'
 import type { Post } from '@/lib/posts'
 import RoseWindow from './RoseWindow'
 import LancetRow from './LancetRow'
-import DropCap from './DropCap'
+
+const MOBILE_BAR_PALETTE = [
+  { name: 'sapphire', color: '#5b8de6' },
+  { name: 'ruby',     color: '#d63b54' },
+  { name: 'rose',     color: '#e88aa8' },
+  { name: 'emerald',  color: '#3fa05a' },
+  { name: 'yellow',   color: '#f5d168' },
+] as const
 
 type Props = {
   posts: Post[]
@@ -28,36 +37,113 @@ export default function Hero({ posts }: Props) {
       <div className="absolute inset-0 cathedral-noise pointer-events-none" />
       <div className="absolute inset-0 cathedral-vignette pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-12 flex flex-col items-center">
-        {/* Rose window centerpiece */}
-        <div className="rose-stage relative">
-          <RoseWindow size={540} interactive />
+      <h1 className="sr-only">Algorithmic Faith</h1>
 
-          {/* Caustic light spill on the wall directly below the rose */}
-          <div className="caustic-spill" aria-hidden>
-            <span className="caustic c-sapphire" />
-            <span className="caustic c-emerald" />
-            <span className="caustic c-yellow" />
-            <span className="caustic c-ruby" />
-            <span className="caustic c-rose" />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-14 sm:pt-16 pb-12 flex flex-col items-center">
+        {/* The window assembly: arched "ALGORITHMIC" inscription, the rose,
+            and the carved "FAITH" lintel are stacked tightly inside one
+            container so they read as a single architectural piece. */}
+        <div className="window-assembly flex flex-col items-center">
+          {/* Arched ALGORITHMIC over the top of the rose */}
+          <svg
+            className="title-arch block"
+            viewBox="0 0 600 130"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
+          >
+            <defs>
+              {/* path arcs from lower-left, up over the apex, back down to lower-right */}
+              <path id="title-arch-path" d="M 50 120 Q 300 -40 550 120" fill="none" />
+            </defs>
+            <text
+              fill="#e3c389"
+              style={{
+                fontFamily: 'var(--font-cinzel), Georgia, serif',
+                fontWeight: 700,
+                fontSize: 44,
+                letterSpacing: 8,
+                textTransform: 'uppercase',
+                filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.9))',
+              }}
+            >
+              <textPath href="#title-arch-path" startOffset="50%" textAnchor="middle">
+                ALGORITHMIC
+              </textPath>
+            </text>
+          </svg>
+
+          {/* Rose window centerpiece — pulled up so the arch hugs its rim */}
+          <div className="rose-stage relative -mt-6 sm:-mt-8">
+            <RoseWindow size={540} interactive />
+
+            {/* Caustic light spill on the wall directly below the rose */}
+            <div className="caustic-spill" aria-hidden>
+              <span className="caustic c-sapphire" />
+              <span className="caustic c-emerald" />
+              <span className="caustic c-yellow" />
+              <span className="caustic c-ruby" />
+              <span className="caustic c-rose" />
+            </div>
+          </div>
+
+          {/* Carved FAITH lintel — stone band with the word inscribed */}
+          <div className="faith-lintel mt-2" aria-hidden>
+            <svg viewBox="0 0 600 110" xmlns="http://www.w3.org/2000/svg" className="block">
+              <defs>
+                <linearGradient id="lintel-stone" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%"  stopColor="#2a1f15" />
+                  <stop offset="50%" stopColor="#150f0a" />
+                  <stop offset="100%" stopColor="#0a0705" />
+                </linearGradient>
+                <linearGradient id="lintel-edge" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="rgba(245,209,104,0.35)" />
+                  <stop offset="100%" stopColor="rgba(245,209,104,0)" />
+                </linearGradient>
+              </defs>
+              {/* main stone band */}
+              <path
+                d="M 30 18 L 570 18 L 590 90 L 10 90 Z"
+                fill="url(#lintel-stone)"
+                stroke="#020408"
+                strokeWidth="2"
+              />
+              {/* top bevel highlight */}
+              <line x1="30" y1="20" x2="570" y2="20" stroke="url(#lintel-edge)" strokeWidth="1.4" />
+              {/* small decorative bosses at each end */}
+              <circle cx="46"  cy="54" r="4" fill="#3a2510" stroke="#020408" strokeWidth="1" />
+              <circle cx="46"  cy="54" r="1.6" fill="#f5d168" />
+              <circle cx="554" cy="54" r="4" fill="#3a2510" stroke="#020408" strokeWidth="1" />
+              <circle cx="554" cy="54" r="1.6" fill="#f5d168" />
+              {/* The word */}
+              <text
+                x="300"
+                y="68"
+                textAnchor="middle"
+                fill="#f5d168"
+                style={{
+                  fontFamily: 'var(--font-cinzel), Georgia, serif',
+                  fontWeight: 700,
+                  fontSize: 52,
+                  letterSpacing: 14,
+                  textTransform: 'uppercase',
+                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.95))',
+                  paintOrder: 'stroke fill',
+                }}
+                stroke="#020408"
+                strokeWidth="0.8"
+              >
+                FAITH
+              </text>
+            </svg>
           </div>
         </div>
 
-        {/* Title below the rose, with illuminated drop cap */}
-        <h1 className="font-serif mt-12 text-center text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#e3c389] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
-          <span className="inline-flex items-center gap-1">
-            <DropCap letter="A" palette="sapphire" />
-            <span>lgorithmic</span>
-          </span>
-          <span className="block text-[#f5d168] mt-1">Faith</span>
-        </h1>
-
-        <p className="mt-5 text-center text-base sm:text-lg text-[#c9b489] max-w-2xl mx-auto leading-relaxed px-4">
+        <p className="mt-8 text-center text-base sm:text-lg text-[#c9b489] max-w-2xl mx-auto leading-relaxed px-4">
           Where faith meets the feed. Spotlighting the creators using
           YouTube, TikTok, and AI to share their message with the world.
         </p>
 
-        {/* Jewel divider — now spans all 5 lancet colors */}
+        {/* Jewel divider — spans all 5 lancet colors */}
         <div className="w-72 h-[2px] my-10 bg-gradient-to-r from-transparent via-[#5b8de6] via-[#d63b54] via-[#3fa05a] via-[#f5d168] via-[#e88aa8] to-transparent opacity-90" />
 
         {/* The lancet row */}
@@ -85,6 +171,44 @@ export default function Hero({ posts }: Props) {
 
       {/* Bottom fade into the next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-950 to-transparent pointer-events-none" />
+
+      {/* Mobile-only fixed bottom bar — the five lancet windows always
+          available while the user is on the home page. */}
+      <nav
+        className="mobile-lancet-bar sm:hidden fixed bottom-0 left-0 right-0 z-40"
+        aria-label="Featured posts"
+      >
+        <ul className="relative flex items-end justify-between gap-1 px-2 pt-2 pb-3">
+          {(() => {
+            const five = posts.slice(0, 5)
+            while (five.length < 5 && five.length > 0) five.push(five[five.length - 1])
+            return five.map((post, i) => {
+              const p = MOBILE_BAR_PALETTE[i]
+              return (
+                <li key={`${post.slug}-${i}`} className="flex-1 min-w-0">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="mobile-lancet-link block"
+                    aria-label={post.title}
+                  >
+                    <svg viewBox="0 0 30 50" xmlns="http://www.w3.org/2000/svg" className="block mx-auto">
+                      <path
+                        d="M 2 50 L 2 18 Q 15 -2 28 18 L 28 50 Z"
+                        fill={p.color}
+                        stroke="#020408"
+                        strokeWidth="1.6"
+                      />
+                      <line x1="15" y1="20" x2="15" y2="50" stroke="#020408" strokeWidth="0.6" opacity="0.7" />
+                      <circle cx="15" cy="14" r="1.6" fill="#fce9a7" stroke="#020408" strokeWidth="0.4" />
+                    </svg>
+                    <span className="mobile-lancet-label">{post.title}</span>
+                  </Link>
+                </li>
+              )
+            })
+          })()}
+        </ul>
+      </nav>
     </section>
   )
 }
