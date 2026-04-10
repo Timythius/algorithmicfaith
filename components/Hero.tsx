@@ -12,18 +12,13 @@
  *   • CTAs at the bottom
  */
 
-import Link from 'next/link'
 import type { Post } from '@/lib/posts'
 import RoseWindow from './RoseWindow'
 import LancetRow from './LancetRow'
 
-const MOBILE_BAR_PALETTE = [
-  { name: 'sapphire', color: '#5b8de6' },
-  { name: 'ruby',     color: '#d63b54' },
-  { name: 'rose',     color: '#e88aa8' },
-  { name: 'emerald',  color: '#3fa05a' },
-  { name: 'yellow',   color: '#f5d168' },
-] as const
+// Smaller heights so the row fits a 320 px viewport without scrolling.
+const MOBILE_LANCET_HEIGHTS = [140, 165, 190, 165, 140]
+const MOBILE_LANCET_WIDTH = 50
 
 type Props = {
   posts: Post[]
@@ -146,9 +141,18 @@ export default function Hero({ posts }: Props) {
         {/* Jewel divider — spans all 5 lancet colors */}
         <div className="w-72 h-[2px] my-10 bg-gradient-to-r from-transparent via-[#5b8de6] via-[#d63b54] via-[#3fa05a] via-[#f5d168] via-[#e88aa8] to-transparent opacity-90" />
 
-        {/* The lancet row */}
-        <div className="w-full overflow-x-auto pb-2">
-          <div className="min-w-fit mx-auto px-4">
+        {/* The lancet row — small on mobile so the five fit without
+            a horizontal slider; full Chartres scale from sm: upward. */}
+        <div className="w-full pb-2">
+          <div className="sm:hidden flex justify-center px-2">
+            <LancetRow
+              posts={posts}
+              heights={MOBILE_LANCET_HEIGHTS}
+              panelWidth={MOBILE_LANCET_WIDTH}
+              className="lancet-row flex items-end justify-center gap-1"
+            />
+          </div>
+          <div className="hidden sm:flex justify-center min-w-fit mx-auto px-4">
             <LancetRow posts={posts} />
           </div>
         </div>
@@ -171,44 +175,6 @@ export default function Hero({ posts }: Props) {
 
       {/* Bottom fade into the next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-950 to-transparent pointer-events-none" />
-
-      {/* Mobile-only fixed bottom bar — the five lancet windows always
-          available while the user is on the home page. */}
-      <nav
-        className="mobile-lancet-bar sm:hidden fixed bottom-0 left-0 right-0 z-40"
-        aria-label="Featured posts"
-      >
-        <ul className="relative flex items-end justify-between gap-1 px-2 pt-2 pb-3">
-          {(() => {
-            const five = posts.slice(0, 5)
-            while (five.length < 5 && five.length > 0) five.push(five[five.length - 1])
-            return five.map((post, i) => {
-              const p = MOBILE_BAR_PALETTE[i]
-              return (
-                <li key={`${post.slug}-${i}`} className="flex-1 min-w-0">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="mobile-lancet-link block"
-                    aria-label={post.title}
-                  >
-                    <svg viewBox="0 0 30 50" xmlns="http://www.w3.org/2000/svg" className="block mx-auto">
-                      <path
-                        d="M 2 50 L 2 18 Q 15 -2 28 18 L 28 50 Z"
-                        fill={p.color}
-                        stroke="#020408"
-                        strokeWidth="1.6"
-                      />
-                      <line x1="15" y1="20" x2="15" y2="50" stroke="#020408" strokeWidth="0.6" opacity="0.7" />
-                      <circle cx="15" cy="14" r="1.6" fill="#fce9a7" stroke="#020408" strokeWidth="0.4" />
-                    </svg>
-                    <span className="mobile-lancet-label">{post.title}</span>
-                  </Link>
-                </li>
-              )
-            })
-          })()}
-        </ul>
-      </nav>
     </section>
   )
 }

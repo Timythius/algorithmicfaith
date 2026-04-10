@@ -10,27 +10,39 @@ import type { PaletteName } from './GlassPatterns'
 
 type Props = {
   posts: Post[]
+  /** Per-lancet heights (left → right). Defaults to desktop sizes. */
+  heights?: number[]
+  /** Width of each lancet panel. Defaults to desktop sizing (110). */
+  panelWidth?: number
+  /** Optional className override for the row container (gap, etc.). */
+  className?: string
 }
 
-const HEIGHTS = [380, 440, 500, 440, 380]
+const DEFAULT_HEIGHTS = [380, 440, 500, 440, 380]
 
 // Order: sapphire → ruby → ROSE (focal center) → emerald → yellow (right end).
 // The right-end yellow is rendered with reduced main weight so it doesn't
 // flood the row with gold.
 const PALETTES: PaletteName[] = ['sapphire', 'ruby', 'rose', 'emerald', 'yellow']
 
-export default function LancetRow({ posts }: Props) {
+export default function LancetRow({
+  posts,
+  heights = DEFAULT_HEIGHTS,
+  panelWidth = 110,
+  className = 'lancet-row flex items-end justify-center gap-2 sm:gap-3 md:gap-5',
+}: Props) {
   if (!posts || posts.length === 0) return null
   const five = posts.slice(0, 5)
   while (five.length < 5) five.push(five[five.length - 1])
 
   return (
-    <div className="lancet-row flex items-end justify-center gap-2 sm:gap-3 md:gap-5">
+    <div className={className}>
       {five.map((post, i) => (
         <LancetPanel
           key={`${post.slug}-${i}`}
           post={post}
-          height={HEIGHTS[i]}
+          height={heights[i]}
+          width={panelWidth}
           palette={PALETTES[i]}
           // The right-end yellow is muted so it doesn't out-shout the row.
           mainWeight={PALETTES[i] === 'yellow' ? 'reduced' : 'full'}

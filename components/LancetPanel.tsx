@@ -17,11 +17,12 @@ import type { Post } from '@/lib/posts'
 import GlassPatterns, { patternUrl, type PaletteName } from './GlassPatterns'
 
 const CAMING = '#020408'
-const PANEL_W = 110
 
 type Props = {
   post: Post
   height?: number
+  /** Panel width in SVG units (controls overall lancet size). */
+  width?: number
   /** Dominant color for this lancet's main glass field. */
   palette?: PaletteName
   /**
@@ -46,13 +47,16 @@ const ACCENTS: Record<PaletteName, [PaletteName, PaletteName]> = {
   mixed:    ['sapphire', 'ruby'],
 }
 
-export default function LancetPanel({ post, height = 480, palette = 'sapphire', mainWeight = 'full' }: Props) {
-  const w = PANEL_W
+export default function LancetPanel({ post, height = 480, width = 110, palette = 'sapphire', mainWeight = 'full' }: Props) {
+  const w = width
   const total = height
   const cx = w / 2
 
-  const archH = 70
-  const baseBandH = 26
+  // Scale arch and base band proportionally to width so a smaller lancet
+  // doesn't end up with a giant arch and a tiny body.
+  const scale = w / 110
+  const archH = 70 * scale
+  const baseBandH = 26 * scale
   const bodyTop = archH
   const bodyBottom = total - baseBandH
   const bodyH = bodyBottom - bodyTop
