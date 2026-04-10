@@ -22,7 +22,7 @@ export default function Header() {
   const isHome = pathname === '/'
 
   return (
-    <header className="bg-dark-950/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-dark-800/50">
+    <header className="bg-dark-950/95 backdrop-blur-md sticky top-0 left-0 right-0 z-50 border-b border-dark-800/50">
       {/* Stained glass accent line at very top */}
       <div className="h-[2px] bg-gradient-to-r from-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 to-gold-500" />
 

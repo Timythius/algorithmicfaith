@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Outfit, Cinzel } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
@@ -15,9 +15,46 @@ const cinzel = Cinzel({
   variable: '--font-cinzel',
 })
 
+// Use the public site URL when set, otherwise the Vercel deployment URL,
+// otherwise fall back to localhost so dev and prod both produce valid OG
+// tags without manual config.
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
+const SITE_NAME = 'Algorithmic Faith'
+const SITE_DESCRIPTION =
+  'Where faith meets the feed. Spotlighting the creators using YouTube, TikTok, and AI to share their message with the world.'
+
 export const metadata: Metadata = {
-  title: 'Algorithmic Faith',
-  description: 'Discovering faith creators who are shaping culture through YouTube, TikTok, and beyond',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: 'website',
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    locale: 'en_US',
+    // app/opengraph-image.tsx is auto-picked up by Next.js — no need to
+    // list images here, but Twitter card metadata below references the
+    // same generated file via the file convention.
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#050302',
+  colorScheme: 'dark',
 }
 
 export default function RootLayout({
@@ -31,7 +68,7 @@ export default function RootLayout({
         <RoseLoader />
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-grow pt-[65px]">
+          <main className="flex-grow">
             {children}
           </main>
           <Footer />
