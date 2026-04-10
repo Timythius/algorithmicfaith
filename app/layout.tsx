@@ -11,7 +11,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: 'Algorithmic Faith',
-  description: 'Exploring the intersection of technology, philosophy, and human understanding',
+  description: 'Discovering faith creators who are shaping culture through YouTube, TikTok, and beyond',
 }
 
 export default function RootLayout({

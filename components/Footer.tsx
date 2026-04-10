@@ -16,7 +16,7 @@ export default function Footer() {
               </h3>
             </Link>
             <p className="text-dark-400 leading-relaxed mb-6">
-              Exploring ideas at the intersection of technology, philosophy, and human understanding.
+              Spotlighting faith creators who are using YouTube, TikTok, and AI to share their message with the world.
             </p>
           </div>
 
@@ -26,30 +26,22 @@ export default function Footer() {
               Navigate
             </h4>
             <ul className="space-y-4">
-              <li>
-                <Link
-                  href="/"
-                  className="text-dark-400 hover:text-gold-400 transition-colors duration-300"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-dark-400 hover:text-gold-400 transition-colors duration-300"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-dark-400 hover:text-gold-400 transition-colors duration-300"
-                >
-                  About
-                </Link>
-              </li>
+              {[
+                { href: '/', label: 'Home' },
+                { href: '/blog', label: 'Blog' },
+                { href: '/creators', label: 'Creators' },
+                { href: '/resources', label: 'Resources' },
+                { href: '/about', label: 'About' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-dark-400 hover:text-gold-400 transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -59,26 +51,18 @@ export default function Footer() {
               Topics
             </h4>
             <ul className="space-y-4">
-              <li>
-                <span className="text-dark-400 hover:text-gold-400 transition-colors duration-300 cursor-pointer">
-                  Technology
-                </span>
-              </li>
-              <li>
-                <span className="text-dark-400 hover:text-gold-400 transition-colors duration-300 cursor-pointer">
-                  Philosophy
-                </span>
-              </li>
-              <li>
-                <span className="text-dark-400 hover:text-gold-400 transition-colors duration-300 cursor-pointer">
-                  AI & Ethics
-                </span>
-              </li>
-              <li>
-                <span className="text-dark-400 hover:text-gold-400 transition-colors duration-300 cursor-pointer">
-                  Human Understanding
-                </span>
-              </li>
+              {['YouTube', 'TikTok', 'AI & Tech', 'Worship', 'Sermons', 'Devotionals'].map(
+                (topic) => (
+                  <li key={topic}>
+                    <Link
+                      href="/blog"
+                      className="text-dark-400 hover:text-gold-400 transition-colors duration-300"
+                    >
+                      {topic}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -88,10 +72,10 @@ export default function Footer() {
               Connect
             </h4>
             <p className="text-dark-400 mb-6 leading-relaxed">
-              Have thoughts to share? Questions to explore? Get in touch.
+              Know a faith creator I should feature? Got a tip or a story? Let me know.
             </p>
-            <Link
-              href="/about"
+            <a
+              href="mailto:hello@algorithmicfaith.com"
               className="inline-flex items-center text-gold-400 hover:text-gold-300 font-medium transition-colors duration-300"
             >
               Get in touch
@@ -108,7 +92,7 @@ export default function Footer() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -117,21 +101,6 @@ export default function Footer() {
           <p className="text-dark-500 text-sm">
             &copy; {currentYear} Algorithmic Faith. All rights reserved.
           </p>
-
-          <div className="flex items-center gap-6">
-            <Link
-              href="/privacy"
-              className="text-dark-500 hover:text-dark-300 text-sm transition-colors duration-300"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-dark-500 hover:text-dark-300 text-sm transition-colors duration-300"
-            >
-              Terms
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

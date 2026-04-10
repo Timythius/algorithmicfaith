@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'About | Algorithmic Faith',
-  description: 'Learn more about Algorithmic Faith - exploring technology, philosophy, and human understanding',
+  description: 'The story behind Algorithmic Faith — why I started spotlighting faith creators in the algorithm age',
 }
 
 export default function AboutPage() {
@@ -20,11 +20,10 @@ export default function AboutPage() {
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            About
+            Hey, I&apos;m Tim
           </h1>
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            A space for exploring ideas at the intersection of technology, philosophy,
-            and human understanding.
+            I built Algorithmic Faith to spotlight the creators using tech to spread faith — and to figure out how the algorithm fits into all of it.
           </p>
         </div>
       </div>
@@ -32,39 +31,39 @@ export default function AboutPage() {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="space-y-16">
-          {/* What We Explore */}
+          {/* The Story */}
           <section>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center">
               <span className="w-8 h-0.5 bg-gold-500 mr-4" />
-              What We Explore
+              Why This Exists
             </h2>
             <div className="space-y-6 text-dark-300 text-lg leading-relaxed">
               <p>
-                In an age where algorithms shape our experiences and artificial intelligence
-                challenges our assumptions about consciousness and creativity, we need spaces
-                for thoughtful reflection.
+                There&apos;s something wild happening right now. Faith creators — pastors, worship leaders, everyday believers — are reaching millions through YouTube and TikTok. They&apos;re not waiting for a church building or a Sunday slot. They&apos;re hitting record and letting the algorithm do its thing.
               </p>
               <p>
-                This blog curates and discusses videos, articles, and ideas that help us
-                navigate these questions with both intellectual rigor and openness to wonder.
+                But here&apos;s the question that keeps me up at night: how does the algorithm shape the message? When a 60-second TikTok about prayer goes viral, is that the Holy Spirit or the recommendation engine? Maybe both?
+              </p>
+              <p>
+                Algorithmic Faith is where I explore that intersection. I spotlight creators who are doing incredible work, dig into how AI and algorithms are changing the game, and share what I&apos;m learning along the way.
               </p>
             </div>
           </section>
 
-          {/* Topics */}
+          {/* What You'll Find */}
           <section>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center">
               <span className="w-8 h-0.5 bg-gold-500 mr-4" />
-              Topics
+              What You&apos;ll Find Here
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                'Artificial Intelligence and its implications',
-                'Philosophy of mind and consciousness',
-                'Technology and society',
-                'Ethics in the digital age',
-                'The future of human-machine collaboration',
-                'Digital transformation of faith',
+                'Creator spotlights — the people behind the content',
+                'Curated videos and posts worth your time',
+                'How algorithms affect faith content',
+                'AI tools faith creators are actually using',
+                'Platform breakdowns — YouTube, TikTok, and more',
+                'Honest takes on what&apos;s working and what&apos;s not',
               ].map((topic) => (
                 <div
                   key={topic}
@@ -93,18 +92,17 @@ export default function AboutPage() {
           <section>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center">
               <span className="w-8 h-0.5 bg-gold-500 mr-4" />
-              Get in Touch
+              Let&apos;s Connect
             </h2>
             <div className="bg-gradient-to-br from-dark-900 to-dark-900/50 border border-dark-800 rounded-2xl p-8">
               <p className="text-dark-300 text-lg mb-6">
-                Have a thought-provoking article or video to share? Want to start a conversation?
-                Reach out and let&apos;s explore these ideas together.
+                Know a faith creator I should feature? Got a take on algorithms and faith you want to share? I&apos;d love to hear from you.
               </p>
               <a
                 href="mailto:hello@algorithmicfaith.com"
                 className="inline-flex items-center bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-6 py-3 rounded-xl transition-colors duration-300"
               >
-                Start a Conversation
+                Get in Touch
                 <svg
                   className="w-4 h-4 ml-2"
                   fill="none"

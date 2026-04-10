@@ -41,12 +41,11 @@ export default function Newsletter() {
       <div className="relative max-w-4xl mx-auto px-6 text-center">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Stay Connected
+          Stay in the Loop
         </h2>
 
         <p className="text-dark-300 text-lg mb-10 max-w-2xl mx-auto">
-          Get new articles delivered directly to your inbox. No spam, just thoughtful content
-          on technology, philosophy, and human understanding.
+          Creator spotlights, algorithm tips, and AI tools — straight to your inbox. No spam, just the good stuff.
         </p>
 
         {/* Form */}

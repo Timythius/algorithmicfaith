@@ -51,6 +51,25 @@ export default function Hero() {
         {/* Subtle divider */}
         <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mb-8" />
 
+        <p className="text-lg md:text-xl text-dark-300 max-w-2xl mx-auto mb-4">
+          Where faith meets the feed. Spotlighting the creators using YouTube, TikTok, and AI to share their message with the world.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <a
+            href="/creators"
+            className="bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-6 py-3 rounded-xl transition-colors duration-300"
+          >
+            Meet the Creators
+          </a>
+          <a
+            href="/blog"
+            className="border border-dark-600 hover:border-gold-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-300"
+          >
+            Latest Posts
+          </a>
+        </div>
+
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <svg

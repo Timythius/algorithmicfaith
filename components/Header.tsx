@@ -3,9 +3,15 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+const navLinks = [
+  { href: '/blog', label: 'Blog' },
+  { href: '/creators', label: 'Creators' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/about', label: 'About' },
+]
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
 
   return (
     <header className="bg-dark-950/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-dark-800/50">
@@ -19,31 +25,17 @@ export default function Header() {
             Algorithmic Faith
           </Link>
 
-          {/* Desktop Navigation - Ultra Minimal */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="/blog"
-              className="text-dark-300 hover:text-white transition-colors duration-300 text-sm font-medium"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/about"
-              className="text-dark-300 hover:text-white transition-colors duration-300 text-sm font-medium"
-            >
-              About
-            </Link>
-
-            {/* Search Icon */}
-            <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="text-dark-300 hover:text-white transition-colors duration-300 p-2"
-              aria-label="Search"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-dark-300 hover:text-white transition-colors duration-300 text-sm font-medium"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -62,41 +54,10 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Search Bar - Expandable */}
-        {isSearchOpen && (
-          <div className="hidden md:block mt-4 pb-2">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search articles..."
-                className="w-full bg-dark-900 border border-dark-700 rounded-lg px-4 py-3 text-white placeholder-dark-400 focus:outline-none focus:border-gold-500 transition-colors"
-                autoFocus
-              />
-              <button
-                onClick={() => setIsSearchOpen(false)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-dark-400 hover:text-white"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* Mobile Navigation - Full Screen Overlay */}
         {isMenuOpen && (
           <div className="md:hidden fixed inset-0 top-[65px] bg-dark-950 z-40">
             <div className="flex flex-col p-6 space-y-6">
-              {/* Mobile Search */}
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  className="w-full bg-dark-900 border border-dark-700 rounded-lg px-4 py-3 text-white placeholder-dark-400 focus:outline-none focus:border-gold-500 transition-colors"
-                />
-              </div>
-
               <Link
                 href="/"
                 className="text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
@@ -104,20 +65,16 @@ export default function Header() {
               >
                 Home
               </Link>
-              <Link
-                href="/blog"
-                className="text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/about"
-                className="text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         )}

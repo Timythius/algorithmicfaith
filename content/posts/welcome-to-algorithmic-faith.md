@@ -1,30 +1,38 @@
 ---
 title: "Welcome to Algorithmic Faith"
 date: "2024-01-15"
-excerpt: "An introduction to this space for exploring technology, philosophy, and human understanding."
-tags: ["introduction", "philosophy", "technology"]
+excerpt: "Why I started this site, what you'll find here, and why faith creators deserve more attention."
+tags: ["introduction", "faith creators", "algorithms"]
+category: "General"
 ---
 
-Welcome to Algorithmic Faith. This is a space for thoughtful exploration of the ideas that shape our increasingly digital world.
+Hey — welcome to Algorithmic Faith.
 
-## Why "Algorithmic Faith"?
+I started this site because something interesting is happening right now, and not enough people are talking about it.
 
-The name reflects a central tension of our time: we place enormous trust in systems we don't fully understand. Algorithms recommend what we watch, read, and buy. They influence who we meet and what opportunities we're offered.
+## Faith creators are everywhere
 
-Yet most of us couldn't explain how these systems work. In a sense, we operate on faith - algorithmic faith.
+Scroll through YouTube or TikTok for five minutes and you'll find pastors preaching to millions, worship leaders dropping tracks that rival anything on the charts, and everyday people sharing testimony in 60-second clips that hit harder than most Sunday sermons.
 
-## What You'll Find Here
+These creators aren't waiting for permission. They're not building church buildings — they're building audiences. And the platforms are rewarding them for it.
 
-This blog is a curated collection of:
+## But here's the thing
 
-- **Videos** that illuminate complex ideas
-- **Articles** worth reading and discussing
-- **Reflections** on technology and its human implications
+The algorithm isn't neutral. It has preferences. It rewards certain formats, certain lengths, certain emotions. And when you're trying to share something as deeply personal as faith, those algorithmic pressures matter.
 
-## Join the Conversation
+Does a 90-second TikTok about grace carry the same weight as a 45-minute sermon? Can you compress the gospel into a YouTube Short? Should you even try?
 
-The questions we'll explore don't have easy answers. That's what makes them worth discussing.
+## What you'll find here
 
-What does it mean to be human in an age of artificial intelligence? How do we maintain agency when algorithms shape so much of our experience? What ethical frameworks can guide us?
+This is where I work through those questions. Here's what I'll be sharing:
 
-Let's think through these questions together.
+- **Creator spotlights** — profiling faith creators who are doing incredible work across platforms
+- **Algorithm breakdowns** — how YouTube, TikTok, and other platforms actually work for faith content
+- **Tool reviews** — AI tools and software that are changing how creators produce content
+- **Honest takes** — what's working, what's not, and what it all means
+
+## Let's figure this out together
+
+I don't have all the answers. But I think the conversation is worth having. If you know a faith creator worth spotlighting or you've got thoughts on any of this, hit me up.
+
+Welcome aboard.
