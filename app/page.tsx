@@ -1,7 +1,7 @@
 import { getAllPosts } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 import Hero from '@/components/Hero'
-import Newsletter from '@/components/Newsletter'
+// import Newsletter from '@/components/Newsletter' // hidden until signup is wired up
 import RoseDivider from '@/components/RoseDivider'
 
 export default function Home() {
@@ -86,8 +86,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <Newsletter />
+      {/* Newsletter Section — hidden until signup is wired up */}
+      {/* <Newsletter /> */}
     </>
   )
 }

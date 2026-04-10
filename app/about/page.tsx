@@ -20,7 +20,7 @@ export default function AboutPage() {
           {/* Jewel divider */}
           <div className="w-48 h-[2px] mx-auto mb-6 bg-gradient-to-r from-transparent via-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 via-gold-500 to-transparent" />
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            I built Algorithmic Faith to spotlight the creators using tech to spread faith — and to figure out how the algorithm fits into all of it.
+            I built Algorithmic Faith to spotlight the creators bringing faith to the feed.
           </p>
         </div>
       </div>
@@ -36,13 +36,10 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-6 text-dark-300 text-lg leading-relaxed">
               <p>
-                There&apos;s something wild happening right now. Faith creators — pastors, worship leaders, everyday believers — are reaching millions through YouTube and TikTok. They&apos;re not waiting for a church building or a Sunday slot. They&apos;re hitting record and letting the algorithm do its thing.
+                There&apos;s something wild happening right now. Faith creators — priests and pastors, religious sisters and worship leaders, lay Christians of every tradition — are reaching millions through every corner of the feed the algorithm lets them into.
               </p>
               <p>
-                But here&apos;s the question that keeps me up at night: how does the algorithm shape the message? When a 60-second TikTok about prayer goes viral, is that the Holy Spirit or the recommendation engine? Maybe both?
-              </p>
-              <p>
-                Algorithmic Faith is where I explore that intersection. I spotlight creators who are doing incredible work, dig into how AI and algorithms are changing the game, and share what I&apos;m learning along the way.
+                Algorithmic Faith is where I explore what faith does to the feed. I spotlight creators who are doing incredible work, dig into how algorithms are changing the game, and share what I&apos;m learning along the way.
               </p>
             </div>
           </section>
@@ -58,8 +55,8 @@ export default function AboutPage() {
                 { text: 'Creator spotlights — the people behind the content', color: 'text-ruby-400' },
                 { text: 'Curated videos and posts worth your time', color: 'text-sapphire-400' },
                 { text: 'How algorithms affect faith content', color: 'text-amethyst-400' },
-                { text: 'AI tools faith creators are actually using', color: 'text-emerald-400' },
-                { text: 'Platform breakdowns — YouTube, TikTok, and more', color: 'text-gold-400' },
+                { text: 'Tools and tips from the creators themselves', color: 'text-emerald-400' },
+                { text: 'Platform breakdowns — from YouTube to Substack and everywhere between', color: 'text-gold-400' },
                 { text: 'Honest takes on what\'s working and what\'s not', color: 'text-ruby-400' },
               ].map((topic) => (
                 <div

@@ -4,14 +4,12 @@ import { useState } from 'react'
 import PostCard from './PostCard'
 import { Post } from '@/lib/posts'
 
-const platformFilters = [
+const categoryFilters = [
   { label: 'All', color: 'bg-gold-500 text-dark-950' },
-  { label: 'YouTube', color: 'bg-ruby-500 text-white' },
-  { label: 'TikTok', color: 'bg-amethyst-500 text-white' },
+  { label: 'Creator Spotlights', color: 'bg-ruby-500 text-white' },
   { label: 'Worship', color: 'bg-gold-500 text-dark-950' },
   { label: 'Sermons', color: 'bg-emerald-500 text-white' },
   { label: 'Devotionals', color: 'bg-amethyst-600 text-white' },
-  { label: 'AI & Tech', color: 'bg-sapphire-500 text-white' },
 ]
 
 export default function BlogFilter({ posts }: { posts: Post[] }) {
@@ -30,7 +28,7 @@ export default function BlogFilter({ posts }: { posts: Post[] }) {
     <>
       {/* Filter Bar */}
       <div className="flex flex-wrap gap-3 mb-10">
-        {platformFilters.map((filter) => (
+        {categoryFilters.map((filter) => (
           <button
             key={filter.label}
             onClick={() => setActiveFilter(filter.label)}

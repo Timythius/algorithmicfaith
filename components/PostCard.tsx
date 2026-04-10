@@ -8,9 +8,6 @@ type Props = {
 }
 
 const tagColors: Record<string, string> = {
-  youtube: 'bg-ruby-500/10 text-ruby-400 border-ruby-500/20',
-  tiktok: 'bg-amethyst-500/10 text-amethyst-400 border-amethyst-500/20',
-  'ai': 'bg-sapphire-500/10 text-sapphire-400 border-sapphire-500/20',
   worship: 'bg-gold-500/10 text-gold-400 border-gold-500/20',
   sermons: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
   devotionals: 'bg-amethyst-500/10 text-amethyst-300 border-amethyst-500/20',
@@ -22,6 +19,19 @@ function getTagColor(tag: string) {
     if (lower.includes(key)) return value
   }
   return 'bg-gold-500/10 text-gold-400 border-gold-500/20'
+}
+
+// Platform pills — separate from tags so "YouTube" reads as *where it
+// lives* and "worship" reads as *what it's about*. Keyed case-insensitively.
+const platformColors: Record<string, string> = {
+  youtube: 'bg-ruby-500/10 text-ruby-400 border-ruby-500/20',
+}
+
+function getPlatformColor(platform: string) {
+  return (
+    platformColors[platform.toLowerCase()] ||
+    'bg-dark-800/60 text-dark-300 border-dark-700'
+  )
 }
 
 export default function PostCard({ post, featured = false }: Props) {
@@ -57,6 +67,20 @@ export default function PostCard({ post, featured = false }: Props) {
           featured ? 'md:w-1/2' : ''
         }`}
       >
+        {/* Platforms — where the creator lives */}
+        {post.platforms && post.platforms.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-3">
+            {post.platforms.map((platform: string) => (
+              <span
+                key={platform}
+                className={`px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider border ${getPlatformColor(platform)}`}
+              >
+                {platform}
+              </span>
+            ))}
+          </div>
+        )}
+
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">

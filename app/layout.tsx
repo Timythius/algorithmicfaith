@@ -24,7 +24,7 @@ const SITE_URL =
 
 const SITE_NAME = 'Algorithmic Faith'
 const SITE_DESCRIPTION =
-  'Where faith meets the feed. Spotlighting the creators using YouTube, TikTok, and AI to share their message with the world.'
+  'Where faith meets the feed. Spotlighting the creators making ministry happen online.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

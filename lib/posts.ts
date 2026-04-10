@@ -17,6 +17,7 @@ export type Post = {
   articleUrl?: string
   tags?: string[]
   category?: string
+  platforms?: string[]
 }
 
 export function getAllPosts(): Post[] {
@@ -66,6 +67,7 @@ export function getPostBySlug(slug: string): Post | null {
       articleUrl: data.articleUrl,
       tags: data.tags || [],
       category: data.category || 'General',
+      platforms: data.platforms || [],
     }
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error)

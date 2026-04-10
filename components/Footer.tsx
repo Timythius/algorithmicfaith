@@ -21,7 +21,7 @@ export default function Footer() {
               </h3>
             </Link>
             <p className="text-dark-400 leading-relaxed mb-6">
-              Spotlighting faith creators who are using YouTube, TikTok, and AI to share their message with the world.
+              Where faith meets the feed. Spotlighting the creators making ministry happen online.
             </p>
           </div>
 
@@ -57,9 +57,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: 'YouTube', color: 'text-ruby-400' },
-                { label: 'TikTok', color: 'text-amethyst-400' },
-                { label: 'AI & Tech', color: 'text-sapphire-400' },
+                { label: 'Creator Spotlights', color: 'text-ruby-400' },
                 { label: 'Worship', color: 'text-gold-400' },
                 { label: 'Sermons', color: 'text-emerald-400' },
                 { label: 'Devotionals', color: 'text-amethyst-300' },
