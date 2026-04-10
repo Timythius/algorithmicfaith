@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Vault',
-  description: 'Tools, guides, and resources for faith creators navigating algorithms and AI',
+  description: 'A small, slow-grown collection of tools and resources I trust',
 }
 
 type Resource = {
@@ -11,71 +11,7 @@ type Resource = {
   free: boolean
 }
 
-const resources: Resource[] = [
-  {
-    title: 'TubeBuddy',
-    description:
-      'YouTube SEO and optimization tool. Great for finding keywords that faith content audiences are actually searching for.',
-    category: 'YouTube Tools',
-    url: 'https://www.tubebuddy.com',
-    free: false,
-  },
-  {
-    title: 'vidIQ',
-    description:
-      'Another solid YouTube analytics tool. Their trend alerts can help you spot rising faith-related topics before they peak.',
-    category: 'YouTube Tools',
-    url: 'https://vidiq.com',
-    free: true,
-  },
-  {
-    title: 'Canva',
-    description:
-      'Design thumbnails, social graphics, and sermon slides. The free tier is genuinely powerful for most faith creators.',
-    category: 'Design',
-    url: 'https://www.canva.com',
-    free: true,
-  },
-  {
-    title: 'Descript',
-    description:
-      'Edit video and audio by editing text. Game-changer for sermon clips and podcast content. AI features make it fast.',
-    category: 'AI Tools',
-    url: 'https://www.descript.com',
-    free: true,
-  },
-  {
-    title: 'Opus Clip',
-    description:
-      'AI-powered tool that turns long-form sermons and talks into viral short-form clips. Built for the TikTok/Shorts/Reels workflow.',
-    category: 'AI Tools',
-    url: 'https://www.opus.pro',
-    free: true,
-  },
-  {
-    title: 'ChatGPT / Claude',
-    description:
-      'Use AI to brainstorm sermon series titles, write video descriptions, generate social captions, and outline content calendars.',
-    category: 'AI Tools',
-    free: true,
-  },
-  {
-    title: 'CapCut',
-    description:
-      'Free video editor with trending templates, auto-captions, and effects. The go-to for TikTok and Reels creators.',
-    category: 'Video Editing',
-    url: 'https://www.capcut.com',
-    free: true,
-  },
-  {
-    title: 'Later',
-    description:
-      'Schedule and plan content across platforms. Visual calendar makes it easy to maintain a consistent posting rhythm.',
-    category: 'Scheduling',
-    url: 'https://later.com',
-    free: true,
-  },
-]
+const resources: Resource[] = []
 
 const categories = Array.from(new Set(resources.map((r) => r.category)))
 
@@ -100,104 +36,70 @@ export default function ResourcesPage() {
             Vault
           </h1>
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            Tools and platforms that faith creators are using to grow, create, and connect. Tried, tested, and worth your time.
+            A small, slow-grown collection of tools and resources I actually trust. Filling up gradually.
           </p>
         </div>
       </div>
 
       {/* Resources by Category */}
       <div className="max-w-5xl mx-auto px-6 pb-20">
-        {categories.map((category) => (
-          <div key={category} className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <span className="w-8 h-0.5 bg-gold-500 mr-4" />
-              {category}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {resources
-                .filter((r) => r.category === category)
-                .map((resource) => (
-                  <div
-                    key={resource.title}
-                    className="bg-dark-900/50 border border-dark-800 rounded-xl p-6 hover:border-dark-700 transition-all duration-300"
-                  >
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-lg font-bold text-white">
-                        {resource.url ? (
-                          <a
-                            href={resource.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-gold-400 transition-colors"
-                          >
-                            {resource.title}
-                          </a>
-                        ) : (
-                          resource.title
-                        )}
-                      </h3>
-                      <span
-                        className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${
-                          resource.free
-                            ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                            : 'bg-gold-500/10 text-gold-400 border-gold-500/20'
-                        }`}
-                      >
-                        {resource.free ? 'Free tier' : 'Paid'}
-                      </span>
+        {resources.length === 0 ? (
+          <div className="glass-panel leadline rounded-2xl p-10 text-center">
+            <div className="w-32 h-[2px] mx-auto mb-6 bg-gradient-to-r from-transparent via-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 via-gold-500 to-transparent" />
+            <h3 className="font-serif text-2xl text-white mb-3">The vault is quiet for now.</h3>
+            <p className="text-dark-300 max-w-xl mx-auto">
+              I&apos;d rather list nothing than list filler. Real entries will land here as I find tools and resources worth your time.
+            </p>
+          </div>
+        ) : (
+          categories.map((category) => (
+            <div key={category} className="mb-12">
+              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <span className="w-8 h-0.5 bg-gold-500 mr-4" />
+                {category}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {resources
+                  .filter((r) => r.category === category)
+                  .map((resource) => (
+                    <div
+                      key={resource.title}
+                      className="bg-dark-900/50 border border-dark-800 rounded-xl p-6 hover:border-dark-700 transition-all duration-300"
+                    >
+                      <div className="flex items-start justify-between mb-3">
+                        <h3 className="text-lg font-bold text-white">
+                          {resource.url ? (
+                            <a
+                              href={resource.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:text-gold-400 transition-colors"
+                            >
+                              {resource.title}
+                            </a>
+                          ) : (
+                            resource.title
+                          )}
+                        </h3>
+                        <span
+                          className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${
+                            resource.free
+                              ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                              : 'bg-gold-500/10 text-gold-400 border-gold-500/20'
+                          }`}
+                        >
+                          {resource.free ? 'Free tier' : 'Paid'}
+                        </span>
+                      </div>
+                      <p className="text-dark-300 text-sm leading-relaxed">
+                        {resource.description}
+                      </p>
                     </div>
-                    <p className="text-dark-300 text-sm leading-relaxed">
-                      {resource.description}
-                    </p>
-                  </div>
-                ))}
-            </div>
-          </div>
-        ))}
-
-        {/* Tips Section */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-            <span className="w-8 h-0.5 bg-gold-500 mr-4" />
-            Quick Tips for Faith Creators
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {[
-              {
-                title: 'Post consistently',
-                tip: 'The algorithm rewards consistency more than perfection. Pick a schedule you can sustain and stick with it.',
-              },
-              {
-                title: 'Hook in 3 seconds',
-                tip: 'On short-form platforms, your first 3 seconds decide everything. Lead with the most compelling moment.',
-              },
-              {
-                title: 'Engage your comments',
-                tip: 'Replying to comments within the first hour signals the algorithm that your content sparks conversation.',
-              },
-              {
-                title: 'Repurpose everything',
-                tip: 'One sermon = YouTube video + 5 shorts + podcast episode + quote graphics. Work smarter.',
-              },
-              {
-                title: 'Use captions always',
-                tip: '85% of social video is watched on mute. Auto-captions aren\'t optional — they\'re essential.',
-              },
-              {
-                title: 'Study your analytics',
-                tip: 'Check which videos retain viewers past 30 seconds. That tells you more than view counts ever will.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-dark-900/50 border border-dark-800 rounded-xl p-5"
-              >
-                <h3 className="text-white font-semibold mb-2">{item.title}</h3>
-                <p className="text-dark-400 text-sm leading-relaxed">{item.tip}</p>
+                  ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          ))
+        )}
       </div>
     </div>
   )

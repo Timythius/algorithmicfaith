@@ -10,7 +10,7 @@ export type Creator = {
   handle: string
   platform: 'YouTube' | 'TikTok' | 'Instagram' | 'Multi-platform'
   description: string
-  subscribers: string
+  subscribers?: string
   tags: string[]
   url: string
   imageUrl?: string
@@ -18,64 +18,13 @@ export type Creator = {
 
 const creators: Creator[] = [
   {
-    name: 'The Bible Project',
-    handle: '@bibleproject',
+    name: 'The Bush Chapel',
+    handle: '@thebushchapel',
     platform: 'YouTube',
     description:
-      'Stunning animated videos that break down biblical themes, books, and concepts. They\'ve made theology visual, accessible, and binge-worthy.',
-    subscribers: '5M+',
-    tags: ['Theology', 'Animation', 'Education'],
-    url: 'https://www.youtube.com/@bibleproject',
-  },
-  {
-    name: 'Elevation Church',
-    handle: '@elevationchurch',
-    platform: 'YouTube',
-    description:
-      'Pastor Steven Furtick and the Elevation team have mastered the algorithm — sermon clips, worship sets, and shorts that consistently trend.',
-    subscribers: '4M+',
-    tags: ['Sermons', 'Worship', 'Shorts'],
-    url: 'https://www.youtube.com/@elevationchurch',
-  },
-  {
-    name: 'Jackie Hill Perry',
-    handle: '@jackiehillperry',
-    platform: 'Multi-platform',
-    description:
-      'Poet, author, and speaker bringing sharp theological thinking to social media. Her TikToks and Reels cut through the noise with honesty and depth.',
-    subscribers: '500K+',
-    tags: ['Theology', 'Culture', 'Poetry'],
-    url: 'https://www.youtube.com/@JackieHillPerry',
-  },
-  {
-    name: 'The Chosen',
-    handle: '@thechosen',
-    platform: 'Multi-platform',
-    description:
-      'The crowdfunded series about the life of Jesus became a cultural phenomenon — and their social media strategy is a masterclass in faith content.',
-    subscribers: '8M+',
-    tags: ['Film', 'Storytelling', 'Community'],
-    url: 'https://www.youtube.com/@TheChosen',
-  },
-  {
-    name: 'Mike Todd',
-    handle: '@iammiketodd',
-    platform: 'YouTube',
-    description:
-      'Transformation Church pastor whose energetic preaching style and creative visuals have made him one of the most-watched faith voices online.',
-    subscribers: '3M+',
-    tags: ['Sermons', 'Creative', 'Youth'],
-    url: 'https://www.youtube.com/@TransformationChurch',
-  },
-  {
-    name: 'Lecrae',
-    handle: '@lecrae',
-    platform: 'Multi-platform',
-    description:
-      'Grammy-winning artist who bridges faith and hip-hop culture. Uses every platform to spark real conversations about identity, race, and belief.',
-    subscribers: '1M+',
-    tags: ['Music', 'Culture', 'Hip-Hop'],
-    url: 'https://www.youtube.com/@Lecrae',
+      'Emma Woods makes a quiet little chapel service for the people the algorithm forgets — those worshipping from home or bedside, in the hush of the Australian bush. Piano, Scripture, reflection, prayer, blessing. Make a cuppa first.',
+    tags: ['Worship', 'Lectionary', 'Accessibility'],
+    url: 'https://www.youtube.com/@thebushchapel',
   },
 ]
 
@@ -97,32 +46,13 @@ export default function CreatorsPage() {
           {/* Jewel divider */}
           <div className="w-48 h-[2px] mx-auto mb-6 bg-gradient-to-r from-transparent via-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 via-gold-500 to-transparent" />
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            The people using platforms and algorithms to share faith with the world. Here are the ones worth following.
+            People and projects I actually know — small, honest, and worth your time.
           </p>
         </div>
       </div>
 
-      {/* Filter Tags */}
-      <div className="max-w-5xl mx-auto px-6 py-8">
-        <div className="flex flex-wrap gap-3 justify-center">
-          {[
-            { label: 'All', color: 'bg-gold-500 text-dark-950' },
-            { label: 'YouTube', color: 'bg-ruby-500/10 text-ruby-400 border border-ruby-500/20' },
-            { label: 'TikTok', color: 'bg-amethyst-500/10 text-amethyst-400 border border-amethyst-500/20' },
-            { label: 'Multi-platform', color: 'bg-sapphire-500/10 text-sapphire-400 border border-sapphire-500/20' },
-          ].map((filter) => (
-            <span
-              key={filter.label}
-              className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 ${filter.color}`}
-            >
-              {filter.label}
-            </span>
-          ))}
-        </div>
-      </div>
-
       {/* Creator Grid */}
-      <div className="max-w-5xl mx-auto px-6 pb-20">
+      <div className="max-w-5xl mx-auto px-6 pt-8 pb-20">
         <div className="grid md:grid-cols-2 gap-6">
           {creators.map((creator) => (
             <CreatorCard key={creator.handle} creator={creator} />

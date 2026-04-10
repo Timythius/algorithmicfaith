@@ -52,7 +52,9 @@ export default function CreatorCard({ creator }: { creator: Creator }) {
             </span>
           ))}
         </div>
-        <span className="text-dark-500 text-sm">{creator.subscribers}</span>
+        {creator.subscribers && (
+          <span className="text-dark-500 text-sm">{creator.subscribers}</span>
+        )}
       </div>
     </a>
   )
