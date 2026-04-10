@@ -3,47 +3,27 @@
 /**
  * RoseWindow — densely-subdivided rose window in the Chartres tradition.
  *
+ * Purely decorative: no interactivity, no links. The site's navigation
+ * lives in the lancet windows below.
+ *
  * Design principles:
  *   • 12-fold rotational symmetry (Chartres rose has 12 main petals).
- *   • Restrained palette: deep cobalt + deep ruby dominant, warm amber
- *     accents, near-black caming. No greens, no purples, no white blowouts.
+ *   • Sainte-Chapelle palette of 6 jewel colours with near-black caming.
  *   • Every shape is filled with an SVG <pattern> of tiny jewel cells so
  *     the glass reads as dense rather than flat.
  *   • Heavy black caming (stroke 2.5–4) frames every pane.
- *   • Multi-ring construction:
- *       1. outer stone ring (carved, dark)
- *       2. corona of 24 small alternating cells
- *       3. ring of 12 large pointed petals
- *       4. ring of 12 quatrefoils
- *       5. ring of 12 inner medallions — 7 are interactive category links,
- *          5 are decorative crosses
- *       6. central medallion with chi-rho cross
- *   • Slow ambient counter-rotation on outer corona (240s) and inner
- *     tracery (360s); disabled under prefers-reduced-motion or data-lite.
+ *   • Multi-ring construction: outer carved stone ring, corona of 24
+ *     small cells, ring of 12 pointed petals, ring of 12 quatrefoils,
+ *     ring of 12 inner medallions, central medallion with cross.
+ *   • Slow ambient counter-rotation; disabled under prefers-reduced-motion
+ *     or data-lite.
  */
 
 import { useId } from 'react'
-import Link from 'next/link'
 import GlassPatterns, { patternUrl, type PaletteName } from './GlassPatterns'
-
-export type RoseCategory = {
-  name: string
-  href: string
-}
-
-export const ROSE_CATEGORIES: RoseCategory[] = [
-  { name: 'YouTube',     href: '/blog?category=YouTube'         },
-  { name: 'Worship',     href: '/blog?category=Worship'         },
-  { name: 'AI & Tech',   href: '/blog?category=AI%20%26%20Tech' },
-  { name: 'Sermons',     href: '/blog?category=Sermons'         },
-  { name: 'Devotionals', href: '/blog?category=Devotionals'     },
-  { name: 'TikTok',      href: '/blog?category=TikTok'          },
-  { name: 'General',     href: '/blog'                          },
-]
 
 type Props = {
   size?: number
-  interactive?: boolean
   static?: boolean
   className?: string
 }
@@ -103,7 +83,7 @@ function quatrefoil(cx: number, cy: number, r: number) {
 }
 
 // ---- main component --------------------------------------------------------
-export default function RoseWindow({ size = 600, interactive = false, static: isStatic = false, className }: Props) {
+export default function RoseWindow({ size = 600, static: isStatic = false, className }: Props) {
   // ring radii (viewBox 500x500, center 250,250)
   const R_OUTER         = 248
   const R_OUTER_BEVEL   = 235
@@ -121,7 +101,7 @@ export default function RoseWindow({ size = 600, interactive = false, static: is
   const N_PETALS  = 12
   const N_CORONA  = 24
   const N_QUAT    = 12
-  const N_MED     = 12   // 12 inner medallions, 7 carry category icons
+  const N_MED     = 12
 
   // unique pattern ids per instance (Loader and Hero render separately)
   const uid = useId().replace(/[^a-zA-Z0-9]/g, '')
@@ -167,17 +147,12 @@ export default function RoseWindow({ size = 600, interactive = false, static: is
     return { cx: c.x, cy: c.y, r: 12, color: QUAT_CYCLE[i] }
   })
 
-  // 12 inner medallions, 7 are category-bearing (every-other plus extras)
-  // We assign categories to indices 0,2,4,6,8,10,11 — that's 7 around the ring
-  const CATEGORY_INDICES = new Set([0, 2, 4, 6, 8, 10, 11])
-  let catCursor = 0
+  // 12 inner medallions — uniformly decorative now
   const meds = Array.from({ length: N_MED }, (_, i) => {
     const step = 360 / N_MED
     const a = i * step + step / 2
     const c = pol((R_MED_IN + R_MED_OUT) / 2, a)
-    const isCat = CATEGORY_INDICES.has(i)
-    const cat = isCat ? ROSE_CATEGORIES[catCursor++] : undefined
-    return { cx: c.x, cy: c.y, r: 14, isCat, cat }
+    return { cx: c.x, cy: c.y, r: 14 }
   })
 
   return (
@@ -292,36 +267,15 @@ export default function RoseWindow({ size = 600, interactive = false, static: is
         <circle cx={CX} cy={CY} r={R_QUAT_IN - 1} fill="none" stroke={CAMING} strokeWidth="1.6" />
         <circle cx={CX} cy={CY} r={R_MED_OUT + 1} fill="none" stroke={CAMING} strokeWidth="1.6" />
 
-        {/* ---- ring 4: 12 inner medallions ---- */}
+        {/* ---- ring 4: 12 inner medallions (decorative) ---- */}
         <g>
-          {meds.map((m, i) => {
-            const body = (
-              <g>
-                <circle cx={m.cx} cy={m.cy} r={m.r} fill={url(MED_CYCLE[i])} stroke={CAMING} strokeWidth="2.2" />
-                <circle cx={m.cx} cy={m.cy} r={m.r - 4} fill="none" stroke={CAMING} strokeWidth="1" opacity="0.5" />
-                {/* Interactive medallions get a small jewel bead so they
-                    still read as distinct from decorative ones — no UI
-                    icons (those clashed with the cathedral aesthetic). */}
-                {m.isCat && m.cat ? (
-                  <>
-                    <circle cx={m.cx} cy={m.cy} r="3.5" fill="#fce9a7" stroke={CAMING} strokeWidth="0.8" />
-                    <circle cx={m.cx} cy={m.cy} r="1.4" fill={CAMING} />
-                  </>
-                ) : (
-                  <circle cx={m.cx} cy={m.cy} r="2" fill="#fce9a7" opacity="0.7" />
-                )}
-                <title>{m.cat?.name ?? ''}</title>
-              </g>
-            )
-            if (interactive && m.isCat && m.cat) {
-              return (
-                <Link key={i} href={m.cat.href} aria-label={`Filter posts by ${m.cat.name}`} className="rose-petal-link">
-                  {body}
-                </Link>
-              )
-            }
-            return <g key={i}>{body}</g>
-          })}
+          {meds.map((m, i) => (
+            <g key={i}>
+              <circle cx={m.cx} cy={m.cy} r={m.r} fill={url(MED_CYCLE[i])} stroke={CAMING} strokeWidth="2.2" />
+              <circle cx={m.cx} cy={m.cy} r={m.r - 4} fill="none" stroke={CAMING} strokeWidth="1" opacity="0.5" />
+              <circle cx={m.cx} cy={m.cy} r="2" fill="#fce9a7" opacity="0.8" />
+            </g>
+          ))}
         </g>
 
         {/* caming gap ring */}
@@ -352,13 +306,6 @@ export default function RoseWindow({ size = 600, interactive = false, static: is
         .rose-window :global(.rose-rotate-ccw) {
           animation: rose-spin-ccw 720s linear infinite;
           transform-origin: ${CX}px ${CY}px;
-        }
-        .rose-window :global(.rose-petal-link) {
-          cursor: pointer;
-          transition: filter 0.5s ease;
-        }
-        .rose-window :global(.rose-petal-link:hover) {
-          filter: brightness(1.4) drop-shadow(0 0 10px rgba(227, 169, 59, 0.55));
         }
         @keyframes rose-spin-cw {
           from { transform: rotate(0deg); }

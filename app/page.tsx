@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section — cathedral wall */}
-      <Hero posts={posts} />
+      <Hero />
 
       <RoseDivider />
 

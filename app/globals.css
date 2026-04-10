@@ -204,6 +204,13 @@
   max-width: 92vw;
 }
 
+/* Mobile lancet row sits inside the rose's diameter — ~82% of the
+   .window-assembly width, the way real Chartres lancets do. */
+.lancet-stage {
+  width: 75.5vw;        /* 82% of 92vw */
+  max-width: 443px;     /* 82% of 540px */
+}
+
 /* Arched ALGORITHMIC inscription that hugs the top of the rose */
 .title-arch {
   width: 100%;

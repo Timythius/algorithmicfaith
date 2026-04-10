@@ -6,20 +6,22 @@
  * decides its dominant glass color; the other colors appear as accents
  * in the small ornament cells, the central oval and the base band.
  *
- * No cartoon halo/robe figures — when a post has no coverImage we draw
- * a dark silhouette inside a coloured oval cell. Title sits OUTSIDE the
- * lancet, on the dark stone wall below.
+ * The lancets are the site's primary navigation: each one is a Link
+ * to a top-level page (Home, Blog, Creators, Resources, About). The
+ * label sits outside the lancet on the dark stone wall below.
  */
 
 import { useId } from 'react'
 import Link from 'next/link'
-import type { Post } from '@/lib/posts'
 import GlassPatterns, { patternUrl, type PaletteName } from './GlassPatterns'
 
 const CAMING = '#020408'
 
 type Props = {
-  post: Post
+  /** Visible label below the lancet (e.g. "Creators"). */
+  title: string
+  /** Destination href (e.g. "/creators"). */
+  href: string
   height?: number
   /** Panel width in SVG units (controls overall lancet size). */
   width?: number
@@ -37,6 +39,10 @@ type Props = {
    * stretch to a flex container.
    */
   fluid?: boolean
+  /**
+   * Marks the current page so this lancet is rendered with extra glow.
+   */
+  active?: boolean
 }
 
 /**
@@ -53,7 +59,16 @@ const ACCENTS: Record<PaletteName, [PaletteName, PaletteName]> = {
   mixed:    ['sapphire', 'ruby'],
 }
 
-export default function LancetPanel({ post, height = 480, width = 110, palette = 'sapphire', mainWeight = 'full', fluid = false }: Props) {
+export default function LancetPanel({
+  title,
+  href,
+  height = 480,
+  width = 110,
+  palette = 'sapphire',
+  mainWeight = 'full',
+  fluid = false,
+  active = false,
+}: Props) {
   const w = width
   const total = height
   const cx = w / 2
@@ -69,7 +84,6 @@ export default function LancetPanel({ post, height = 480, width = 110, palette =
 
   const uid = useId().replace(/[^a-zA-Z0-9]/g, '')
   const url = (n: PaletteName) => patternUrl(uid, n)
-  const figClip = `lfig-${uid}`
 
   const main = palette
   const [accentA, accentB] = ACCENTS[palette]
@@ -118,10 +132,11 @@ export default function LancetPanel({ post, height = 480, width = 110, palette =
 
   return (
     <Link
-      href={`/blog/${post.slug}`}
-      className="lancet block group"
+      href={href}
+      className={`lancet block group${active ? ' is-active' : ''}`}
       style={fluid ? { width: '100%' } : { width: w }}
-      aria-label={post.title}
+      aria-label={title}
+      aria-current={active ? 'page' : undefined}
     >
       <svg
         {...(fluid
@@ -134,9 +149,6 @@ export default function LancetPanel({ post, height = 480, width = 110, palette =
       >
         <defs>
           <GlassPatterns uid={uid} />
-          <clipPath id={figClip}>
-            <ellipse cx={figCx} cy={figCy} rx={figRX} ry={figRY} />
-          </clipPath>
         </defs>
 
         {/* dark stone frame */}
@@ -212,23 +224,11 @@ export default function LancetPanel({ post, height = 480, width = 110, palette =
           <polygon points="0,-5 5,0 0,5 -5,0" fill={url(accentB)} stroke={CAMING} strokeWidth="0.8" />
         </g>
 
-        {/* central figure cell — accent color so it contrasts the body */}
+        {/* central decorative medallion — accent color so it contrasts the body */}
         <ellipse cx={figCx} cy={figCy} rx={figRX} ry={figRY} fill={url(accentA)} stroke={CAMING} strokeWidth="3" />
-
-        {/* If a cover image exists, clip it to the oval cell. Otherwise the
-            oval is left as a plain decorative glass medallion — no figure. */}
-        {post.coverImage && (
-          <image
-            href={post.coverImage}
-            x={figCx - figRX}
-            y={figCy - figRY}
-            width={figRX * 2}
-            height={figRY * 2}
-            preserveAspectRatio="xMidYMid slice"
-            clipPath={`url(#${figClip})`}
-            opacity="0.85"
-          />
-        )}
+        {/* small inner ring + bead so the medallion reads as ornament */}
+        <ellipse cx={figCx} cy={figCy} rx={figRX * 0.62} ry={figRY * 0.62} fill="none" stroke={CAMING} strokeWidth="1" opacity="0.6" />
+        <circle cx={figCx} cy={figCy} r={Math.max(2, w * 0.04)} fill="#fce9a7" stroke={CAMING} strokeWidth="0.6" />
 
         {/* a quatrefoil-like ornament below the figure (accent B) */}
         <g transform={`translate(${cx} ${bodyTop + bodyH * 0.74})`}>
@@ -240,28 +240,25 @@ export default function LancetPanel({ post, height = 480, width = 110, palette =
         <rect x="4" y={bodyBottom} width={w - 8} height={baseBandH} fill={url(accentA)} stroke={CAMING} strokeWidth="2.5" />
         <path d={`M 4 ${bodyBottom + baseBandH / 2} Q ${cx} ${bodyBottom + baseBandH / 2 + 3} ${w - 4} ${bodyBottom + baseBandH / 2}`} stroke={CAMING} strokeWidth="1.2" fill="none" />
 
-        {/* title outside, on the dark wall below the lancet */}
+        {/* label outside, on the dark wall below the lancet */}
         <foreignObject x="-10" y={total + 6} width={w + 20} height={48}>
           <div
             // @ts-expect-error svg foreignObject child
             xmlns="http://www.w3.org/1999/xhtml"
             style={{
               fontFamily: 'var(--font-cinzel), Georgia, serif',
-              color: '#e3c389',
-              fontSize: 9,
-              lineHeight: 1.25,
+              color: active ? '#f5d168' : '#e3c389',
+              fontSize: Math.max(9, w * 0.13),
+              lineHeight: 1.2,
               textAlign: 'center',
               textTransform: 'uppercase',
-              letterSpacing: 0.6,
+              letterSpacing: 1.2,
+              fontWeight: active ? 700 : 600,
               padding: '2px 4px',
-              display: '-webkit-box',
-              WebkitLineClamp: 3,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-              textShadow: '0 1px 2px rgba(0,0,0,0.9)',
+              textShadow: '0 1px 3px rgba(0,0,0,0.95)',
             }}
           >
-            {post.title}
+            {title}
           </div>
         </foreignObject>
       </svg>
@@ -273,6 +270,9 @@ export default function LancetPanel({ post, height = 480, width = 110, palette =
         .lancet:hover :global(svg) {
           filter: brightness(1.18) drop-shadow(0 0 14px ${HOVER_GLOW[main]});
           transform: translateY(-2px);
+        }
+        .lancet.is-active :global(svg) {
+          filter: brightness(1.12) drop-shadow(0 0 18px ${HOVER_GLOW[main]});
         }
         @media (prefers-reduced-motion: reduce) {
           .lancet :global(svg) { transition: none; }

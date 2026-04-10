@@ -1,3 +1,5 @@
+'use client'
+
 /**
  * Hero — cathedral wall.
  *
@@ -6,25 +8,23 @@
  *   • coloured caustic light spill on the wall below the rose, as if
  *     the glass were casting it
  *   • arched "ALGORITHMIC" inscription hugging the top of the rose
- *   • centered rose window
+ *   • centered (decorative) rose window
  *   • carved "FAITH" stone lintel directly beneath the rose
- *   • a row of 5 lancet windows below the lintel, each in its own color
- *   • CTAs at the bottom
+ *   • a row of 5 lancet windows acting as the site's primary nav
  */
 
-import type { Post } from '@/lib/posts'
+import { usePathname } from 'next/navigation'
 import RoseWindow from './RoseWindow'
 import LancetRow from './LancetRow'
 
-// Smaller heights so the row fits a 320 px viewport without scrolling.
+// Mobile lancet sizing — viewBox numbers; the actual display width is
+// constrained by the .lancet-stage wrapper (~82% of the rose).
 const MOBILE_LANCET_HEIGHTS = [140, 165, 190, 165, 140]
 const MOBILE_LANCET_WIDTH = 50
 
-type Props = {
-  posts: Post[]
-}
+export default function Hero() {
+  const pathname = usePathname() || '/'
 
-export default function Hero({ posts }: Props) {
   return (
     <section className="cathedral-hero relative overflow-hidden">
       {/* dark stone wall background */}
@@ -34,7 +34,7 @@ export default function Hero({ posts }: Props) {
 
       <h1 className="sr-only">Algorithmic Faith</h1>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-14 sm:pt-16 pb-12 flex flex-col items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-14 sm:pt-16 pb-16 flex flex-col items-center">
         {/* The window assembly: arched "ALGORITHMIC" inscription, the rose,
             and the carved "FAITH" lintel are stacked tightly inside one
             container so they read as a single architectural piece. */}
@@ -67,9 +67,9 @@ export default function Hero({ posts }: Props) {
             </text>
           </svg>
 
-          {/* Rose window centerpiece — pulled up so the arch hugs its rim */}
+          {/* Rose window centerpiece — purely decorative now */}
           <div className="rose-stage relative -mt-6 sm:-mt-8">
-            <RoseWindow size={540} interactive />
+            <RoseWindow size={540} />
 
             {/* Caustic light spill on the wall directly below the rose */}
             <div className="caustic-spill" aria-hidden>
@@ -141,14 +141,14 @@ export default function Hero({ posts }: Props) {
         {/* Jewel divider — spans all 5 lancet colors */}
         <div className="w-72 h-[2px] my-10 bg-gradient-to-r from-transparent via-[#5b8de6] via-[#d63b54] via-[#3fa05a] via-[#f5d168] via-[#e88aa8] to-transparent opacity-90" />
 
-        {/* The lancet row — on mobile, the five lancets stretch to span the
-            same width as the rose (.window-assembly = 540px / 92vw) so the
-            row visually anchors to the wheel above. Desktop keeps the full
-            fixed Chartres scale. */}
-        <div className="w-full pb-2">
-          <div className="sm:hidden window-assembly mx-auto">
+        {/* The lancet row — five top-level navigation links. On mobile the
+            row sits at ~82% of the rose width (.lancet-stage), tucked inside
+            its diameter the way real Chartres lancets sit beneath the wheel.
+            Desktop keeps the full fixed Chartres scale. */}
+        <nav className="w-full pb-2" aria-label="Site navigation">
+          <div className="sm:hidden lancet-stage mx-auto">
             <LancetRow
-              posts={posts}
+              currentPath={pathname}
               heights={MOBILE_LANCET_HEIGHTS}
               panelWidth={MOBILE_LANCET_WIDTH}
               fluid
@@ -156,24 +156,9 @@ export default function Hero({ posts }: Props) {
             />
           </div>
           <div className="hidden sm:flex justify-center min-w-fit mx-auto px-4">
-            <LancetRow posts={posts} />
+            <LancetRow currentPath={pathname} />
           </div>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-4 mt-12">
-          <a
-            href="/creators"
-            className="bg-[#c89436] hover:bg-[#f5d168] text-[#0a0705] font-semibold px-7 py-3.5 rounded-sm border border-[#3a2510] transition-all duration-300 hover:shadow-[0_0_25px_rgba(245,209,104,0.45)]"
-          >
-            Meet the Creators
-          </a>
-          <a
-            href="/blog"
-            className="border border-[#3a2510] hover:border-[#f5d168] text-[#e3c389] font-semibold px-7 py-3.5 rounded-sm transition-all duration-300 hover:bg-[#1a1006]/40"
-          >
-            All Articles
-          </a>
-        </div>
+        </nav>
       </div>
 
       {/* Bottom fade into the next section */}
