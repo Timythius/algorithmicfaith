@@ -31,8 +31,8 @@ function isActive(item: NavLancet, currentPath: string) {
 }
 
 // Chartres rhythm in miniature: short · medium · tall · medium · short.
-const MINI_HEIGHTS = [56, 64, 72, 64, 56]
-const MINI_WIDTH = 38
+const MINI_HEIGHTS = [62, 70, 80, 70, 62]
+const MINI_WIDTH = 50
 
 export default function MiniLancetNav({ currentPath }: Props) {
   return (

@@ -123,20 +123,11 @@ export default function PostPage({ params }: Props) {
           </div>
         )}
 
-        {/* Content */}
+        {/* Content — cathedral-styled prose (drop cap, jewel rules,
+            Cinzel section heads, gold blockquotes). All visual rules
+            live in app/globals.css under .cathedral-article */}
         <div
-          className="prose prose-lg prose-invert max-w-none
-            prose-headings:font-serif prose-headings:text-white prose-headings:font-bold
-            prose-p:text-dark-300 prose-p:leading-relaxed
-            prose-a:text-gold-400 prose-a:no-underline hover:prose-a:text-gold-300
-            prose-strong:text-white
-            prose-code:text-gold-400 prose-code:bg-dark-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-            prose-blockquote:border-l-gold-500 prose-blockquote:text-dark-400
-            prose-img:rounded-xl prose-img:border-2 prose-img:border-dark-700
-            prose-hr:border-dark-700
-            prose-li:text-dark-300
-            prose-ul:text-dark-300
-            prose-ol:text-dark-300"
+          className="cathedral-article max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 

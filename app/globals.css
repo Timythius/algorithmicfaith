@@ -294,6 +294,245 @@
   vertical-align: middle;
 }
 
+/* ---------- Cathedral article body ----------
+   Used by blog post pages. Aims for the feel of an old illuminated
+   book: gold drop cap + small-caps lead, Cinzel section heads with a
+   jewel underbar, ornate gold blockquotes, jewel-rainbow horizontal
+   rules, and warm cream body text on a deep stone background.
+
+   Drops Tailwind's prose stack entirely — every element a markdown
+   post can emit is styled here so the result is consistent. */
+
+.cathedral-article {
+  color: #c9b489;
+  font-size: 1.075rem;
+  line-height: 1.85;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.cathedral-article > p:first-of-type::first-letter {
+  font-family: var(--font-cinzel), Georgia, serif;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 0.85;
+  float: left;
+  margin: 0.45rem 0.7rem 0 0;
+  color: #f5d168;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+.cathedral-article > p:first-of-type::first-line {
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  color: #e3c389;
+}
+
+.cathedral-article p {
+  margin: 1.4rem 0;
+}
+
+.cathedral-article h2 {
+  font-family: var(--font-cinzel), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.55rem;
+  color: #f5d168;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.85rem;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
+}
+
+.cathedral-article h2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 4.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, #5b8de6, #d63b54, #3fa05a, #f5d168, #e88aa8);
+  opacity: 0.95;
+}
+
+.cathedral-article h3 {
+  font-family: var(--font-cinzel), Georgia, serif;
+  font-size: 1.15rem;
+  color: #e3c389;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.cathedral-article h4 {
+  font-family: var(--font-cinzel), Georgia, serif;
+  font-size: 1rem;
+  color: #e3c389;
+  letter-spacing: 0.05em;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cathedral-article blockquote {
+  position: relative;
+  border-left: 3px solid #f5d168;
+  background: linear-gradient(180deg, rgba(245, 209, 104, 0.06), rgba(245, 209, 104, 0.02));
+  padding: 1.4rem 1.75rem 1.4rem 2.25rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #e3c389;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 1px 0 rgba(245, 209, 104, 0.08);
+}
+
+.cathedral-article blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.4rem;
+  left: 0.6rem;
+  font-family: var(--font-cinzel), Georgia, serif;
+  font-size: 3.5rem;
+  color: rgba(245, 209, 104, 0.35);
+  line-height: 1;
+}
+
+.cathedral-article blockquote p {
+  margin: 0;
+}
+
+.cathedral-article blockquote p + p {
+  margin-top: 0.75rem;
+}
+
+.cathedral-article hr {
+  border: none;
+  height: 2px;
+  margin: 3rem auto;
+  width: 80%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #5b8de6,
+    #d63b54,
+    #3fa05a,
+    #f5d168,
+    #e88aa8,
+    transparent
+  );
+  opacity: 0.85;
+}
+
+.cathedral-article a {
+  color: #f5d168;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 209, 104, 0.3);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.cathedral-article a:hover {
+  color: #fce9a7;
+  border-bottom-color: #f5d168;
+}
+
+.cathedral-article strong {
+  color: #f5d168;
+  font-weight: 600;
+}
+
+.cathedral-article em {
+  color: #e3c389;
+}
+
+.cathedral-article ul,
+.cathedral-article ol {
+  margin: 1.5rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.cathedral-article ul li,
+.cathedral-article ol li {
+  position: relative;
+  padding-left: 1.85rem;
+  margin: 0.85rem 0;
+  line-height: 1.75;
+}
+
+.cathedral-article ul li::before {
+  content: '\2756'; /* black diamond minus white X — small lozenge */
+  position: absolute;
+  left: 0.1rem;
+  top: 0.05rem;
+  color: #f5d168;
+  font-size: 0.95rem;
+}
+
+.cathedral-article ol {
+  counter-reset: cathedral-counter;
+}
+
+.cathedral-article ol li {
+  counter-increment: cathedral-counter;
+}
+
+.cathedral-article ol li::before {
+  content: counter(cathedral-counter) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f5d168;
+  font-family: var(--font-cinzel), Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.cathedral-article code {
+  background: #1a1410;
+  color: #f5d168;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.25rem;
+  font-size: 0.92em;
+  border: 1px solid #3a2510;
+}
+
+.cathedral-article pre {
+  background: #0a0705;
+  border: 1px solid #3a2510;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  box-shadow: inset 0 0 0 1px rgba(245, 209, 104, 0.06);
+}
+
+.cathedral-article pre code {
+  background: none;
+  border: none;
+  color: #e3c389;
+  padding: 0;
+}
+
+.cathedral-article img {
+  border-radius: 0.5rem;
+  border: 2px solid #3a2510;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  margin: 2rem auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* the closing line of an article — italicised, centred, with extra
+   breathing room — used by giving the last paragraph the .closing class
+   if we ever want it; for now plain markdown still looks great. */
+.cathedral-article p:last-of-type {
+  margin-bottom: 0;
+}
+
 /* ---------- Lite mode overrides ---------- */
 
 html[data-lite="true"] .cathedral-wall,

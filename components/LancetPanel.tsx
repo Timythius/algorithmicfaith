@@ -240,8 +240,11 @@ export default function LancetPanel({
         <rect x="4" y={bodyBottom} width={w - 8} height={baseBandH} fill={url(accentA)} stroke={CAMING} strokeWidth="2.5" />
         <path d={`M 4 ${bodyBottom + baseBandH / 2} Q ${cx} ${bodyBottom + baseBandH / 2 + 3} ${w - 4} ${bodyBottom + baseBandH / 2}`} stroke={CAMING} strokeWidth="1.2" fill="none" />
 
-        {/* label outside, on the dark wall below the lancet */}
-        <foreignObject x="-10" y={total + 6} width={w + 20} height={48}>
+        {/* label outside, on the dark wall below the lancet — the
+            foreignObject is slightly wider than the lancet so longer
+            labels (e.g. CREATORS) have a bit of breathing room without
+            running into adjacent panels. */}
+        <foreignObject x={-w * 0.25} y={total + 6} width={w * 1.5} height={48}>
           <div
             // @ts-expect-error svg foreignObject child
             xmlns="http://www.w3.org/1999/xhtml"
