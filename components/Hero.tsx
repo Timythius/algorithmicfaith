@@ -141,15 +141,18 @@ export default function Hero({ posts }: Props) {
         {/* Jewel divider — spans all 5 lancet colors */}
         <div className="w-72 h-[2px] my-10 bg-gradient-to-r from-transparent via-[#5b8de6] via-[#d63b54] via-[#3fa05a] via-[#f5d168] via-[#e88aa8] to-transparent opacity-90" />
 
-        {/* The lancet row — small on mobile so the five fit without
-            a horizontal slider; full Chartres scale from sm: upward. */}
+        {/* The lancet row — on mobile, the five lancets stretch to span the
+            same width as the rose (.window-assembly = 540px / 92vw) so the
+            row visually anchors to the wheel above. Desktop keeps the full
+            fixed Chartres scale. */}
         <div className="w-full pb-2">
-          <div className="sm:hidden flex justify-center px-2">
+          <div className="sm:hidden window-assembly mx-auto">
             <LancetRow
               posts={posts}
               heights={MOBILE_LANCET_HEIGHTS}
               panelWidth={MOBILE_LANCET_WIDTH}
-              className="lancet-row flex items-end justify-center gap-1"
+              fluid
+              className="lancet-row flex items-end justify-between gap-1 w-full"
             />
           </div>
           <div className="hidden sm:flex justify-center min-w-fit mx-auto px-4">

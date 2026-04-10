@@ -16,6 +16,12 @@ type Props = {
   panelWidth?: number
   /** Optional className override for the row container (gap, etc.). */
   className?: string
+  /**
+   * When true, each lancet stretches to fill an equal share of the row's
+   * width (flex-1) instead of using fixed pixel widths. The aspect ratio
+   * of each panel is preserved via the SVG viewBox.
+   */
+  fluid?: boolean
 }
 
 const DEFAULT_HEIGHTS = [380, 440, 500, 440, 380]
@@ -30,6 +36,7 @@ export default function LancetRow({
   heights = DEFAULT_HEIGHTS,
   panelWidth = 110,
   className = 'lancet-row flex items-end justify-center gap-2 sm:gap-3 md:gap-5',
+  fluid = false,
 }: Props) {
   if (!posts || posts.length === 0) return null
   const five = posts.slice(0, 5)
@@ -37,17 +44,27 @@ export default function LancetRow({
 
   return (
     <div className={className}>
-      {five.map((post, i) => (
-        <LancetPanel
-          key={`${post.slug}-${i}`}
-          post={post}
-          height={heights[i]}
-          width={panelWidth}
-          palette={PALETTES[i]}
-          // The right-end yellow is muted so it doesn't out-shout the row.
-          mainWeight={PALETTES[i] === 'yellow' ? 'reduced' : 'full'}
-        />
-      ))}
+      {five.map((post, i) => {
+        const panel = (
+          <LancetPanel
+            post={post}
+            height={heights[i]}
+            width={panelWidth}
+            palette={PALETTES[i]}
+            // The right-end yellow is muted so it doesn't out-shout the row.
+            mainWeight={PALETTES[i] === 'yellow' ? 'reduced' : 'full'}
+            fluid={fluid}
+          />
+        )
+        if (fluid) {
+          return (
+            <div key={`${post.slug}-${i}`} className="flex-1 min-w-0 flex items-end">
+              {panel}
+            </div>
+          )
+        }
+        return <div key={`${post.slug}-${i}`}>{panel}</div>
+      })}
     </div>
   )
 }

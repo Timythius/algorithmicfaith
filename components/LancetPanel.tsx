@@ -31,6 +31,12 @@ type Props = {
    * (e.g. yellow) doesn't dominate the row.
    */
   mainWeight?: 'full' | 'reduced'
+  /**
+   * When true, the SVG fills its parent (width: 100%) instead of using a
+   * fixed pixel size. Used by responsive rows that want the lancets to
+   * stretch to a flex container.
+   */
+  fluid?: boolean
 }
 
 /**
@@ -47,7 +53,7 @@ const ACCENTS: Record<PaletteName, [PaletteName, PaletteName]> = {
   mixed:    ['sapphire', 'ruby'],
 }
 
-export default function LancetPanel({ post, height = 480, width = 110, palette = 'sapphire', mainWeight = 'full' }: Props) {
+export default function LancetPanel({ post, height = 480, width = 110, palette = 'sapphire', mainWeight = 'full', fluid = false }: Props) {
   const w = width
   const total = height
   const cx = w / 2
@@ -114,13 +120,15 @@ export default function LancetPanel({ post, height = 480, width = 110, palette =
     <Link
       href={`/blog/${post.slug}`}
       className="lancet block group"
-      style={{ width: w }}
+      style={fluid ? { width: '100%' } : { width: w }}
       aria-label={post.title}
     >
       <svg
-        width={w}
-        height={total + 56}
+        {...(fluid
+          ? { width: '100%', height: 'auto' as const }
+          : { width: w, height: total + 56 })}
         viewBox={`0 0 ${w} ${total + 56}`}
+        preserveAspectRatio="xMidYMax meet"
         xmlns="http://www.w3.org/2000/svg"
         className="block overflow-visible"
       >
