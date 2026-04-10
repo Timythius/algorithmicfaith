@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Resources | Algorithmic Faith',
+  title: 'Library | Algorithmic Faith',
   description: 'Tools, guides, and resources for faith creators navigating algorithms and AI',
 }
 
@@ -97,7 +97,7 @@ export default function ResourcesPage() {
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Resources
+            Library
           </h1>
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
             Tools and platforms that faith creators are using to grow, create, and connect. Tried, tested, and worth your time.

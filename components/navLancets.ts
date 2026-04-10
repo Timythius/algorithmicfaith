@@ -20,6 +20,6 @@ export const NAV_LANCETS: NavLancet[] = [
   { label: 'Home',      href: '/',          palette: 'sapphire' },
   { label: 'Blog',      href: '/blog',      palette: 'ruby'     },
   { label: 'Creators',  href: '/creators',  palette: 'rose'     },
-  { label: 'Resources', href: '/resources', palette: 'emerald'  },
+  { label: 'Library',   href: '/library',   palette: 'emerald'  },
   { label: 'About',     href: '/about',     palette: 'yellow'   },
 ]

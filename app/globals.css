@@ -279,6 +279,15 @@
   100% { transform: translateY(6px)  scale(1.05); opacity: 0.7; }
 }
 
+/* Hide the coloured light spill on mobile — at small sizes the pools
+   bleed into the lancet row and read as muddy rather than radiant.
+   The rose itself still rotates. */
+@media (max-width: 639px) {
+  .caustic-spill {
+    display: none;
+  }
+}
+
 /* ---------- Drop cap baseline tweaks ---------- */
 .drop-cap svg {
   display: block;
