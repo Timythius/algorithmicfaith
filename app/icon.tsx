@@ -7,7 +7,10 @@ import { ImageResponse } from 'next/og'
  */
 
 export const runtime = 'edge'
-export const size = { width: 64, height: 64 }
+// 192x192 — one-stop favicon: large enough to be the PWA install icon
+// when referenced from app/manifest.ts, but the browser auto-downscales
+// it for the tiny tab favicon so we don't need a second file.
+export const size = { width: 192, height: 192 }
 export const contentType = 'image/png'
 
 const PALETTE = ['#2d5cc0', '#d63b54', '#3fa05a', '#f5d168', '#e88aa8', '#a02a55', '#1a6b34', '#c89436']
@@ -40,7 +43,7 @@ function petalPath(i: number) {
 
 function buildIconSvg() {
   return `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="64" height="64">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="192" height="192">
       <circle cx="50" cy="50" r="48" fill="#0a0705" stroke="${CAMING}" stroke-width="2"/>
       <circle cx="50" cy="50" r="44" fill="#1a1410"/>
       ${PALETTE.map(
@@ -71,7 +74,7 @@ export default function Icon() {
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={dataUri} width={64} height={64} alt="" />
+        <img src={dataUri} width={192} height={192} alt="" />
       </div>
     ),
     size
