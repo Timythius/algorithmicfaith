@@ -2,17 +2,20 @@ import { getAllPosts } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 import Hero from '@/components/Hero'
 import Newsletter from '@/components/Newsletter'
+import RoseDivider from '@/components/RoseDivider'
 
 export default function Home() {
   const posts = getAllPosts()
 
   return (
     <>
-      {/* Hero Section */}
-      <Hero />
+      {/* Hero Section — cathedral wall */}
+      <Hero posts={posts} />
+
+      <RoseDivider />
 
       {/* Latest Posts Section */}
-      <section className="bg-dark-950 py-20">
+      <section className="bg-dark-950 py-16">
         <div className="max-w-5xl mx-auto px-6">
           {/* Section Header */}
           <div className="flex items-center justify-between mb-12">

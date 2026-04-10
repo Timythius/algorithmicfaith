@@ -3,6 +3,7 @@ import { Outfit, Cinzel } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import RoseLoader from '@/components/RoseLoader'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${cinzel.variable}`}>
       <body className={outfit.className}>
+        <RoseLoader />
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-grow pt-[65px]">

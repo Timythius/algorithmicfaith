@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import StainedGlassLogo from './StainedGlassLogo'
+import LiteToggle from './LiteToggle'
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
@@ -43,6 +44,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            <LiteToggle />
           </div>
 
           {/* Mobile Menu Button */}

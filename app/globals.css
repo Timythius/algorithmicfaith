@@ -171,3 +171,109 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* ---------- Cathedral hero ---------- */
+
+.cathedral-hero {
+  background-color: #050302;
+  min-height: 92vh;
+}
+
+/* dark stone wall — warm grey-black with soft uplift from below */
+.cathedral-wall {
+  background:
+    radial-gradient(ellipse 60% 35% at 50% 100%, rgba(74, 50, 24, 0.5), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 50% 50%, #120c07 0%, #050302 80%);
+}
+
+/* faint granite noise for the wall — feTurbulence as data URI */
+.cathedral-noise {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16  0 0 0 0 0.11  0 0 0 0 0.07  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+/* faint vignette around the edges */
+.cathedral-vignette {
+  background:
+    radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.92) 100%);
+}
+
+.rose-stage {
+  width: 540px;
+  max-width: 92vw;
+  aspect-ratio: 1 / 1;
+}
+
+.rose-stage > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.rose-stage svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ---------- Caustic light spill on the wall below the rose ---------- */
+.caustic-spill {
+  position: absolute;
+  left: 50%;
+  bottom: -90px;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 220px;
+  pointer-events: none;
+}
+.caustic {
+  position: absolute;
+  width: 36%;
+  height: 110px;
+  top: 0;
+  border-radius: 50%;
+  filter: blur(46px);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  animation: caustic-drift 14s ease-in-out infinite alternate;
+}
+.c-sapphire { left: 6%;  background: radial-gradient(ellipse, rgba(91, 141, 230, 0.85), transparent 70%); animation-delay: 0s;  }
+.c-emerald  { left: 22%; background: radial-gradient(ellipse, rgba(63, 160, 90,  0.75), transparent 70%); animation-delay: -3s; }
+.c-yellow   { left: 38%; background: radial-gradient(ellipse, rgba(245, 209, 104, 0.95), transparent 70%); animation-delay: -6s; top: -10px; }
+.c-ruby     { left: 54%; background: radial-gradient(ellipse, rgba(214, 59, 84,  0.8),  transparent 70%); animation-delay: -9s; }
+.c-rose     { left: 70%; background: radial-gradient(ellipse, rgba(232, 138, 168, 0.7), transparent 70%); animation-delay: -12s; }
+
+@keyframes caustic-drift {
+  0%   { transform: translateY(-4px) scale(1);   opacity: 0.5; }
+  100% { transform: translateY(6px)  scale(1.05); opacity: 0.7; }
+}
+
+/* ---------- Drop cap baseline tweaks ---------- */
+.drop-cap svg {
+  display: block;
+  vertical-align: middle;
+}
+
+/* ---------- Lite mode overrides ---------- */
+
+html[data-lite="true"] .cathedral-wall,
+html[data-lite="true"] .cathedral-noise,
+html[data-lite="true"] .cathedral-vignette,
+html[data-lite="true"] .caustic-spill {
+  display: none;
+}
+
+html[data-lite="true"] .cathedral-hero {
+  background: #0a0a0f;
+}
+
+html[data-lite="true"] .lancet-row {
+  display: none;
+}
+
+html[data-lite="true"] *,
+html[data-lite="true"] *::before,
+html[data-lite="true"] *::after {
+  animation-duration: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0s !important;
+}
