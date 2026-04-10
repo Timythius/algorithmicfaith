@@ -81,38 +81,6 @@ export default function AboutPage() {
               ))}
             </div>
           </section>
-
-          {/* Get in Touch */}
-          <section>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-6 flex items-center">
-              <span className="w-8 h-0.5 bg-gradient-to-r from-amethyst-500 to-sapphire-500 mr-4" />
-              Let&apos;s Connect
-            </h2>
-            <div className="glass-panel leadline rounded-2xl p-8">
-              <p className="text-dark-300 text-lg mb-6">
-                Know a faith creator I should feature? Got a take on algorithms and faith you want to share? I&apos;d love to hear from you.
-              </p>
-              <a
-                href="mailto:hello@algorithmicfaith.com"
-                className="inline-flex items-center bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]"
-              >
-                Get in Touch
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </section>
         </div>
       </div>
     </div>

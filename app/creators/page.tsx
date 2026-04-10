@@ -58,22 +58,6 @@ export default function CreatorsPage() {
             <CreatorCard key={creator.handle} creator={creator} />
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="mt-16 text-center glass-panel leadline rounded-2xl p-8">
-          <h3 className="font-serif text-2xl font-bold text-white mb-3">
-            Know a creator I should feature?
-          </h3>
-          <p className="text-dark-300 mb-6">
-            I&apos;m always looking for faith creators doing great work on any platform.
-          </p>
-          <a
-            href="mailto:hello@algorithmicfaith.com"
-            className="inline-flex items-center bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]"
-          >
-            Suggest a Creator
-          </a>
-        </div>
       </div>
     </div>
   )
