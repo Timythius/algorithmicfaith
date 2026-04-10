@@ -85,20 +85,17 @@ export default function CreatorsPage() {
       {/* Hero Section */}
       <div className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950" />
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full"
-            style={{
-              background:
-                'radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%)',
-            }}
-          />
-        </div>
+        {/* Stained glass light rays */}
+        <div className="absolute top-0 left-1/4 w-48 h-full opacity-[0.04] blur-3xl" style={{ background: 'linear-gradient(180deg, #e11d48 0%, transparent 50%)' }} />
+        <div className="absolute top-0 right-1/4 w-48 h-full opacity-[0.04] blur-3xl" style={{ background: 'linear-gradient(180deg, #a855f7 0%, transparent 50%)' }} />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-full opacity-[0.05] blur-3xl" style={{ background: 'linear-gradient(180deg, #fbbf24 0%, transparent 40%)' }} />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Faith Creators
           </h1>
+          {/* Jewel divider */}
+          <div className="w-48 h-[2px] mx-auto mb-6 bg-gradient-to-r from-transparent via-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 via-gold-500 to-transparent" />
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
             The people using platforms and algorithms to share faith with the world. Here are the ones worth following.
           </p>
@@ -108,16 +105,17 @@ export default function CreatorsPage() {
       {/* Filter Tags */}
       <div className="max-w-5xl mx-auto px-6 py-8">
         <div className="flex flex-wrap gap-3 justify-center">
-          {['All', 'YouTube', 'TikTok', 'Multi-platform'].map((filter) => (
+          {[
+            { label: 'All', color: 'bg-gold-500 text-dark-950' },
+            { label: 'YouTube', color: 'bg-ruby-500/10 text-ruby-400 border border-ruby-500/20' },
+            { label: 'TikTok', color: 'bg-amethyst-500/10 text-amethyst-400 border border-amethyst-500/20' },
+            { label: 'Multi-platform', color: 'bg-sapphire-500/10 text-sapphire-400 border border-sapphire-500/20' },
+          ].map((filter) => (
             <span
-              key={filter}
-              className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors duration-300 ${
-                filter === 'All'
-                  ? 'bg-gold-500 text-dark-950'
-                  : 'bg-dark-900 text-dark-300 border border-dark-700 hover:border-gold-500 hover:text-white'
-              }`}
+              key={filter.label}
+              className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 ${filter.color}`}
             >
-              {filter}
+              {filter.label}
             </span>
           ))}
         </div>
@@ -132,8 +130,8 @@ export default function CreatorsPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center bg-gradient-to-br from-dark-900 to-dark-900/50 border border-dark-800 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-white mb-3">
+        <div className="mt-16 text-center glass-panel leadline rounded-2xl p-8">
+          <h3 className="font-serif text-2xl font-bold text-white mb-3">
             Know a creator I should feature?
           </h3>
           <p className="text-dark-300 mb-6">
@@ -141,7 +139,7 @@ export default function CreatorsPage() {
           </p>
           <a
             href="mailto:hello@algorithmicfaith.com"
-            className="inline-flex items-center bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-6 py-3 rounded-xl transition-colors duration-300"
+            className="inline-flex items-center bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]"
           >
             Suggest a Creator
           </a>

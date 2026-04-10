@@ -1,11 +1,19 @@
 import { Creator } from '@/app/creators/page'
 
 const platformColors: Record<string, string> = {
-  YouTube: 'bg-red-500/10 text-red-400 border-red-500/20',
-  TikTok: 'bg-pink-500/10 text-pink-400 border-pink-500/20',
-  Instagram: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-  'Multi-platform': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  YouTube: 'bg-ruby-500/10 text-ruby-400 border-ruby-500/20',
+  TikTok: 'bg-amethyst-500/10 text-amethyst-400 border-amethyst-500/20',
+  Instagram: 'bg-amethyst-500/10 text-amethyst-300 border-amethyst-500/20',
+  'Multi-platform': 'bg-sapphire-500/10 text-sapphire-400 border-sapphire-500/20',
 }
+
+const tagColors = [
+  'bg-ruby-500/10 text-ruby-400 border-ruby-500/20',
+  'bg-sapphire-500/10 text-sapphire-400 border-sapphire-500/20',
+  'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+  'bg-amethyst-500/10 text-amethyst-400 border-amethyst-500/20',
+  'bg-gold-500/10 text-gold-400 border-gold-500/20',
+]
 
 export default function CreatorCard({ creator }: { creator: Creator }) {
   return (
@@ -13,11 +21,11 @@ export default function CreatorCard({ creator }: { creator: Creator }) {
       href={creator.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block bg-dark-900/50 border border-dark-800 rounded-2xl p-6 hover:border-dark-700 transition-all duration-300"
+      className="group block stained-card glass-panel leadline rounded-2xl p-6 hover:border-dark-600 transition-all duration-300"
     >
       <div className="flex items-start justify-between mb-4">
         <div>
-          <h3 className="text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-300">
+          <h3 className="font-serif text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-300">
             {creator.name}
           </h3>
           <p className="text-dark-400 text-sm">{creator.handle}</p>
@@ -35,10 +43,10 @@ export default function CreatorCard({ creator }: { creator: Creator }) {
 
       <div className="flex items-center justify-between">
         <div className="flex flex-wrap gap-2">
-          {creator.tags.map((tag) => (
+          {creator.tags.map((tag, i) => (
             <span
               key={tag}
-              className="bg-gold-500/10 text-gold-400 px-2.5 py-0.5 rounded-full text-xs font-medium border border-gold-500/20"
+              className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${tagColors[i % tagColors.length]}`}
             >
               {tag}
             </span>

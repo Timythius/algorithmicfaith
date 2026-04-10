@@ -11,7 +11,11 @@
     @apply bg-dark-950 text-dark-100 antialiased;
   }
 
-  /* Custom scrollbar for dark theme */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cinzel), Georgia, serif;
+  }
+
+  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -29,13 +33,90 @@
     @apply bg-dark-600;
   }
 
-  /* Selection color */
   ::selection {
     @apply bg-gold-500/30 text-white;
   }
 }
 
 @layer components {
+  /* Leadline border — mimics lead came in stained glass */
+  .leadline {
+    @apply border-2 border-dark-700/80;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .leadline-gold {
+    @apply border-2 border-gold-700/40;
+    box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.1);
+  }
+
+  /* Glass panel effect */
+  .glass-panel {
+    @apply bg-dark-900/60 backdrop-blur-sm;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Jewel glow effects */
+  .glow-ruby {
+    box-shadow: 0 0 30px rgba(225, 29, 72, 0.15), inset 0 0 30px rgba(225, 29, 72, 0.05);
+  }
+
+  .glow-sapphire {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.15), inset 0 0 30px rgba(37, 99, 235, 0.05);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 30px rgba(5, 150, 105, 0.15), inset 0 0 30px rgba(5, 150, 105, 0.05);
+  }
+
+  .glow-amethyst {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.15), inset 0 0 30px rgba(168, 85, 247, 0.05);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.15), inset 0 0 30px rgba(251, 191, 36, 0.05);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-jewel {
+    background: linear-gradient(135deg, #e11d48, #a855f7, #2563eb, #059669, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Stained glass rainbow top border on hover */
+  .stained-card {
+    @apply relative overflow-hidden;
+    transition: all 0.4s ease;
+  }
+
+  .stained-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #e11d48, #a855f7, #2563eb, #059669, #fbbf24);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .stained-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Stained glass divider line */
+  .divider-jewel {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e11d48, #a855f7, #2563eb, #059669, #fbbf24, transparent);
+  }
+
   /* Dark theme prose styling */
   .prose-custom {
     @apply prose prose-lg max-w-none prose-invert;
@@ -51,29 +132,16 @@
 
   /* Video container */
   .video-container {
-    @apply relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-dark-800;
+    @apply relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl;
+    border: 2px solid rgba(67, 67, 67, 0.8);
   }
 
   .video-container iframe {
     @apply absolute top-0 left-0 w-full h-full;
   }
-
-  /* Gradient text utility */
-  .text-gradient {
-    @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
-  }
-
-  /* Glow effects */
-  .glow-gold {
-    box-shadow: 0 0 40px rgba(251, 191, 36, 0.15);
-  }
-
-  .glow-gold-sm {
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.1);
-  }
 }
 
-/* Animation keyframes */
+/* Animations */
 @keyframes gradient-pulse {
   0%, 100% {
     background-position: 0% 50%;
@@ -92,4 +160,14 @@
     opacity: 0.15;
     transform: scale(1.05);
   }
+}
+
+@keyframes glow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

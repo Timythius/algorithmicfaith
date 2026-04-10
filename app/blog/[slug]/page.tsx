@@ -77,7 +77,7 @@ export default function PostPage({ params }: Props) {
           )}
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             {post.title}
           </h1>
 
@@ -100,6 +100,9 @@ export default function PostPage({ params }: Props) {
               {format(new Date(post.date), 'MMMM d, yyyy')}
             </time>
           </div>
+
+          {/* Jewel divider */}
+          <div className="divider-jewel mt-8" />
         </header>
 
         {/* Featured Video */}
@@ -111,7 +114,7 @@ export default function PostPage({ params }: Props) {
 
         {/* Featured Image */}
         {post.coverImage && (
-          <div className="mb-12 rounded-2xl overflow-hidden border border-dark-800">
+          <div className="mb-12 rounded-2xl overflow-hidden leadline">
             <img
               src={post.coverImage}
               alt={post.title}
@@ -123,13 +126,13 @@ export default function PostPage({ params }: Props) {
         {/* Content */}
         <div
           className="prose prose-lg prose-invert max-w-none
-            prose-headings:text-white prose-headings:font-bold
+            prose-headings:font-serif prose-headings:text-white prose-headings:font-bold
             prose-p:text-dark-300 prose-p:leading-relaxed
             prose-a:text-gold-400 prose-a:no-underline hover:prose-a:text-gold-300
             prose-strong:text-white
             prose-code:text-gold-400 prose-code:bg-dark-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
             prose-blockquote:border-l-gold-500 prose-blockquote:text-dark-400
-            prose-img:rounded-xl prose-img:border prose-img:border-dark-800
+            prose-img:rounded-xl prose-img:border-2 prose-img:border-dark-700
             prose-hr:border-dark-700
             prose-li:text-dark-300
             prose-ul:text-dark-300
@@ -139,7 +142,7 @@ export default function PostPage({ params }: Props) {
 
         {/* Article Link */}
         {post.articleUrl && (
-          <div className="mt-12 p-6 bg-dark-900/50 border border-dark-800 rounded-xl">
+          <div className="mt-12 p-6 glass-panel leadline rounded-xl">
             <p className="text-sm text-dark-500 mb-2">Original article:</p>
             <a
               href={post.articleUrl}

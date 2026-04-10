@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import StainedGlassLogo from './StainedGlassLogo'
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
@@ -15,14 +16,20 @@ export default function Header() {
 
   return (
     <header className="bg-dark-950/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-dark-800/50">
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+      {/* Stained glass accent line at very top */}
+      <div className="h-[2px] bg-gradient-to-r from-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 to-gold-500" />
+
+      <nav className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-semibold text-white tracking-tight hover:text-gold-400 transition-colors duration-300"
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity duration-300"
           >
-            Algorithmic Faith
+            <StainedGlassLogo size={36} />
+            <span className="font-serif text-lg text-white tracking-wide">
+              Algorithmic<span className="text-gold-400"> Faith</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -31,7 +38,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-dark-300 hover:text-white transition-colors duration-300 text-sm font-medium"
+                className="text-dark-300 hover:text-gold-400 transition-colors duration-300 text-sm font-medium tracking-wide"
               >
                 {link.label}
               </Link>
@@ -54,13 +61,15 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation - Full Screen Overlay */}
+        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[65px] bg-dark-950 z-40">
+          <div className="md:hidden fixed inset-0 top-[63px] bg-dark-950 z-40">
+            {/* Jewel accent line */}
+            <div className="divider-jewel" />
             <div className="flex flex-col p-6 space-y-6">
               <Link
                 href="/"
-                className="text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
+                className="font-serif text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
@@ -69,7 +78,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
+                  className="font-serif text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

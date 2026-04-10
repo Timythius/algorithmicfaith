@@ -7,10 +7,27 @@ type Props = {
   featured?: boolean
 }
 
+const tagColors: Record<string, string> = {
+  youtube: 'bg-ruby-500/10 text-ruby-400 border-ruby-500/20',
+  tiktok: 'bg-amethyst-500/10 text-amethyst-400 border-amethyst-500/20',
+  'ai': 'bg-sapphire-500/10 text-sapphire-400 border-sapphire-500/20',
+  worship: 'bg-gold-500/10 text-gold-400 border-gold-500/20',
+  sermons: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+  devotionals: 'bg-amethyst-500/10 text-amethyst-300 border-amethyst-500/20',
+}
+
+function getTagColor(tag: string) {
+  const lower = tag.toLowerCase()
+  for (const [key, value] of Object.entries(tagColors)) {
+    if (lower.includes(key)) return value
+  }
+  return 'bg-gold-500/10 text-gold-400 border-gold-500/20'
+}
+
 export default function PostCard({ post, featured = false }: Props) {
   return (
     <article
-      className={`group bg-dark-900/50 border border-dark-800 rounded-2xl overflow-hidden hover:border-dark-700 transition-all duration-300 ${
+      className={`group stained-card bg-dark-900/50 leadline rounded-2xl overflow-hidden hover:border-dark-600 transition-all duration-300 ${
         featured ? 'md:flex' : ''
       }`}
     >
@@ -46,7 +63,7 @@ export default function PostCard({ post, featured = false }: Props) {
             {post.tags.slice(0, 3).map((tag: string) => (
               <span
                 key={tag}
-                className="bg-gold-500/10 text-gold-400 px-3 py-1 rounded-full text-xs font-medium border border-gold-500/20"
+                className={`px-3 py-1 rounded-full text-xs font-medium border ${getTagColor(tag)}`}
               >
                 {tag}
               </span>
@@ -65,7 +82,7 @@ export default function PostCard({ post, featured = false }: Props) {
         {/* Title */}
         <Link href={`/blog/${post.slug}`}>
           <h2
-            className={`font-bold text-white mb-4 group-hover:text-gold-400 transition-colors duration-300 ${
+            className={`font-serif font-bold text-white mb-4 group-hover:text-gold-400 transition-colors duration-300 ${
               featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
             }`}
           >

@@ -1,18 +1,23 @@
 import Link from 'next/link'
+import StainedGlassLogo from './StainedGlassLogo'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-dark-950 border-t border-dark-800">
+    <footer className="bg-dark-950">
+      {/* Stained glass divider line */}
+      <div className="divider-jewel" />
+
       <div className="max-w-7xl mx-auto px-6">
         {/* Main Footer Content */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <h3 className="text-2xl font-bold text-white">
-                Algorithmic<span className="text-gold-400">Faith</span>
+            <Link href="/" className="inline-flex items-center gap-3 mb-6">
+              <StainedGlassLogo size={32} />
+              <h3 className="font-serif text-xl font-bold text-white">
+                Algorithmic<span className="text-gold-400"> Faith</span>
               </h3>
             </Link>
             <p className="text-dark-400 leading-relaxed mb-6">
@@ -22,7 +27,7 @@ export default function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">
+            <h4 className="font-serif text-white font-semibold mb-6 text-sm uppercase tracking-wider">
               Navigate
             </h4>
             <ul className="space-y-4">
@@ -47,28 +52,33 @@ export default function Footer() {
 
           {/* Categories Column */}
           <div>
-            <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">
+            <h4 className="font-serif text-white font-semibold mb-6 text-sm uppercase tracking-wider">
               Topics
             </h4>
             <ul className="space-y-4">
-              {['YouTube', 'TikTok', 'AI & Tech', 'Worship', 'Sermons', 'Devotionals'].map(
-                (topic) => (
-                  <li key={topic}>
-                    <Link
-                      href="/blog"
-                      className="text-dark-400 hover:text-gold-400 transition-colors duration-300"
-                    >
-                      {topic}
-                    </Link>
-                  </li>
-                )
-              )}
+              {[
+                { label: 'YouTube', color: 'text-ruby-400' },
+                { label: 'TikTok', color: 'text-amethyst-400' },
+                { label: 'AI & Tech', color: 'text-sapphire-400' },
+                { label: 'Worship', color: 'text-gold-400' },
+                { label: 'Sermons', color: 'text-emerald-400' },
+                { label: 'Devotionals', color: 'text-amethyst-300' },
+              ].map((topic) => (
+                <li key={topic.label}>
+                  <Link
+                    href="/blog"
+                    className={`${topic.color} hover:text-white transition-colors duration-300`}
+                  >
+                    {topic.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Column */}
           <div>
-            <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">
+            <h4 className="font-serif text-white font-semibold mb-6 text-sm uppercase tracking-wider">
               Connect
             </h4>
             <p className="text-dark-400 mb-6 leading-relaxed">

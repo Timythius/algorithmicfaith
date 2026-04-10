@@ -16,7 +16,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6">
           {/* Section Header */}
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">
               Latest Articles
             </h2>
             <a
@@ -40,7 +40,10 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Posts Grid - Full Width Cards */}
+          {/* Jewel divider */}
+          <div className="divider-jewel mb-12" />
+
+          {/* Posts Grid */}
           {posts.length > 0 ? (
             <div className="space-y-8">
               {posts.slice(0, 5).map((post, index) => (
@@ -52,7 +55,7 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 bg-dark-900/50 border border-dark-800 rounded-2xl">
+            <div className="text-center py-16 glass-panel leadline rounded-2xl">
               <div className="mb-4">
                 <svg
                   className="w-12 h-12 mx-auto text-dark-600"

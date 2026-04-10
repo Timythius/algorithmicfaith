@@ -4,7 +4,15 @@ import { useState } from 'react'
 import PostCard from './PostCard'
 import { Post } from '@/lib/posts'
 
-const platformFilters = ['All', 'YouTube', 'TikTok', 'Worship', 'Sermons', 'Devotionals', 'AI & Tech']
+const platformFilters = [
+  { label: 'All', color: 'bg-gold-500 text-dark-950' },
+  { label: 'YouTube', color: 'bg-ruby-500 text-white' },
+  { label: 'TikTok', color: 'bg-amethyst-500 text-white' },
+  { label: 'Worship', color: 'bg-gold-500 text-dark-950' },
+  { label: 'Sermons', color: 'bg-emerald-500 text-white' },
+  { label: 'Devotionals', color: 'bg-amethyst-600 text-white' },
+  { label: 'AI & Tech', color: 'bg-sapphire-500 text-white' },
+]
 
 export default function BlogFilter({ posts }: { posts: Post[] }) {
   const [activeFilter, setActiveFilter] = useState('All')
@@ -24,15 +32,15 @@ export default function BlogFilter({ posts }: { posts: Post[] }) {
       <div className="flex flex-wrap gap-3 mb-10">
         {platformFilters.map((filter) => (
           <button
-            key={filter}
-            onClick={() => setActiveFilter(filter)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-              activeFilter === filter
-                ? 'bg-gold-500 text-dark-950'
-                : 'bg-dark-900 text-dark-300 border border-dark-700 hover:border-gold-500 hover:text-white'
+            key={filter.label}
+            onClick={() => setActiveFilter(filter.label)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              activeFilter === filter.label
+                ? `${filter.color} shadow-lg`
+                : 'bg-dark-900 text-dark-300 border border-dark-700 hover:border-gold-500/50 hover:text-white'
             }`}
           >
-            {filter}
+            {filter.label}
           </button>
         ))}
       </div>
@@ -45,7 +53,7 @@ export default function BlogFilter({ posts }: { posts: Post[] }) {
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 bg-dark-900/50 border border-dark-800 rounded-2xl">
+        <div className="text-center py-16 glass-panel leadline rounded-2xl">
           <p className="text-dark-400">No posts in this category yet.</p>
         </div>
       )}

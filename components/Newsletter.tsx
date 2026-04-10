@@ -9,9 +9,6 @@ export default function Newsletter() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
-
-    // Placeholder for newsletter signup logic
-    // Replace with your actual newsletter service integration
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setStatus('success')
     setEmail('')
@@ -22,27 +19,30 @@ export default function Newsletter() {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950" />
 
-      {/* Decorative Elements */}
+      {/* Stained glass light rays */}
       <div className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute top-0 left-1/4 w-64 h-64 rounded-full opacity-5"
-          style={{
-            background: 'radial-gradient(circle, rgba(251, 191, 36, 0.4) 0%, transparent 70%)',
-          }}
+          className="absolute top-0 left-1/4 w-64 h-full opacity-[0.03] blur-3xl"
+          style={{ background: 'linear-gradient(180deg, #a855f7 0%, transparent 60%)' }}
         />
         <div
-          className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full opacity-5"
-          style={{
-            background: 'radial-gradient(circle, rgba(217, 119, 6, 0.4) 0%, transparent 70%)',
-          }}
+          className="absolute top-0 right-1/4 w-80 h-full opacity-[0.03] blur-3xl"
+          style={{ background: 'linear-gradient(180deg, #2563eb 0%, transparent 60%)' }}
+        />
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-full opacity-[0.04] blur-3xl"
+          style={{ background: 'linear-gradient(180deg, #fbbf24 0%, transparent 50%)' }}
         />
       </div>
 
       <div className="relative max-w-4xl mx-auto px-6 text-center">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
           Stay in the Loop
         </h2>
+
+        {/* Jewel divider */}
+        <div className="w-32 h-[2px] mx-auto mb-6 bg-gradient-to-r from-transparent via-ruby-500 via-sapphire-500 via-gold-500 to-transparent" />
 
         <p className="text-dark-300 text-lg mb-10 max-w-2xl mx-auto">
           Creator spotlights, algorithm tips, and AI tools — straight to your inbox. No spam, just the good stuff.
@@ -50,10 +50,10 @@ export default function Newsletter() {
 
         {/* Form */}
         {status === 'success' ? (
-          <div className="bg-gold-500/10 border border-gold-500/30 rounded-xl p-6 max-w-md mx-auto">
+          <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-6 max-w-md mx-auto glow-emerald">
             <div className="flex items-center justify-center mb-3">
               <svg
-                className="w-8 h-8 text-gold-400"
+                className="w-8 h-8 text-emerald-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -80,12 +80,12 @@ export default function Newsletter() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 bg-dark-800 border border-dark-700 rounded-xl px-5 py-4 text-white placeholder-dark-400 focus:outline-none focus:border-gold-500 transition-colors"
+                className="flex-1 bg-dark-800/80 border-2 border-dark-700 rounded-xl px-5 py-4 text-white placeholder-dark-400 focus:outline-none focus:border-gold-500/60 transition-colors"
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-8 py-4 rounded-xl transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                className="bg-gold-500 hover:bg-gold-400 text-dark-950 font-semibold px-8 py-4 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap hover:shadow-[0_0_25px_rgba(251,191,36,0.3)]"
               >
                 {status === 'loading' ? (
                   <span className="flex items-center justify-center">
