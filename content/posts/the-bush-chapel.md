@@ -8,13 +8,13 @@ platforms: ["YouTube"]
 articleUrl: "https://thebushchapel.com"
 ---
 
-Open the Bush Chapel website and the first thing you notice is that nothing is shouting. There is no popup. No banner. No autoplay. Just gum trees in soft sun, the suggestion of a kettle somewhere off-camera, and a single line of welcome: *grab yourself a cuppa and join us in the quiet of the Australian bush.* The Bush Chapel is a small, cosy Christian ministry — fifteen quiet minutes of piano, Scripture, and blessing, made to be received wherever you are.
+Open the Bush Chapel website and the first thing you notice is that nothing is shouting. There is no popup. No banner. No autoplay. Just gum trees in soft sun, the suggestion of a kettle somewhere off-camera, and a single line of welcome: *grab yourself a cuppa and join us in the quiet of the Australian bush.* The Bush Chapel is a small, cosy Christian ministry — fifteen or twenty quiet minutes of piano, Scripture, and blessing, made to be received wherever you are.
 
 > *"Grab yourself a cuppa and join us in the quiet of the Australian bush. Here you will find a simple chapel service made for those who need to worship from home or bedside."*
 
 ## A quiet little chapel
 
-The Bush Chapel was founded by Emma Woods for, in her own words, *"Christian individuals close to us who had not been able to attend their local church."* She came to it from eighteen years as the creative director at Eastern Hills Community Church, with a background in visual arts and hospitality, and now works in education support. She is also the daughter of a Bible teacher — you'll meet him below.
+The Bush Chapel was founded by Emma Woods for, in her own words, *"Christian individuals close to us who had not been able to attend their local church."* She came to it from eighteen years as the creative director at Eastern Hills Community Church, with a background in visual arts and hospitality, and now works in education support. She is also the daughter of a Bible teacher.
 
 People in hospital beds. Elderly relatives in nursing homes. Friends in country parishes too far from a Sunday service. Friends who can't drive anymore. Friends whose Sundays have, for one reason or another, gone quiet.
 
@@ -44,7 +44,7 @@ Pete taught himself to play at sixteen. He has now been playing piano for church
 
 ### John Waterson
 
-If you've seen a Bush Chapel service, you've met John. He's English. He hosts it — the face and voice on camera, the one who reads, prays, and sends you off with the blessing. He studied theology at Durham and at Whitley College Melbourne, worked at St Laurence Anglican Church in Reading, and these days he's making wine at Chateau Yering in the Yarra Valley. Husband and father before any of it.
+If you've seen a Bush Chapel service, you've met John. He's English. He hosts it — the face and voice on camera, the one who reads, prays, and sends you off with the blessing. He studied theology at Durham, worked at St Laurence Anglican Church in Reading, then moved to Australia to study at Whitley College Melbourne, and these days he's making wine at Chateau Yering in the Yarra Valley. Husband and father before any of it.
 
 ---
 
@@ -54,7 +54,7 @@ If you're new to The Bush Chapel there is no wrong place to start — the servic
 
 - **The most recent service** — [*Easter 2A — Fullness of Joy*](https://www.youtube.com/watch?v=-ANRonJqwNk) (8 April 2026). Posted just days ago, sitting in the hush of Easter week.
 - **Easter Sunday itself** — [*Easter Sunday*](https://www.youtube.com/watch?v=xxm0_QKxTSs) (31 March 2026). A natural starting point if you'd rather meet The Bush Chapel through resurrection morning than mid-Lent.
-- **For Lent** — [*Lent 5A — The Raising of Lazarus and Communion*](https://www.youtube.com/watch?v=aQKF-lwnO6c). A deep reflection from Ted on one of John's heaviest passages, sat with unhurriedly, and a quiet close in the way the chapel marks communion.
+- **For Lent** — [*Lent 5A — The Raising of Lazarus and Communion*](https://www.youtube.com/watch?v=aQKF-lwnO6c). A deep reflection from Ted on one of the heaviest passages in John's Gospel, sat with unhurriedly, and a quiet close in the way the chapel marks communion.
 - **For Christmas** — [*Christmas 2025 — Christmas Light*](https://www.youtube.com/watch?v=FWBK82dQ58o). Ted on the candle and the manger.
 - **For something timeless** — [*Proper 10C — The Parable of the Merciful Samaritan*](https://www.youtube.com/watch?v=9hVYzIZfj-c). One of the easiest reflections in their library to land on cold.
 
