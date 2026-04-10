@@ -16,7 +16,7 @@ Open the Bush Chapel website and the first thing you notice is that nothing is s
 
 The Bush Chapel was founded by Emma Woods for, in her own words, *"Christian individuals close to us who had not been able to attend their local church."* She came to it from eighteen years as the creative director at Eastern Hills Community Church, with a background in visual arts and hospitality, and now works in education support. She is also the daughter of a Bible teacher.
 
-People in hospital beds. Elderly relatives in nursing homes. Friends in country parishes too far from a Sunday service. Friends who can't drive anymore. Friends whose Sundays have, for one reason or another, gone quiet.
+People in hospital beds. Elderly relatives in nursing homes. Friends in country parishes too far from a Sunday service. Friends who can't drive anymore. Friends who, for one reason or another, need the church to come to them.
 
 The Bush Chapel was built for the people who can't make it to church on Sunday — and built to feel like the church had come to them, cuppa in hand, kettle still warm. Something cosy. Something small. Something you could open with one hand while the other one held a hot mug. Something that lasted only fifteen or twenty minutes — long enough for a hymn, a reading, a few thoughts, a prayer, another hymn, and a benediction. Long enough to feel like you'd been to church. Short enough that you wouldn't get tired.
 
@@ -72,6 +72,6 @@ The Bush Chapel is doing something different. It is using YouTube the way a smal
 
 That sentence will never trend. It will not be A/B tested into a thumbnail. It is the opposite of how the platform wants you to write. And maybe that is exactly why The Bush Chapel deserves to be the first creator we spotlight on this site — because it is the kind of ministry the algorithm was never built to find, and that we hope it does anyway.
 
-A small disclosure. I'm not a neutral observer of The Bush Chapel — I had a hand in the editing once, and these days I keep the site running, mind the IT, and still help out on the technical side from time to time. I'm also Catholic, and the team behind The Bush Chapel is genuinely ecumenical. Wherever you're reading this from, there's something here for you. Take it as it is: made by Christians, in love, for the people whose Sundays have gone quiet.
+A small disclosure. I'm not a neutral observer of The Bush Chapel — I had a hand in the editing once, and these days I keep the site running, mind the IT, and still help out on the technical side from time to time. I'm also Catholic, and the team behind The Bush Chapel is genuinely ecumenical. Wherever you're reading this from, there's something here for you. Take it as it is: made by Christians, in love, for the brothers and sisters who need the church to come to them.
 
 Make yourself a cuppa first.
