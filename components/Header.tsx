@@ -63,31 +63,48 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation — compact stone tablet anchored top-right
+            so it sits beside the rose window instead of covering it. */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[63px] bg-dark-950 z-40">
-            {/* Jewel accent line */}
-            <div className="divider-jewel" />
-            <div className="flex flex-col p-6 space-y-6">
-              <Link
-                href="/"
-                className="font-serif text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              {navLinks.map((link) => (
+          <>
+            {/* Tap-anywhere catcher to dismiss the panel */}
+            <button
+              type="button"
+              aria-label="Close menu"
+              className="md:hidden fixed inset-0 top-[63px] z-30 bg-transparent cursor-default"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <div
+              className="md:hidden fixed top-[68px] right-3 z-40 w-60 rounded-sm border border-[#3a2510] bg-[#0a0705]/95 backdrop-blur-md shadow-[0_12px_30px_rgba(0,0,0,0.85)] overflow-hidden"
+              role="dialog"
+              aria-label="Site navigation"
+            >
+              {/* Jewel accent strip across the top of the tablet */}
+              <div className="divider-jewel" />
+              <div className="flex flex-col p-4">
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-serif text-2xl text-white hover:text-gold-400 transition-colors duration-300 py-2"
+                  href="/"
+                  className="font-serif text-base text-[#e3c389] hover:text-[#f5d168] transition-colors duration-300 py-2 border-b border-[#1a1006]"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.label}
+                  Home
                 </Link>
-              ))}
+                {navLinks.map((link, i) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`font-serif text-base text-[#e3c389] hover:text-[#f5d168] transition-colors duration-300 py-2 ${i < navLinks.length - 1 ? 'border-b border-[#1a1006]' : ''}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="pt-3 mt-1 border-t border-[#3a2510]">
+                  <LiteToggle />
+                </div>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </nav>
     </header>
