@@ -10,7 +10,7 @@ articleUrl: "https://www.youtube.com/@acrossthepews"
 videoUrl: "https://www.youtube.com/watch?v=7XW1nQlS2-k"
 ---
 
-Across the Pews is a channel built on one move: a Protestant kid crossed the Tiber, and then turned around to look at every church he'd passed on the way. Since converting to Catholicism, the creator behind the channel — Marco — has spent the last year doing what most Christians only argue about online — actually walking into the other buildings and talking to the people inside.
+Across the Pews is a channel built on one move: a Protestant kid crossed the Tiber, and then turned around to look at every church he'd passed on the way. Since converting to Catholicism, the creator behind the channel has spent the last year doing what most Christians only argue about online — actually walking into the other buildings and talking to the people inside.
 
 The channel's breakout video — *"I'M DONE WITH 'CHRISTIANITY'"* — is a conversion story that hit nearly 38,000 views. It is not clickbait. It is someone explaining, plainly, why they left Protestantism for the Catholic Church, and doing it in a way that thousands of people clearly recognised in themselves.
 
@@ -26,7 +26,7 @@ Most of the catalogue is Shorts — quick, sharp takes that land a single point 
 
 ## The Church Review series
 
-One of the strongest things Across the Pews does lives on TikTok: the Church Review series. Marco walks into a different denomination each week — Hillsong offshoots, Planetshakers, Pentecostals, even the Latter-day Saints — and gives an honest, respectful review from the pew. Not a takedown. Not a prank. Just a Catholic sitting in someone else's service and telling you what it was like.
+One of the strongest things Across the Pews does lives on TikTok: the Church Review series. The creator walks into a different denomination each week — Hillsong offshoots, Planetshakers, Pentecostals, even the Latter-day Saints — and gives an honest, respectful review from the pew. Not a takedown. Not a prank. Just a Catholic sitting in someone else's service and telling you what it was like.
 
 The series runs to at least fourteen entries so far, including:
 
@@ -35,7 +35,7 @@ The series runs to at least fourteen entries so far, including:
 - **Church Review #10: Faith Church Pentecostals** — "I love y'all but hear me out."
 - **Church Review #14: The Mormons (Latter-day Saints)** — "All of these questions point to if they are even Christian."
 
-It is the kind of content that could easily turn mean. It does not. Marco treats every congregation he visits the way you'd want a guest to treat yours — with real attention and real honesty.
+It is the kind of content that could easily turn mean. It does not. He treats every congregation he visits the way you'd want a guest to treat yours — with real attention and real honesty.
 
 ---
 
@@ -61,7 +61,7 @@ The Church Review series and short-form commentary live primarily on TikTok at [
 
 ### On the podcast circuit
 
-Marco appeared as a guest on **THE PULPIT podcast, Episode 34** — [*"Ex Protestant: What Do Catholics Actually Believe?"*](https://open.spotify.com/episode/0m299h3DunF66zJ3Bu4Ih1) (February 2026). A long, unhurried conversation — an hour and thirty-nine minutes — about stepping into different denominations, major doctrinal differences, misconceptions about Catholicism, and how conviction and unity can coexist without compromise. It is one of the best long-form introductions to what Across the Pews is about.
+The creator appeared as a guest on **THE PULPIT podcast, Episode 34** — [*"Ex Protestant: What Do Catholics Actually Believe?"*](https://open.spotify.com/episode/0m299h3DunF66zJ3Bu4Ih1) (February 2026). A long, unhurried conversation — an hour and thirty-nine minutes — about stepping into different denominations, major doctrinal differences, misconceptions about Catholicism, and how conviction and unity can coexist without compromise. It is one of the best long-form introductions to what Across the Pews is about.
 
 ### On the page
 
@@ -85,6 +85,6 @@ The full channel lives at [@acrossthepews](https://www.youtube.com/@acrossthepew
 
 Conversion content is one of the things the algorithm actually rewards. Denomination debates, hot takes on the Church, "I left X for Y" — the platform loves it because it generates clicks, comments, and arguments. Most creators in this space know that, and it shows.
 
-Across the Pews is playing the same game but doing it honestly. The videos are not designed to start fights. They are designed to walk into rooms that most Christians avoid and sit down long enough to learn something. The conversion story works not because it is inflammatory but because it is sincere. The interviews work because the creator is genuinely listening, not setting up a gotcha. The Church Reviews work because Marco sits in the pew like he means it.
+Across the Pews is playing the same game but doing it honestly. The videos are not designed to start fights. They are designed to walk into rooms that most Christians avoid and sit down long enough to learn something. The conversion story works not because it is inflammatory but because it is sincere. The interviews work because the creator is genuinely listening, not setting up a gotcha. The Church Reviews work because the creator sits in the pew like he means it.
 
 That is harder than it looks — especially on platforms that reward outrage over curiosity. Across the Pews is making content the algorithm wants to push for all the wrong reasons, and somehow keeping it honest anyway.
