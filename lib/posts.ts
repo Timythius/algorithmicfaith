@@ -18,6 +18,7 @@ export type Post = {
   tags?: string[]
   category?: string
   platforms?: string[]
+  draft?: boolean
 }
 
 export function getAllPosts(): Post[] {
@@ -34,6 +35,7 @@ export function getAllPosts(): Post[] {
       return getPostBySlug(slug)
     })
     .filter((post): post is Post => post !== null)
+    .filter((post) => process.env.NODE_ENV === 'development' || !post.draft)
     .sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()))
 
   return posts
@@ -68,6 +70,7 @@ export function getPostBySlug(slug: string): Post | null {
       tags: data.tags || [],
       category: data.category || 'General',
       platforms: data.platforms || [],
+      draft: data.draft || false,
     }
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error)
@@ -83,4 +86,9 @@ export function getPostSlugs(): string[] {
   return fs.readdirSync(postsDirectory)
     .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName) => fileName.replace(/\.md$/, ''))
+    .filter((slug) => {
+      if (process.env.NODE_ENV === 'development') return true
+      const post = getPostBySlug(slug)
+      return post && !post.draft
+    })
 }

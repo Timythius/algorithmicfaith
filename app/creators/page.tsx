@@ -8,7 +8,7 @@ export const metadata = {
 export type Creator = {
   name: string
   handle: string
-  platform: 'YouTube' | 'TikTok' | 'Instagram' | 'Multi-platform'
+  platform: 'YouTube' | 'TikTok' | 'Instagram' | 'Podcast' | 'Multi-platform'
   description: string
   subscribers?: string
   tags: string[]
@@ -25,6 +25,15 @@ const creators: Creator[] = [
       'Emma Woods makes a quiet little chapel service for the people the algorithm forgets — those worshipping from home or bedside, in the hush of the Australian bush. Piano, Scripture, reflection, prayer, blessing. Make a cuppa first.',
     tags: ['Worship', 'Lectionary', 'Accessibility'],
     url: 'https://www.youtube.com/@thebushchapel',
+  },
+  {
+    name: 'The Myth Pilgrim',
+    handle: '@TheMythPilgrim',
+    platform: 'Podcast',
+    description:
+      'Lawrence Kai finds God hiding in the stories we already love — scripture alongside The Lord of the Rings, saints alongside Star Wars. A Catholic podcast that treats myth, fairytale, and pop culture as real doors into the spiritual life.',
+    tags: ['Mythology', 'Catholic', 'Pop Culture', 'Storytelling', 'Spiritual Direction'],
+    url: 'https://open.spotify.com/show/4nCiKyK0eqw5R3DYuSCZjZ',
   },
 ]
 
