@@ -35,6 +35,15 @@ const creators: Creator[] = [
     tags: ['Mythology', 'Catholic', 'Pop Culture', 'Storytelling', 'Spiritual Direction'],
     url: 'https://open.spotify.com/show/4nCiKyK0eqw5R3DYuSCZjZ',
   },
+  {
+    name: 'Across the Pews',
+    handle: '@acrossthepews',
+    platform: 'Multi-platform',
+    description:
+      'A Catholic convert bridging the gaps between denominations — visiting Orthodox monasteries, female priest churches, and everything in between. Interviews, conversion stories, and honest questions about what the Church is and isn\'t.',
+    tags: ['Conversion', 'Catholic', 'Ecumenical', 'Interviews', 'Commentary'],
+    url: 'https://www.youtube.com/@acrossthepews',
+  },
 ]
 
 export default function CreatorsPage() {
