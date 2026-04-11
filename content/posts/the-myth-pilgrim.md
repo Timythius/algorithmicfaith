@@ -4,6 +4,7 @@ date: "2026-04-09"
 excerpt: "Lawrence Kai finds theology hiding in Tolkien, Marvel, Disney, and Star Wars — and makes a Catholic podcast that treats myth and pop culture as real doors into the spiritual life."
 tags: ["mythology", "catholic", "pop culture", "storytelling", "spiritual direction"]
 category: "Creator Spotlights"
+draft: true
 platforms: ["Podcast"]
 articleUrl: "https://themythpilgrim.com"
 videoUrl: "https://open.spotify.com/episode/2OHaQU3RQ9LVXvUz2gBBqq"
