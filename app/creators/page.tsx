@@ -26,24 +26,6 @@ const creators: Creator[] = [
     tags: ['Worship', 'Lectionary', 'Accessibility'],
     url: 'https://www.youtube.com/@thebushchapel',
   },
-  {
-    name: 'The Myth Pilgrim',
-    handle: '@TheMythPilgrim',
-    platform: 'Podcast',
-    description:
-      'Lawrence Kai finds God hiding in the stories we already love — scripture alongside The Lord of the Rings, saints alongside Star Wars. A Catholic podcast that treats myth, fairytale, and pop culture as real doors into the spiritual life.',
-    tags: ['Mythology', 'Catholic', 'Pop Culture', 'Storytelling', 'Spiritual Direction'],
-    url: 'https://open.spotify.com/show/4nCiKyK0eqw5R3DYuSCZjZ',
-  },
-  {
-    name: 'Across the Pews',
-    handle: '@acrossthepews',
-    platform: 'Multi-platform',
-    description:
-      'A Catholic convert bridging the gaps between denominations — visiting Orthodox monasteries, female priest churches, and everything in between. Interviews, conversion stories, and honest questions about what the Church is and isn\'t.',
-    tags: ['Conversion', 'Catholic', 'Ecumenical', 'Interviews', 'Commentary'],
-    url: 'https://www.youtube.com/@acrossthepews',
-  },
 ]
 
 export default function CreatorsPage() {
