@@ -5,82 +5,41 @@ import Link from 'next/link'
 import type { Post } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 
-const STORAGE_KEY = 'af-drafts-unlocked'
+const STORAGE_KEY = 'af-drafts-slugs'
 
 export default function DraftsGate({ posts }: { posts: Post[] }) {
-  const [unlocked, setUnlocked] = useState(false)
+  const [unlockedSlugs, setUnlockedSlugs] = useState<string[]>([])
   const [value, setValue] = useState('')
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    if (sessionStorage.getItem(STORAGE_KEY) === '1') {
-      setUnlocked(true)
+    const stored = sessionStorage.getItem(STORAGE_KEY)
+    if (stored) {
+      const slugs = JSON.parse(stored) as string[]
+      setUnlockedSlugs(slugs)
     }
   }, [])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (value === '777') {
-      sessionStorage.setItem(STORAGE_KEY, '1')
-      setUnlocked(true)
-      // Also unlock individual posts so they don't double-prompt
-      posts.forEach((p) => sessionStorage.setItem(`af-unlocked-${p.slug}`, '1'))
+    // Find which posts match the entered password
+    const matched = posts.filter((p) => p.password === value)
+    if (matched.length > 0) {
+      const combined = [...unlockedSlugs, ...matched.map((p) => p.slug)]
+      const newSlugs = combined.filter((s, i) => combined.indexOf(s) === i)
+      setUnlockedSlugs(newSlugs)
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(newSlugs))
+      // Also unlock individual post pages for this session
+      matched.forEach((p) => sessionStorage.setItem(`af-unlocked-${p.slug}`, '1'))
+      setValue('')
+      setError(false)
     } else {
       setError(true)
       setValue('')
     }
   }
 
-  if (!unlocked) {
-    return (
-      <div className="min-h-screen bg-dark-950 flex items-center justify-center px-6">
-        <form
-          onSubmit={handleSubmit}
-          className="glass-panel leadline rounded-2xl p-10 max-w-sm w-full text-center"
-        >
-          <div className="mb-6">
-            <svg
-              className="w-10 h-10 mx-auto text-gold-500 mb-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-              />
-            </svg>
-            <h2 className="font-serif text-xl text-white mb-2">Drafts</h2>
-            <p className="text-dark-400 text-sm">
-              This area is for friends reviewing work before it goes live.
-            </p>
-          </div>
-
-          <input
-            type="password"
-            value={value}
-            onChange={(e) => { setValue(e.target.value); setError(false) }}
-            placeholder="Password"
-            autoFocus
-            className="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-center text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/30 transition-colors"
-          />
-
-          {error && (
-            <p className="text-red-400 text-sm mt-3">Wrong password. Try again.</p>
-          )}
-
-          <button
-            type="submit"
-            className="mt-4 w-full bg-gold-500/15 border border-gold-500/30 text-gold-400 hover:bg-gold-500/25 hover:text-gold-300 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
-          >
-            Unlock
-          </button>
-        </form>
-      </div>
-    )
-  }
+  const visiblePosts = posts.filter((p) => unlockedSlugs.includes(p.slug))
 
   return (
     <div className="min-h-screen bg-dark-950">
@@ -103,17 +62,60 @@ export default function DraftsGate({ posts }: { posts: Post[] }) {
         </div>
       </div>
 
-      {/* Draft Posts */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        {posts.length > 0 ? (
+        {/* Password form — always visible so they can unlock more */}
+        <form
+          onSubmit={handleSubmit}
+          className="glass-panel leadline rounded-2xl p-8 max-w-sm mx-auto text-center mb-12"
+        >
+          <div className="mb-5">
+            <svg
+              className="w-9 h-9 mx-auto text-gold-500 mb-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+              />
+            </svg>
+            <p className="text-dark-400 text-sm">
+              {visiblePosts.length === 0
+                ? 'Enter your password to see the article Tim shared with you.'
+                : 'Enter another password to unlock more articles.'}
+            </p>
+          </div>
+
+          <input
+            type="password"
+            value={value}
+            onChange={(e) => { setValue(e.target.value); setError(false) }}
+            placeholder="Password"
+            autoFocus={visiblePosts.length === 0}
+            className="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-center text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/30 transition-colors"
+          />
+
+          {error && (
+            <p className="text-red-400 text-sm mt-3">Wrong password. Try again.</p>
+          )}
+
+          <button
+            type="submit"
+            className="mt-4 w-full bg-gold-500/15 border border-gold-500/30 text-gold-400 hover:bg-gold-500/25 hover:text-gold-300 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
+          >
+            Unlock
+          </button>
+        </form>
+
+        {/* Unlocked posts */}
+        {visiblePosts.length > 0 && (
           <div className="space-y-8">
-            {posts.map((post, index) => (
+            {visiblePosts.map((post, index) => (
               <PostCard key={post.slug} post={post} featured={index === 0} />
             ))}
-          </div>
-        ) : (
-          <div className="text-center py-16 glass-panel leadline rounded-2xl">
-            <p className="text-dark-400">No drafts at the moment.</p>
           </div>
         )}
 
