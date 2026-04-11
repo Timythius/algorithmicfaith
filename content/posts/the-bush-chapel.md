@@ -6,6 +6,7 @@ tags: ["worship", "australia", "lectionary", "accessibility"]
 category: "Creator Spotlights"
 platforms: ["YouTube"]
 articleUrl: "https://thebushchapel.com"
+videoUrl: "https://www.youtube.com/watch?v=-ANRonJqwNk"
 ---
 
 Open the Bush Chapel website and the first thing you notice is that nothing is shouting. There is no popup. No banner. No autoplay. Just gum trees in soft sun, the suggestion of a kettle somewhere off-camera, and a single line of welcome: *grab yourself a cuppa and join us in the quiet of the Australian bush.* The Bush Chapel is a small, cosy Christian ministry — fifteen or twenty quiet minutes of piano, Scripture, and blessing, made to be received wherever you are.

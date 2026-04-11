@@ -5,7 +5,7 @@ type Props = {
   title?: string
 }
 
-function getVideoId(url: string): { type: 'youtube' | 'vimeo' | 'unknown'; id: string } {
+function getVideoId(url: string): { type: 'youtube' | 'vimeo' | 'spotify-episode' | 'spotify-show' | 'unknown'; id: string } {
   // YouTube patterns
   const youtubePatterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
@@ -26,6 +26,19 @@ function getVideoId(url: string): { type: 'youtube' | 'vimeo' | 'unknown'; id: s
     return { type: 'vimeo', id: vimeoMatch[1] }
   }
 
+  // Spotify patterns
+  const spotifyEpisodePattern = /open\.spotify\.com\/episode\/([a-zA-Z0-9]+)/
+  const spotifyEpisodeMatch = url.match(spotifyEpisodePattern)
+  if (spotifyEpisodeMatch) {
+    return { type: 'spotify-episode', id: spotifyEpisodeMatch[1] }
+  }
+
+  const spotifyShowPattern = /open\.spotify\.com\/show\/([a-zA-Z0-9]+)/
+  const spotifyShowMatch = url.match(spotifyShowPattern)
+  if (spotifyShowMatch) {
+    return { type: 'spotify-show', id: spotifyShowMatch[1] }
+  }
+
   return { type: 'unknown', id: '' }
 }
 
@@ -36,6 +49,23 @@ export default function VideoEmbed({ url, title = 'Embedded video' }: Props) {
     return (
       <div className="video-container bg-gray-200 flex items-center justify-center">
         <p className="text-gray-500">Unable to embed video. <a href={url} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Watch on original site</a></p>
+      </div>
+    )
+  }
+
+  if (type === 'spotify-episode' || type === 'spotify-show') {
+    const spotifyType = type === 'spotify-episode' ? 'episode' : 'show'
+    return (
+      <div className="my-6">
+        <iframe
+          src={`https://open.spotify.com/embed/${spotifyType}/${id}?theme=0`}
+          width="100%"
+          height="352"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          style={{ borderRadius: '12px', border: 'none' }}
+          title={title}
+        />
       </div>
     )
   }
