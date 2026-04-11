@@ -26,6 +26,8 @@ function getTagColor(tag: string) {
 const platformColors: Record<string, string> = {
   youtube: 'bg-ruby-500/10 text-ruby-400 border-ruby-500/20',
   podcast: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+  tiktok: 'bg-[#69C9D0]/10 text-[#69C9D0] border-[#69C9D0]/20',
+  instagram: 'bg-amethyst-500/10 text-amethyst-400 border-amethyst-500/20',
 }
 
 function getPlatformColor(platform: string) {
