@@ -148,12 +148,22 @@ export default function DraftsGate({ posts }: { posts: Post[] }) {
             <p className="text-red-400 text-sm mt-3">Wrong password. Try again.</p>
           )}
 
-          <button
-            type="submit"
-            className="mt-4 w-full bg-gold-500/15 border border-gold-500/30 text-gold-400 hover:bg-gold-500/25 hover:text-gold-300 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
-          >
-            Unlock
-          </button>
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <button
+              type="submit"
+              className="bg-gold-500/15 border border-gold-500/30 text-gold-400 hover:bg-gold-500/25 hover:text-gold-300 rounded-lg px-4 py-3 text-sm font-medium transition-colors"
+            >
+              Unlock
+            </button>
+            <button
+              type="button"
+              onClick={lock}
+              disabled={visiblePosts.length === 0}
+              className="bg-dark-800 border border-dark-700 text-dark-300 hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 rounded-lg px-4 py-3 text-sm font-medium transition-colors disabled:opacity-40 disabled:hover:bg-dark-800 disabled:hover:border-dark-700 disabled:hover:text-dark-300 disabled:cursor-not-allowed"
+            >
+              Lock
+            </button>
+          </div>
         </form>
 
         {/* Unlocked posts */}
@@ -165,7 +175,7 @@ export default function DraftsGate({ posts }: { posts: Post[] }) {
           </div>
         )}
 
-        <div className="mt-12 flex items-center justify-between">
+        <div className="mt-12">
           <Link
             href="/"
             className="inline-flex items-center text-gold-400 hover:text-gold-300 font-medium transition-colors"
@@ -175,17 +185,6 @@ export default function DraftsGate({ posts }: { posts: Post[] }) {
             </svg>
             Back to home
           </Link>
-
-          <button
-            onClick={lock}
-            disabled={visiblePosts.length === 0}
-            className="inline-flex items-center text-dark-500 hover:text-red-400 text-sm transition-colors disabled:opacity-40 disabled:hover:text-dark-500 disabled:cursor-not-allowed"
-          >
-            <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-            </svg>
-            Lock &amp; exit
-          </button>
         </div>
       </div>
     </div>
