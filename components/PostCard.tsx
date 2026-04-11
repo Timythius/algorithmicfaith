@@ -25,6 +25,7 @@ function getTagColor(tag: string) {
 // lives* and "worship" reads as *what it's about*. Keyed case-insensitively.
 const platformColors: Record<string, string> = {
   youtube: 'bg-ruby-500/10 text-ruby-400 border-ruby-500/20',
+  podcast: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
 }
 
 function getPlatformColor(platform: string) {

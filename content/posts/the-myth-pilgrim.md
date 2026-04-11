@@ -5,7 +5,7 @@ excerpt: "Lawrence Kai finds theology hiding in Tolkien, Marvel, Disney, and Sta
 tags: ["mythology", "catholic", "pop culture", "storytelling", "spiritual direction"]
 category: "Creator Spotlights"
 draft: true
-platforms: ["Spotify", "Apple Podcasts"]
+platforms: ["Podcast"]
 articleUrl: "https://themythpilgrim.com"
 videoUrl: "https://open.spotify.com/episode/2OHaQU3RQ9LVXvUz2gBBqq"
 ---
