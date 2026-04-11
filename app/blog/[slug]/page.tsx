@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { format } from 'date-fns'
 import VideoEmbed from '@/components/VideoEmbed'
+import PasswordGate from '@/components/PasswordGate'
 
 type Props = {
   params: { slug: string }
@@ -32,33 +33,8 @@ export default function PostPage({ params }: Props) {
     notFound()
   }
 
-  return (
-    <div className="min-h-screen bg-dark-950">
-      {/* Back Navigation */}
-      <div className="bg-dark-900/50 border-b border-dark-800">
-        <div className="max-w-4xl mx-auto px-6 py-4">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-dark-400 hover:text-gold-400 transition-colors"
-          >
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 16l-4-4m0 0l4-4m-4 4h18"
-              />
-            </svg>
-            Back to articles
-          </Link>
-        </div>
-      </div>
-
+  const articleContent = (
+    <>
       <article className="max-w-4xl mx-auto px-6 py-12">
         {/* Header */}
         <header className="mb-12">
@@ -169,6 +145,43 @@ export default function PostPage({ params }: Props) {
           </Link>
         </div>
       </article>
+    </>
+  )
+
+  return (
+    <div className="min-h-screen bg-dark-950">
+      {/* Back Navigation */}
+      <div className="bg-dark-900/50 border-b border-dark-800">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-dark-400 hover:text-gold-400 transition-colors"
+          >
+            <svg
+              className="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M7 16l-4-4m0 0l4-4m-4 4h18"
+              />
+            </svg>
+            Back to articles
+          </Link>
+        </div>
+      </div>
+
+      {post.password ? (
+        <PasswordGate slug={post.slug} password={post.password}>
+          {articleContent}
+        </PasswordGate>
+      ) : (
+        articleContent
+      )}
     </div>
   )
 }

@@ -19,6 +19,7 @@ export type Post = {
   category?: string
   platforms?: string[]
   draft?: boolean
+  password?: string
 }
 
 export function getAllPosts(): Post[] {
@@ -71,6 +72,7 @@ export function getPostBySlug(slug: string): Post | null {
       category: data.category || 'General',
       platforms: data.platforms || [],
       draft: data.draft || false,
+      password: data.password,
     }
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error)
