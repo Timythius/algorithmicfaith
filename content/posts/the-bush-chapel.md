@@ -49,17 +49,42 @@ If you've seen a Bush Chapel service, you've met John. He's English. He hosts it
 
 ---
 
-## Where to begin
+## Latest services
 
-If you're new to The Bush Chapel there is no wrong place to start — the services follow the lectionary and circle back through the church year, so eventually you'll meet every season. A few entry points worth your cuppa:
+The Bush Chapel has published over thirty services since launching in mid-2025 — a quiet, steady rhythm from Ordinary Time through Advent, Christmas, Lent, and Easter. The most recent:
 
-- **The most recent service** — [*Easter 2A — Fullness of Joy*](https://www.youtube.com/watch?v=-ANRonJqwNk) (8 April 2026). Posted just days ago, sitting in the hush of Easter week.
-- **Easter Sunday itself** — [*Easter Sunday*](https://www.youtube.com/watch?v=xxm0_QKxTSs) (31 March 2026). A natural starting point if you'd rather meet The Bush Chapel through resurrection morning than mid-Lent.
-- **For Lent** — [*Lent 5A — The Raising of Lazarus and Communion*](https://www.youtube.com/watch?v=aQKF-lwnO6c). A deep reflection from Ted on one of the heaviest passages in John's Gospel, sat with unhurriedly, and a quiet close in the way the chapel marks communion.
+- [*Easter 2A — Fullness of Joy*](https://www.youtube.com/watch?v=-ANRonJqwNk) (8 April 2026). Posted just days ago, sitting in the hush of Easter week.
+- [*Easter Sunday*](https://www.youtube.com/watch?v=xxm0_QKxTSs) (31 March 2026). Resurrection morning. A natural place to meet The Bush Chapel for the first time.
+- [*Passion Sunday*](https://www.youtube.com/watch?v=qXx8tKwCnlg) (25 March 2026). The week the story turns.
+- [*Lent 5A — The Raising of Lazarus and Communion*](https://www.youtube.com/watch?v=aQKF-lwnO6c) (17 March 2026). A deep reflection from Ted on one of the heaviest passages in John's Gospel, sat with unhurriedly, and a quiet close in the way the chapel marks communion.
+- [*Lent 4A — The Man Born Blind and Lenten Seeing*](https://www.youtube.com/watch?v=kdh4JDUR9rM) (10 March 2026). Sight and its absence — the kind of text Ted was made to teach.
+
+---
+
+## Where to begin by season
+
+If you are new to The Bush Chapel there is no wrong place to start — the services follow the lectionary and circle back through the church year, so eventually you will meet every season. A few entry points worth your cuppa:
+
+- **For Easter** — [*Easter Sunday*](https://www.youtube.com/watch?v=xxm0_QKxTSs). The most natural starting point.
+- **For Lent** — [*Lent 5A — The Raising of Lazarus and Communion*](https://www.youtube.com/watch?v=aQKF-lwnO6c). One of the deepest reflections in the archive.
 - **For Christmas** — [*Christmas 2025 — Christmas Light*](https://www.youtube.com/watch?v=FWBK82dQ58o). Ted on the candle and the manger.
 - **For something timeless** — [*Proper 10C — The Parable of the Merciful Samaritan*](https://www.youtube.com/watch?v=9hVYzIZfj-c). One of the easiest reflections in their library to land on cold.
 
-The full archive — sorted by liturgical season, the way the church year actually moves — lives at [thebushchapel.com](https://thebushchapel.com). The YouTube channel is [@thebushchapel](https://www.youtube.com/@thebushchapel). New services are published in the rhythm of the lectionary, week after week, the way they always have been.
+---
+
+## The pianist's own channel
+
+Pete McClean — the man who has been playing piano for church for seventy-two years — has his own quiet little YouTube channel where he posts weekly hymn videos at [@skeat7557](https://www.youtube.com/@skeat7557). If you want just the piano, just the hymns, and nothing else, Pete has been putting them up faithfully, week after week. It is one of the smallest and most beautiful corners of YouTube.
+
+---
+
+## Where to find it all
+
+The full archive — sorted by liturgical season, the way the church year actually moves — lives at [thebushchapel.com](https://thebushchapel.com), with past services organised by [Advent](https://thebushchapel.com), [Christmas](https://thebushchapel.com), [Lent](https://thebushchapel.com), [Easter](https://thebushchapel.com), [Pentecost](https://thebushchapel.com), and [Ordinary Time](https://thebushchapel.com). Every service comes with a downloadable PDF transcript for the hard of hearing.
+
+The YouTube channel is [@thebushchapel](https://www.youtube.com/@thebushchapel). The [community message board](https://thebushchapel.com/community.html) is where prayer requests and small kindnesses live — the digital equivalent of a chat at the church door.
+
+New services are published in the rhythm of the lectionary, week after week, the way they always have been.
 
 ---
 

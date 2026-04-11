@@ -32,20 +32,49 @@ Each episode takes a story — usually a film, sometimes a book, sometimes a myt
 
 The range is broad. In one episode Lawrence is inside the Mines of Moria with Gandalf. In another he is unpacking the theology of *Avengers: Endgame*. In another he is sitting with Quasimodo in the bell tower of Notre-Dame, talking about shame and freedom. He has covered *Frozen*, *Encanto*, *The Lion King*, Harry Potter, Star Wars, and dozens more — always with the same quiet seriousness, always with the same assumption: that the story matters, and that God is already in it.
 
-He also writes and tells his own stories — original fairytales that appear in the feed during holiday periods, including *The Desert Heart*, *Radical Red*, and *The Legend of the Everspring Tree*.
+He also writes and tells his own stories — original fairytales that appear in the feed during holiday periods, including *The Desert Heart*, *Radical Red*, *Where the Night is Brightest*, and *The Legend of the Everspring Tree*.
 
 ---
 
-## Where to begin
+## Latest episodes
 
-One hundred and thirty episodes is a lot of pilgrimage. Here are a few good places to sit down:
+- **Episode 130** — [*How God Shows Up in the Wilderness*](https://open.spotify.com/episode/2OHaQU3RQ9LVXvUz2gBBqq) (April 2026). On spiritual dryness, divine absence, and what happens when the wilderness becomes sacred ground.
+- **Episode 129** — *Death and Resurrection in Avengers Endgame* (March 2026). Lawrence finds the paschal mystery inside the biggest blockbuster of the decade — and makes it stick.
+- **Episode 128** — *My Pilgrimage to India — Testimony* (February 2026). Lawrence on the road, literally. A personal episode about encountering God in an unfamiliar landscape.
+- **Christmas Special** — *Where the Night is Brightest* (December 2025). An original fairytale for the season — the kind of story Lawrence was born to tell.
+- **Episode 126** — *The Wizard of Oz & The Hero's Journey* (December 2025). Dorothy's yellow brick road as a map of the spiritual life.
 
-- **The latest episode** — [*Episode 130: How God Shows Up in the Wilderness*](https://open.spotify.com/episode/2OHaQU3RQ9LVXvUz2gBBqq) (April 2026). On spiritual dryness, divine absence, and what happens when the wilderness becomes sacred ground.
-- **The pop culture showcase** — *Episode 129: Death and Resurrection in Avengers Endgame* (March 2026). If you want to see what The Myth Pilgrim does best, start here — Lawrence finds the paschal mystery inside the biggest blockbuster of the decade.
-- **The milestone** — *Episode 50: Freedom from Shame — The Hunchback of Notre Dame* (May 2022). One of the earliest episodes that shows the full range of what this podcast can do with a single film.
-- **Meet the pilgrim** — *Episode 100: A Special Interview with the Host* (July 2024). Lawrence in conversation about why he does this, what drives it, and where the pilgrimage is heading.
+---
 
-The full archive lives at [themythpilgrim.com/listen](https://themythpilgrim.com/listen/). The podcast is available on [Spotify](https://open.spotify.com/show/4nCiKyK0eqw5R3DYuSCZjZ) and [Apple Podcasts](https://podcasts.apple.com/au/podcast/the-myth-pilgrim/id1521985265).
+## Most popular episodes
+
+The Myth Pilgrim does not publish listen counts, but these are the episodes that surface most often across platforms and seem to resonate deepest with listeners:
+
+- *Superman & Reclaiming the True Self* — The Christ archetype in the original superhero.
+- *Inside Out 2: Befriending Your Difficult Emotions* — Pixar meets spiritual direction.
+- *Christian Themes in Moana: The Communion of Saints* — The ocean as grace.
+- *The Little Mermaid and Old Testament Tragedy* — Darker than Disney intended.
+- *The Many Christian Values in Shrek* — Yes, really. And it works.
+- *Anakin, Palpatine and St Ignatius' Discernment of Spirits* — Star Wars through the lens of Ignatian spirituality.
+- *Episode 50: Freedom from Shame — The Hunchback of Notre Dame* — One of the earliest episodes that shows the full range of what this podcast can do with a single film.
+- *Episode 100: A Special Interview with the Host* (July 2024). Lawrence in conversation about why he does this, what drives it, and where the pilgrimage is heading.
+
+---
+
+## Where to listen
+
+One hundred and thirty-one episodes and counting. The Myth Pilgrim is available everywhere podcasts live:
+
+- [**Spotify**](https://open.spotify.com/show/4nCiKyK0eqw5R3DYuSCZjZ) — rated 5.0 out of 5 (46 ratings)
+- [**Apple Podcasts**](https://podcasts.apple.com/au/podcast/the-myth-pilgrim/id1521985265) — rated 4.9 out of 5 (29 ratings)
+- [**Amazon Music**](https://music.amazon.com) — also available
+- [**Podcast Addict**](https://podcastaddict.com/podcast/the-myth-pilgrim/3040121)
+- [**Podbean**](https://www.podbean.com/podcast-detail/kehpz-d92e7/The-Myth-Pilgrim-Podcast)
+- [**Pocket Casts**](https://pocketcasts.com) and **Cast Box**
+
+The full archive — sorted by episode — lives at [themythpilgrim.com/listen](https://themythpilgrim.com/listen/). The podcast ranks in the **top 5% globally** on Listen Notes with a listen score of 33.
+
+You can also follow Lawrence on [Facebook](https://www.facebook.com/TheMythPilgrim/) and [LinkedIn](https://www.linkedin.com/in/lawrence-yuen-spiritual-director/).
 
 ---
 

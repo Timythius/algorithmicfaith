@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import RoseLoader from '@/components/RoseLoader'
+import JesusBeams from '@/components/JesusBeams'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -66,7 +67,8 @@ export default function RootLayout({
     <html lang="en" className={`${outfit.variable} ${cinzel.variable}`}>
       <body className={outfit.className}>
         <RoseLoader />
-        <div className="min-h-screen flex flex-col">
+        <JesusBeams />
+        <div className="min-h-screen flex flex-col relative z-10">
           <Header />
           <main className="flex-grow">
             {children}

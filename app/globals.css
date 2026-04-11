@@ -533,12 +533,94 @@
   margin-bottom: 0;
 }
 
+/* ---------- Jesus beams — crepuscular light from the rose ---------- */
+
+.jesus-beams {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Each ray is a tall gradient strip fanning from the rose-window origin.
+   The origin sits at top-centre, roughly where the rose is on the homepage.
+   On inner pages the beams still read as ambient cathedral light. */
+.jb-ray {
+  position: absolute;
+  top: -5%;
+  left: calc(50% + var(--beam-x, 0%));
+  width: var(--beam-width, 100px);
+  height: 160vh;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(var(--beam-rotate, 0deg));
+  background: linear-gradient(
+    to bottom,
+    var(--beam-color) 0%,
+    color-mix(in srgb, var(--beam-color) 60%, transparent) 25%,
+    color-mix(in srgb, var(--beam-color) 30%, transparent) 50%,
+    transparent 85%
+  );
+  filter: blur(45px);
+  opacity: 0.07;
+  mix-blend-mode: screen;
+  animation: jb-sway 18s ease-in-out infinite alternate;
+  animation-delay: var(--beam-delay, 0s);
+}
+
+/* Central gold glow — warm pool of light at the base of the rose */
+.jb-glow {
+  position: absolute;
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 800px;
+  background: radial-gradient(
+    ellipse 50% 70% at 50% 0%,
+    rgba(245, 209, 104, 0.12),
+    rgba(245, 209, 104, 0.04) 40%,
+    transparent 75%
+  );
+  pointer-events: none;
+  filter: blur(30px);
+  mix-blend-mode: screen;
+}
+
+/* Gentle sway — beams drift 2-3 degrees as if light shifts through glass */
+@keyframes jb-sway {
+  0%   { transform: translateX(-50%) rotate(var(--beam-rotate, 0deg)) scaleX(1);   opacity: 0.07; }
+  50%  { transform: translateX(-50%) rotate(calc(var(--beam-rotate, 0deg) + 1.5deg)) scaleX(1.08); opacity: 0.09; }
+  100% { transform: translateX(-50%) rotate(calc(var(--beam-rotate, 0deg) - 1deg))  scaleX(0.95); opacity: 0.06; }
+}
+
+/* On mobile, tighten the beams and reduce opacity — less room, less light */
+@media (max-width: 639px) {
+  .jb-ray {
+    filter: blur(35px);
+    opacity: 0.05;
+    height: 120vh;
+  }
+  .jb-glow {
+    width: 350px;
+    height: 500px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .jb-ray {
+    animation: none;
+  }
+}
+
 /* ---------- Lite mode overrides ---------- */
 
 html[data-lite="true"] .cathedral-wall,
 html[data-lite="true"] .cathedral-noise,
 html[data-lite="true"] .cathedral-vignette,
-html[data-lite="true"] .caustic-spill {
+html[data-lite="true"] .caustic-spill,
+html[data-lite="true"] .jesus-beams {
   display: none;
 }
 
