@@ -183,8 +183,8 @@ export default function RoseWindow({ size = 600, static: isStatic = false, class
 
           {/* warm backlight — slightly brighter for the sun-flooded look */}
           <radialGradient id={`backlight-${uid}`} cx="50%" cy="50%" r="55%">
-            <stop offset="0%"   stopColor="#5a3a18" stopOpacity="0.65" />
-            <stop offset="40%"  stopColor="#241608" stopOpacity="0.35" />
+            <stop offset="0%"   stopColor="#5a3a18" stopOpacity="0.35" />
+            <stop offset="40%"  stopColor="#241608" stopOpacity="0.18" />
             <stop offset="100%" stopColor="#020205" stopOpacity="0" />
           </radialGradient>
         </defs>
