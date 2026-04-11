@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/lib/posts'
+import { getPublicPosts } from '@/lib/posts'
 import BlogFilter from '@/components/BlogFilter'
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 export default function BlogPage() {
-  const posts = getAllPosts()
+  const posts = getPublicPosts()
 
   return (
     <div className="min-h-screen bg-dark-950">

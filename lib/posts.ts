@@ -80,6 +80,14 @@ export function getPostBySlug(slug: string): Post | null {
   }
 }
 
+export function getPublicPosts(): Post[] {
+  return getAllPosts().filter((post) => !post.password)
+}
+
+export function getDraftPosts(): Post[] {
+  return getAllPosts().filter((post) => !!post.password)
+}
+
 export function getPostSlugs(): string[] {
   if (!fs.existsSync(postsDirectory)) {
     return []

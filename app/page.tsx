@@ -1,11 +1,11 @@
-import { getAllPosts } from '@/lib/posts'
+import { getPublicPosts } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 import Hero from '@/components/Hero'
 // import Newsletter from '@/components/Newsletter' // hidden until signup is wired up
 import RoseDivider from '@/components/RoseDivider'
 
 export default function Home() {
-  const posts = getAllPosts()
+  const posts = getPublicPosts()
 
   return (
     <>
