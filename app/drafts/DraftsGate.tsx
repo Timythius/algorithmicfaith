@@ -1,35 +1,81 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import type { Post } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 
 const STORAGE_KEY = 'af-drafts-slugs'
+const MAX_VIEW_MS = 15 * 60 * 1000   // 15 minutes total
+const IDLE_MS = 5 * 60 * 1000        // 5 minutes idle
 
 export default function DraftsGate({ posts }: { posts: Post[] }) {
   const [unlockedSlugs, setUnlockedSlugs] = useState<string[]>([])
   const [value, setValue] = useState('')
   const [error, setError] = useState(false)
+  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const maxTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  useEffect(() => {
-    const stored = sessionStorage.getItem(STORAGE_KEY)
-    if (stored) {
-      const slugs = JSON.parse(stored) as string[]
-      setUnlockedSlugs(slugs)
-    }
+  const lock = useCallback(() => {
+    setUnlockedSlugs((prev) => {
+      prev.forEach((s) => sessionStorage.removeItem(`af-unlocked-${s}`))
+      return []
+    })
+    sessionStorage.removeItem(STORAGE_KEY)
+    if (idleTimer.current) clearTimeout(idleTimer.current)
+    if (maxTimer.current) clearTimeout(maxTimer.current)
   }, [])
+
+  const resetIdle = useCallback(() => {
+    if (idleTimer.current) clearTimeout(idleTimer.current)
+    idleTimer.current = setTimeout(lock, IDLE_MS)
+  }, [lock])
+
+  // Start timers when posts are unlocked
+  useEffect(() => {
+    if (unlockedSlugs.length === 0) return
+
+    // 15-minute hard limit
+    maxTimer.current = setTimeout(lock, MAX_VIEW_MS)
+
+    // 5-minute idle — reset on any interaction
+    resetIdle()
+    const events = ['mousemove', 'keydown', 'scroll', 'touchstart', 'click']
+    events.forEach((e) => window.addEventListener(e, resetIdle))
+
+    return () => {
+      if (maxTimer.current) clearTimeout(maxTimer.current)
+      if (idleTimer.current) clearTimeout(idleTimer.current)
+      events.forEach((e) => window.removeEventListener(e, resetIdle))
+    }
+  }, [unlockedSlugs.length, lock, resetIdle])
+
+  // Lock on page leave, tab switch, or close
+  useEffect(() => {
+    if (unlockedSlugs.length === 0) return
+
+    const handleVisibility = () => {
+      if (document.visibilityState === 'hidden') lock()
+    }
+    const handleBeforeUnload = () => lock()
+
+    document.addEventListener('visibilitychange', handleVisibility)
+    window.addEventListener('beforeunload', handleBeforeUnload)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibility)
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+    }
+  }, [unlockedSlugs.length, lock])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    // Find which posts match the entered password
     const matched = posts.filter((p) => p.password === value)
     if (matched.length > 0) {
       const combined = [...unlockedSlugs, ...matched.map((p) => p.slug)]
       const newSlugs = combined.filter((s, i) => combined.indexOf(s) === i)
       setUnlockedSlugs(newSlugs)
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(newSlugs))
-      // Also unlock individual post pages for this session
       matched.forEach((p) => sessionStorage.setItem(`af-unlocked-${p.slug}`, '1'))
       setValue('')
       setError(false)
@@ -63,7 +109,7 @@ export default function DraftsGate({ posts }: { posts: Post[] }) {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-12">
-        {/* Password form — always visible so they can unlock more */}
+        {/* Password form */}
         <form
           onSubmit={handleSubmit}
           className="glass-panel leadline rounded-2xl p-8 max-w-sm mx-auto text-center mb-12"
@@ -132,11 +178,7 @@ export default function DraftsGate({ posts }: { posts: Post[] }) {
 
           {visiblePosts.length > 0 && (
             <button
-              onClick={() => {
-                unlockedSlugs.forEach((s) => sessionStorage.removeItem(`af-unlocked-${s}`))
-                sessionStorage.removeItem(STORAGE_KEY)
-                setUnlockedSlugs([])
-              }}
+              onClick={lock}
               className="inline-flex items-center text-dark-500 hover:text-red-400 text-sm transition-colors"
             >
               <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

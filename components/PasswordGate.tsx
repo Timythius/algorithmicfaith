@@ -1,12 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
-/**
- * PasswordGate — wraps content behind a simple password prompt.
- * Once unlocked, the session is remembered in sessionStorage so
- * the user doesn't have to re-enter it on every navigation.
- */
+const MAX_VIEW_MS = 15 * 60 * 1000   // 15 minutes total
+const IDLE_MS = 5 * 60 * 1000        // 5 minutes idle
 
 export default function PasswordGate({
   slug,
@@ -21,12 +18,62 @@ export default function PasswordGate({
   const [unlocked, setUnlocked] = useState(false)
   const [value, setValue] = useState('')
   const [error, setError] = useState(false)
+  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const maxTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
+  const lock = useCallback(() => {
+    sessionStorage.removeItem(storageKey)
+    setUnlocked(false)
+    if (idleTimer.current) clearTimeout(idleTimer.current)
+    if (maxTimer.current) clearTimeout(maxTimer.current)
+  }, [storageKey])
+
+  const resetIdle = useCallback(() => {
+    if (idleTimer.current) clearTimeout(idleTimer.current)
+    idleTimer.current = setTimeout(lock, IDLE_MS)
+  }, [lock])
+
+  // Check session on mount
   useEffect(() => {
     if (sessionStorage.getItem(storageKey) === '1') {
       setUnlocked(true)
     }
   }, [storageKey])
+
+  // Start timers when unlocked
+  useEffect(() => {
+    if (!unlocked) return
+
+    maxTimer.current = setTimeout(lock, MAX_VIEW_MS)
+
+    resetIdle()
+    const events = ['mousemove', 'keydown', 'scroll', 'touchstart', 'click']
+    events.forEach((e) => window.addEventListener(e, resetIdle))
+
+    return () => {
+      if (maxTimer.current) clearTimeout(maxTimer.current)
+      if (idleTimer.current) clearTimeout(idleTimer.current)
+      events.forEach((e) => window.removeEventListener(e, resetIdle))
+    }
+  }, [unlocked, lock, resetIdle])
+
+  // Lock on page leave, tab switch, or close
+  useEffect(() => {
+    if (!unlocked) return
+
+    const handleVisibility = () => {
+      if (document.visibilityState === 'hidden') lock()
+    }
+    const handleBeforeUnload = () => lock()
+
+    document.addEventListener('visibilitychange', handleVisibility)
+    window.addEventListener('beforeunload', handleBeforeUnload)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibility)
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+    }
+  }, [unlocked, lock])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -39,7 +86,25 @@ export default function PasswordGate({
     }
   }
 
-  if (unlocked) return <>{children}</>
+  if (unlocked) {
+    return (
+      <>
+        {children}
+        {/* Floating lock button */}
+        <div className="fixed bottom-6 right-6 z-50">
+          <button
+            onClick={lock}
+            className="flex items-center gap-2 bg-dark-900/90 backdrop-blur-sm border border-dark-700 hover:border-red-500/40 text-dark-400 hover:text-red-400 rounded-full px-4 py-2.5 text-sm transition-colors shadow-lg"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+            Lock
+          </button>
+        </div>
+      </>
+    )
+  }
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center px-6">
