@@ -8,7 +8,7 @@ export const metadata = {
 export type Creator = {
   name: string
   handle: string
-  platform: 'YouTube' | 'TikTok' | 'Instagram' | 'Podcast' | 'Multi-platform'
+  platform: 'YouTube' | 'TikTok' | 'Instagram' | 'Podcast' | 'Multi-platform' | 'Shop'
   description: string
   subscribers?: string
   tags: string[]
@@ -16,6 +16,7 @@ export type Creator = {
   imageUrl?: string
 }
 
+// Ordered newest first — matches blog post dates
 const creators: Creator[] = [
   {
     name: 'The Bush Chapel',
