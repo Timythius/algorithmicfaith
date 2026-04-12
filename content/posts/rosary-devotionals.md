@@ -1,7 +1,7 @@
 ---
 title: "Rosary Devotionals: The Home of Handmade Rosaries"
 date: "2026-04-08"
-excerpt: "An Australian Catholic shop handcrafting rosaries, chaplets, combat battle rosaries, gemstone prayer beads, and devotional goods — from glass crystal to paracord, WW1 metal to sacrifice beads. Patsy makes them by hand and ships them from Australia."
+excerpt: "An Australian Catholic shop handcrafting rosaries, chaplets, combat battle rosaries, gemstone prayer beads, and devotional goods — from glass crystal to paracord, WW1 metal to sacrifice beads. All made by hand and shipped from Australia."
 tags: ["catholic", "rosary", "prayer", "devotional", "handmade", "australian"]
 category: "Creator Spotlights"
 platforms: ["Shop"]
@@ -11,9 +11,9 @@ password: "rosarydevotionals"
 
 *"Home of Handmade Rosaries."*
 
-That is the line at the top of Rosary Devotionals. No tagline committee. No brand deck. Just a woman in Australia making rosaries by hand and putting them online for the people who want them.
+That is the line at the top of Rosary Devotionals. No tagline committee. No brand deck. Just someone in Australia making rosaries by hand and putting them online for the people who want them.
 
-Rosary Devotionals is run by Patsy — an Australian Catholic whose Shopify store has quietly become one of the most comprehensive sources of handmade prayer beads and Catholic devotional goods you will find anywhere online. The range is enormous. The prices are honest. And everything is made by hand.
+Rosary Devotionals is an Australian Catholic Shopify store that has quietly become one of the most comprehensive sources of handmade prayer beads and Catholic devotional goods you will find anywhere online. The range is enormous. The prices are honest. And everything is made by hand.
 
 ---
 
@@ -89,13 +89,13 @@ Catholic stationery, vinyl stickers, scapulars, car protectors, and rosary-makin
 
 Rosary Devotionals is built on Shopify, ships from Australia, and supports international orders with multi-currency pricing. The site is available in English and Polish. There is a blog, a donation portal via PayPal, and an active presence on Facebook, Instagram, YouTube, and Pinterest.
 
-But the heart of the thing is Patsy and a workbench. Handmade rosaries, handmade chaplets, handmade bracelets — strung bead by bead, prayed over, and sent out. In a world of mass-produced religious goods, that matters.
+But the heart of the thing is a workbench and a pair of hands. Handmade rosaries, handmade chaplets, handmade bracelets — strung bead by bead, prayed over, and sent out. In a world of mass-produced religious goods, that matters.
 
 ---
 
 ## Why this one
 
-Rosary Devotionals is the kind of store the algorithm buries. It is not optimised for virality. It does not have a content strategy. It has a woman making rosaries by hand in Australia and listing them honestly on a website.
+Rosary Devotionals is the kind of store the algorithm buries. It is not optimised for virality. It does not have a content strategy. It has someone making rosaries by hand in Australia and listing them honestly on a website.
 
 The range is what sets it apart. You can find a $23 glass rosary for a First Communion gift, a $60 gemstone piece for your own prayer life, a $50 combat battle rosary for someone who needs their faith to feel unbreakable, or a $20 chaplet for a devotion you have been meaning to start. The chaplet collection alone — sixteen different devotions, each handmade — is something I have not seen matched anywhere else at this price point.
 
