@@ -26,6 +26,15 @@ const creators: Creator[] = [
     tags: ['Worship', 'Lectionary', 'Accessibility'],
     url: 'https://www.youtube.com/@thebushchapel',
   },
+  {
+    name: 'The Myth Pilgrim',
+    handle: '@themythpilgrim',
+    platform: 'Podcast',
+    description:
+      'Lawrence Kai explores theology alongside Disney, scripture alongside The Lord of the Rings, Saints alongside Star Wars — finding God hiding in the stories we already love.',
+    tags: ['Mythology', 'Catholic', 'Pop Culture', 'Storytelling'],
+    url: 'https://themythpilgrim.com',
+  },
 ]
 
 export default function CreatorsPage() {
