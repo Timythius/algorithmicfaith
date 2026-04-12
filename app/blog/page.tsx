@@ -1,9 +1,14 @@
 import { getPublicPosts } from '@/lib/posts'
 import BlogFilter from '@/components/BlogFilter'
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
 export const metadata = {
   title: 'Blog',
   description: 'Creator spotlights and honest takes on faith in the algorithm age',
+  alternates: { canonical: `${SITE_URL}/blog` },
 }
 
 export default function BlogPage() {

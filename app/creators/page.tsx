@@ -1,8 +1,13 @@
 import CreatorCard from '@/components/CreatorCard'
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
 export const metadata = {
   title: 'Creators',
   description: 'People and projects I actually know — faith creators on YouTube, TikTok, podcasts, and beyond',
+  alternates: { canonical: `${SITE_URL}/creators` },
 }
 
 export type Creator = {

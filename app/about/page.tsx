@@ -1,6 +1,11 @@
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
 export const metadata = {
   title: 'About',
   description: 'The story behind Algorithmic Faith — why I started spotlighting faith creators in the algorithm age',
+  alternates: { canonical: `${SITE_URL}/about` },
 }
 
 export default function AboutPage() {
