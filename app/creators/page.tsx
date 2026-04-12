@@ -55,7 +55,7 @@ export default function CreatorsPage() {
           {/* Jewel divider */}
           <div className="w-48 h-[2px] mx-auto mb-6 bg-gradient-to-r from-transparent via-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 via-gold-500 to-transparent" />
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            People and projects I actually know — small, honest, and worth your time.
+            People and projects I actually know — honest and worth your time.
           </p>
         </div>
       </div>
