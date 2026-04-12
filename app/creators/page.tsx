@@ -19,15 +19,6 @@ export type Creator = {
 // Ordered newest first — matches blog post dates
 const creators: Creator[] = [
   {
-    name: 'The Bush Chapel',
-    handle: '@thebushchapel',
-    platform: 'YouTube',
-    description:
-      'Emma Woods makes a quiet little chapel service for the people the algorithm forgets — those worshipping from home or bedside, in the hush of the Australian bush. Piano, Scripture, reflection, prayer, blessing. Make a cuppa first.',
-    tags: ['Worship', 'Lectionary', 'Accessibility'],
-    url: 'https://www.youtube.com/@thebushchapel',
-  },
-  {
     name: 'The Myth Pilgrim',
     handle: '@themythpilgrim',
     platform: 'Podcast',
@@ -35,6 +26,15 @@ const creators: Creator[] = [
       'Lawrence Kai explores theology alongside Disney, scripture alongside The Lord of the Rings, Saints alongside Star Wars — finding God hiding in the stories we already love.',
     tags: ['Mythology', 'Catholic', 'Pop Culture', 'Storytelling'],
     url: 'https://themythpilgrim.com',
+  },
+  {
+    name: 'The Bush Chapel',
+    handle: '@thebushchapel',
+    platform: 'YouTube',
+    description:
+      'Emma Woods makes a quiet little chapel service for the people the algorithm forgets — those worshipping from home or bedside, in the hush of the Australian bush. Piano, Scripture, reflection, prayer, blessing. Make a cuppa first.',
+    tags: ['Worship', 'Lectionary', 'Accessibility'],
+    url: 'https://www.youtube.com/@thebushchapel',
   },
 ]
 
