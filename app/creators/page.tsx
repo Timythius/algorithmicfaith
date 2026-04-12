@@ -33,15 +33,6 @@ const creators: Creator[] = [
     url: 'https://www.ponderpack.com.au',
   },
   {
-    name: 'Rosary Devotionals',
-    handle: 'rosarydevotionals.com.au',
-    platform: 'Shop',
-    description:
-      'Patsy handcrafts rosaries, chaplets, and Catholic devotional goods from Australia — glass, gemstone, paracord, and WW1 combat battle rosaries, plus sixteen different chaplets, sacrifice beads, jewelry, apparel, and sacrament gifts.',
-    tags: ['Catholic', 'Rosary', 'Prayer', 'Handmade'],
-    url: 'https://rosarydevotionals.com.au',
-  },
-  {
     name: 'Across the Pews',
     handle: '@acrossthepews',
     platform: 'Multi-platform',

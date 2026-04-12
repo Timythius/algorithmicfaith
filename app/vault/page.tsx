@@ -25,14 +25,6 @@ const resources: Resource[] = [
     tags: ['Catholic', 'Prayer Cards', 'Australian'],
     url: 'https://www.ponderpack.com.au',
   },
-  {
-    title: 'Rosary Devotionals',
-    description:
-      'Handmade rosaries, chaplets, and Catholic devotional goods from Australia — glass, gemstone, paracord, and WW1 combat battle rosaries, plus sixteen different chaplets, sacrifice beads, and sacrament gifts. Made by hand, priced honestly.',
-    category: 'Prayer & Devotion',
-    tags: ['Catholic', 'Rosary', 'Handmade'],
-    url: 'https://rosarydevotionals.com.au',
-  },
 ]
 
 const categories = Array.from(new Set(resources.map((r) => r.category)))
