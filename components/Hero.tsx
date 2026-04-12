@@ -134,8 +134,7 @@ export default function Hero() {
         </div>
 
         <p className="mt-8 text-center text-base sm:text-lg text-[#c9b489] max-w-2xl mx-auto leading-relaxed px-4">
-          Where faith meets the feed. Spotlighting the creators making
-          ministry happen online.
+          Where faith meets the feed.
         </p>
 
         {/* Jewel divider — spans all 5 lancet colors */}

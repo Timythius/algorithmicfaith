@@ -21,7 +21,7 @@ export default function Footer() {
               </h3>
             </Link>
             <p className="text-dark-400 leading-relaxed mb-6">
-              Where faith meets the feed. Spotlighting the creators making ministry happen online.
+              Where faith meets the feed.
             </p>
           </div>
 

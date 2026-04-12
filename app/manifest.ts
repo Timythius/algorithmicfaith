@@ -16,7 +16,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Algorithmic Faith',
     short_name: 'Algorithmic',
     description:
-      'Where faith meets the feed. Spotlighting the creators making ministry happen online.',
+      'Where faith meets the feed.',
     start_url: '/',
     display: 'standalone',
     background_color: '#050302',
