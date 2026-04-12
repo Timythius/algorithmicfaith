@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Vault',
-  description: 'A small, slow-grown collection of tools and resources I trust',
+  description: 'A slow-grown collection of resources I trust',
 }
 
 type Resource = {
@@ -36,7 +36,7 @@ export default function ResourcesPage() {
             Vault
           </h1>
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            A small, slow-grown collection of tools and resources I actually trust. Filling up gradually.
+            A slow-grown collection of resources I actually trust. Filling up gradually.
           </p>
         </div>
       </div>
@@ -48,7 +48,7 @@ export default function ResourcesPage() {
             <div className="w-32 h-[2px] mx-auto mb-6 bg-gradient-to-r from-transparent via-ruby-500 via-amethyst-500 via-sapphire-500 via-emerald-500 via-gold-500 to-transparent" />
             <h3 className="font-serif text-2xl text-white mb-3">The vault is quiet for now.</h3>
             <p className="text-dark-300 max-w-xl mx-auto">
-              I&apos;d rather list nothing than list filler. Real entries will land here as I find tools and resources worth your time.
+              I&apos;d rather list nothing than list filler. Real entries will land here as I find resources worth your time.
             </p>
           </div>
         ) : (
