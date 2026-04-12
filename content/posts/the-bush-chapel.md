@@ -1,6 +1,6 @@
 ---
 title: "The Bush Chapel: A Quiet Pew in the Australian Bush"
-date: "2026-04-10"
+date: "2026-04-09"
 excerpt: "A small, cosy Christian ministry in the Australian bush, made for the people who can't get to a Sunday service in person. Inside The Bush Chapel — a team around a piano, fifteen quiet minutes a week, and a kettle somewhere off-camera."
 tags: ["worship", "australia", "lectionary", "accessibility"]
 category: "Creator Spotlights"
