@@ -16,7 +16,16 @@ type Resource = {
   free: boolean
 }
 
-const resources: Resource[] = []
+const resources: Resource[] = [
+  {
+    title: 'Ponder Packs',
+    description:
+      'Velvet-touch Catholic prayer cards by Ewa and Stasiek — themed packs with art, a card stand, and a How-to-Pray card. Create a sacred prayer space and ponder the true, good, and beautiful.',
+    category: 'Prayer & Devotion',
+    url: 'https://www.ponderpack.com.au',
+    free: false,
+  },
+]
 
 const categories = Array.from(new Set(resources.map((r) => r.category)))
 

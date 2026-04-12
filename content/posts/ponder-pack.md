@@ -1,13 +1,12 @@
 ---
 title: "Ponder Packs: Make Space, Be Still & Ponder"
-date: "2026-04-12"
+date: "2026-04-09"
 excerpt: "Velvet-touch Catholic prayer cards born from a Camino pilgrimage — Ewa and Stasiek started making them for newly baptised parishioners, and now thousands of cards have gone out. Detach from the world and turn to prayer."
 tags: ["catholic", "prayer", "devotional", "physical media"]
 category: "Creator Spotlights"
 platforms: ["Shop"]
 coverImage: "https://images.squarespace-cdn.com/content/v1/645725118efb6d024e25b5ea/159bfc7f-330f-4262-b248-9872fdff9456/Cards+-+Front+page.jpg"
 articleUrl: "https://www.ponderpack.com.au"
-password: "ponderpacks"
 ---
 
 *"Do you desire deep peace & purpose?"*
