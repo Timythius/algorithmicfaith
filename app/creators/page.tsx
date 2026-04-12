@@ -24,6 +24,15 @@ export type Creator = {
 // Ordered newest first — matches blog post dates
 const creators: Creator[] = [
   {
+    name: 'Ponder Packs',
+    handle: 'ponderpack.com.au',
+    platform: 'Shop',
+    description:
+      'Velvet-touch Catholic prayer cards born from a Camino pilgrimage — Ewa and Stasiek started making them for newly baptised parishioners, and now thousands of cards have gone out. Create a sacred prayer space and ponder the true, good, and beautiful.',
+    tags: ['Catholic', 'Prayer', 'Devotional', 'Physical Media'],
+    url: 'https://www.ponderpack.com.au',
+  },
+  {
     name: 'Across the Pews',
     handle: '@acrossthepews',
     platform: 'Multi-platform',

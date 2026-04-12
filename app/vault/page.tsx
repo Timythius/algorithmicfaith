@@ -13,7 +13,6 @@ type Resource = {
   description: string
   category: string
   url?: string
-  free: boolean
 }
 
 const resources: Resource[] = [
@@ -23,7 +22,6 @@ const resources: Resource[] = [
       'Velvet-touch Catholic prayer cards by Ewa and Stasiek — themed packs with art, a card stand, and a How-to-Pray card. Create a sacred prayer space and ponder the true, good, and beautiful.',
     category: 'Prayer & Devotion',
     url: 'https://www.ponderpack.com.au',
-    free: false,
   },
 ]
 
@@ -80,7 +78,7 @@ export default function ResourcesPage() {
                       key={resource.title}
                       className="bg-dark-900/50 border border-dark-800 rounded-xl p-6 hover:border-dark-700 transition-all duration-300"
                     >
-                      <div className="flex items-start justify-between mb-3">
+                      <div className="mb-3">
                         <h3 className="text-lg font-bold text-white">
                           {resource.url ? (
                             <a
@@ -95,15 +93,6 @@ export default function ResourcesPage() {
                             resource.title
                           )}
                         </h3>
-                        <span
-                          className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${
-                            resource.free
-                              ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                              : 'bg-gold-500/10 text-gold-400 border-gold-500/20'
-                          }`}
-                        >
-                          {resource.free ? 'Free tier' : 'Paid'}
-                        </span>
                       </div>
                       <p className="text-dark-300 text-sm leading-relaxed">
                         {resource.description}

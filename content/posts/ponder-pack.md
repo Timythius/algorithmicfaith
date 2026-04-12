@@ -1,6 +1,6 @@
 ---
 title: "Ponder Packs: Make Space, Be Still & Ponder"
-date: "2026-04-09"
+date: "2026-04-12"
 excerpt: "Velvet-touch Catholic prayer cards born from a Camino pilgrimage — Ewa and Stasiek started making them for newly baptised parishioners, and now thousands of cards have gone out. Detach from the world and turn to prayer."
 tags: ["catholic", "prayer", "devotional", "physical media"]
 category: "Creator Spotlights"
