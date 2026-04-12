@@ -31,13 +31,13 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         <div className="space-y-6 text-dark-300 text-lg leading-relaxed">
           <p>
-            I started Algorithmic Faith because I kept finding people making quiet, honest things for the church — and nobody was writing about them.
+            I started Algorithmic Faith to write about faithful people making excellent things.
           </p>
           <p>
-            A couple making prayer cards at their kitchen table. A woman recording chapel services from the bush. A podcaster finding theology in Tolkien. A convert sitting down with people from every denomination and just asking real questions.
+            These are friends whose work I believe in. I write about them because I think it&apos;s worth your time.
           </p>
           <p>
-            These are people I actually know. I write about their work because I think it&apos;s worth your time. That&apos;s it, really. More to come.
+            More to come.
           </p>
         </div>
       </div>
