@@ -19,6 +19,15 @@ export type Creator = {
 // Ordered newest first — matches blog post dates
 const creators: Creator[] = [
   {
+    name: 'Across the Pews',
+    handle: '@acrossthepews',
+    platform: 'Multi-platform',
+    description:
+      'A Catholic convert crossing denominational lines — sitting with Orthodox monks, street preachers, and everyone in between, asking the questions most Christians think but don\'t say out loud.',
+    tags: ['Conversion', 'Catholic', 'Ecumenical', 'Interviews'],
+    url: 'https://www.youtube.com/@acrossthepews',
+  },
+  {
     name: 'The Myth Pilgrim',
     handle: '@themythpilgrim',
     platform: 'Podcast',

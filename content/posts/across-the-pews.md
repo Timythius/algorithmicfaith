@@ -4,7 +4,6 @@ date: "2026-04-12"
 excerpt: "A Catholic convert crossing denominational lines — sitting with Orthodox monks, street preachers, and everyone in between, asking the questions most Christians think but don't say out loud."
 tags: ["conversion", "catholic", "ecumenical", "interviews", "commentary"]
 category: "Creator Spotlights"
-password: "acrossthepews"
 platforms: ["YouTube", "TikTok", "Instagram"]
 articleUrl: "https://www.youtube.com/@acrossthepews"
 videoUrl: "https://www.youtube.com/watch?v=7XW1nQlS2-k"
