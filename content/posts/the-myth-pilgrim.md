@@ -1,6 +1,6 @@
 ---
 title: "The Myth Pilgrim: Finding the Gospel in Gandalf and the Avengers"
-date: "2026-04-09"
+date: "2026-04-12"
 excerpt: "Lawrence Kai finds theology hiding in Tolkien, Marvel, Disney, and Star Wars — and makes a Catholic podcast that treats myth and pop culture as real doors into the spiritual life."
 tags: ["mythology", "catholic", "pop culture", "storytelling", "spiritual direction"]
 category: "Creator Spotlights"

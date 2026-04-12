@@ -28,6 +28,7 @@ const platformColors: Record<string, string> = {
   podcast: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
   tiktok: 'bg-[#69C9D0]/10 text-[#69C9D0] border-[#69C9D0]/20',
   instagram: 'bg-amethyst-500/10 text-amethyst-400 border-amethyst-500/20',
+  shop: 'bg-gold-500/10 text-gold-400 border-gold-500/20',
 }
 
 function getPlatformColor(platform: string) {

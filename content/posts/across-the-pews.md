@@ -1,6 +1,6 @@
 ---
 title: "Across the Pews: A Convert Walking the Line Between Churches"
-date: "2026-04-08"
+date: "2026-04-12"
 excerpt: "A Catholic convert crossing denominational lines — sitting with Orthodox monks, street preachers, and everyone in between, asking the questions most Christians think but don't say out loud."
 tags: ["conversion", "catholic", "ecumenical", "interviews", "commentary"]
 category: "Creator Spotlights"
