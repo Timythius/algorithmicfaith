@@ -42,9 +42,15 @@ They both still work full-time. Ponder Packs is a passion project. Proceeds go t
 
 ## The packs
 
-There are five themed packs, a build-your-own option, and artist edition variations.
+### Go Deeper
 
-### Foundational — A$20
+The Examen, Discernment, Eucharistic Adoration, Pray with Scripture, and Reconciliation. For the prayer life that wants to grow — during vocational discernment, Lent, or any season of spiritual deepening.
+
+The artwork includes the North Rose Window of Notre Dame Cathedral for the Examen — *"symmetrical beauty representing Glory to God when everything is in right order."* Siemiradzki's *Christ at the Home of Mary and Martha* for Pray with Scripture. And Murillo's *The Return of the Prodigal Son* (1670) for Reconciliation — *"the loving heart of the Father for each of us, poor sinners."*
+
+Available as a standard or Modern Artist Edition.
+
+### Foundational
 
 *"Core Catholic Christian prayers and practices for daily spiritual life, nurturing the faith and helping to foster a deep, personal relationship with God."*
 
@@ -52,31 +58,25 @@ The Our Father, Hail Mary, the Creed, Daily Classics (morning and evening prayer
 
 The artwork includes Michelangelo's *The Creation of Adam* from the Sistine Chapel, *The Black Madonna* of Czestochowa, a sixteenth-century wool tapestry designed to teach the Creed to non-readers, Karl Gebhardt's *Saying Grace*, and Mary Lizzie Macomber's *Faith, Hope and Love* with its three angels.
 
-### Marian — from A$20
+### Marian
 
 The Rosary, Hail Holy Queen, the Angelus, the Memorare, and the Magnificat. For those seeking to strengthen their spiritual life through Mary's intercession and maternal guidance.
 
-The standard edition features *Offering to the Virgin* by Simon Saint-Jean (1842), depicting Marian altars adorned with flowers — a centuries-old European tradition of daily faith practice. An artist edition variation is also available (see below).
+The standard edition features *Offering to the Virgin* by Simon Saint-Jean (1842), depicting Marian altars adorned with flowers — a centuries-old European tradition of daily faith practice. Also available as a Modern Artist Edition.
 
-### Prayers in Need — A$20
-
-Litany of Trust, Surrender Novena, Prayers of Protection, Our Lady Undoer of Knots, and the Divine Mercy Chaplet. For those seeking guidance to surrender and trust in Jesus during challenges or uncertainty.
-
-Every artwork choice is deliberate. Gustave Brion's *Jesus and Peter on the Water* for the Litany of Trust — *"all we need do is keep our eyes on Jesus, trusting in His love and mercy."* Heinrich Hofmann's *Christ in Gethsemane* for the Surrender Novena — *"Jesus' profound trust and surrender to our Father's will."* Rembrandt's *Christ in the Storm on the Sea of Galilee* for Prayers of Protection — *"even though the storm may be brewing, Jesus is right in the boat with us — we are under His Protection."* And Adolf Hyla's *Divine Mercy* (1944), the image Saint Faustina was divinely instructed to commission, with a version replicating the Divine Mercy Shrine in Keysborough, Victoria.
-
-### Praise & Union — A$20
+### Praise & Union
 
 Divine Praises, Anima Christi, Flame of Love, Holy Spirit, and Sacred Heart Novena. For those seeking to deepen their relationship with God through thanksgiving and adoration.
 
 The cards pair each prayer with art that matches its spirit: Bouguereau's *Song of Angels* for the Divine Praises, Velazquez's *Christ Crucified* for the Anima Christi — meant to *"evoke a sincere movement of our hearts to unite ourselves with Christ's Cross"* — Guido Reni's *Assumption* for the Flame of Love, and a stained glass window from the Cathedral of Cordoba for the Sacred Heart Novena, with Jesus *"inviting us to open up to His gentle, loving and most Sacred Heart."*
 
-### Go Deeper — from A$20
+### Prayers in Need
 
-The Examen, Discernment, Eucharistic Adoration, Pray with Scripture, and Reconciliation. For the prayer life that wants to grow — during vocational discernment, Lent, or any season of spiritual deepening.
+Litany of Trust, Surrender Novena, Prayers of Protection, Our Lady Undoer of Knots, and the Divine Mercy Chaplet. For those seeking guidance to surrender and trust in Jesus during challenges or uncertainty.
 
-The artwork here includes the North Rose Window of Notre Dame Cathedral for the Examen — *"symmetrical beauty representing Glory to God when everything is in right order"* — Siemiradzki's *Christ at the Home of Mary and Martha* for Pray with Scripture, and Murillo's *The Return of the Prodigal Son* (1670) for Reconciliation — *"the loving heart of the Father for each of us, poor sinners."* An artist edition variation is also available.
+Every artwork choice is deliberate. Gustave Brion's *Jesus and Peter on the Water* for the Litany of Trust — *"all we need do is keep our eyes on Jesus, trusting in His love and mercy."* Heinrich Hofmann's *Christ in Gethsemane* for the Surrender Novena — *"Jesus' profound trust and surrender to our Father's will."* Rembrandt's *Christ in the Storm on the Sea of Galilee* for Prayers of Protection — *"even though the storm may be brewing, Jesus is right in the boat with us — we are under His Protection."* And Adolf Hyla's *Divine Mercy* (1944), the image Saint Faustina was divinely instructed to commission, with a version replicating the Divine Mercy Shrine in Keysborough, Victoria.
 
-### Make My Own Ponder Pack — A$26
+### Make My Own Ponder Pack
 
 *"Feel called to a specific prayer or devotion… make your own 5-Pack."* Choose any five unique cards from the full collection, with a card pocket, stand, and How-to-Pray card included.
 
@@ -84,7 +84,7 @@ The artwork here includes the North Rose Window of Notre Dame Cathedral for the 
 
 ## Artist Editions
 
-Some packs are available as Modern Artist Editions for an additional A$5, with the extra proceeds going directly to the featured artist.
+Some packs are available as Modern Artist Editions, with the extra proceeds going directly to the featured artist.
 
 The current artist is **Paul Newton**, an accomplished and revered Australian portrait artist. His piece *Our Lady of the Southern Cross — Help of Christians* was commissioned for Catholic World Youth Day in Sydney in 2008 and now resides in the Domus Australia Chapel in Rome.
 
@@ -98,7 +98,9 @@ The Go Deeper artist edition features *Father Christ & John the Beloved* by Fath
 
 ## A sacred prayer space
 
-The site keeps returning to the same invitation: *create a sacred prayer space*. Not download an app. Not subscribe to a channel. Set something apart. A corner of your desk, your bedside table, your kitchen bench. Put the card on the stand. Read it. Be still.
+> *"Create a sacred prayer space & ponder the true, good & beautiful."*
+
+That is the invitation at the heart of Ponder Packs. Not download an app. Not subscribe to a channel. Set something apart. A corner of your desk, your bedside table, your kitchen bench. Put the card on the stand. Read it. Be still.
 
 A prayer card has no other function. It does not ping. It does not scroll. It just holds the words and waits for you.
 
@@ -108,8 +110,8 @@ A prayer card has no other function. It does not ping. It does not scroll. It ju
 
 ## Why this one
 
-Algorithmic Faith mostly features digital creators — podcasters, YouTubers, people making things for the feed. Ponder Packs is the opposite. It is a physical product designed to pull you away from the screen, not toward it.
+> *"Make Space, Be Still & Ponder."*
 
-But that is exactly why it belongs here. The algorithm is good at feeding us content. It is less good at feeding us stillness. Ponder Packs started as a gift at a parish font and grew into something thousands of people have held in their hands. That is not a marketing strategy. That is just what happens when the thing is real.
+Ponder Packs started as a gift at a parish font and grew into something thousands of people have held in their hands. It is a passion project built by two people with full-time jobs and a deep desire to help others turn to prayer. The proceeds go back into making more resources and getting them to people who need them.
 
-A disclosure: I know Ewa and Stasiek. Images used with permission. Take it as a recommendation from someone who has held the cards and used them. They are worth your time.
+Ewa and Stasiek are friends. Images used with permission. Take it as a recommendation from someone who has held the cards and used them. They are worth your time.
