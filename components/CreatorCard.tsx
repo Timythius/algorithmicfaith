@@ -6,7 +6,7 @@ const platformColors: Record<string, string> = {
   Instagram: 'bg-amethyst-500/10 text-amethyst-300 border-amethyst-500/20',
   Podcast: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
   'Multi-platform': 'bg-sapphire-500/10 text-sapphire-400 border-sapphire-500/20',
-  Shop: 'bg-gold-500/10 text-gold-400 border-gold-500/20',
+  Shop: 'bg-pink-500/10 text-pink-400 border-pink-500/20',
 }
 
 const tagColors = [
