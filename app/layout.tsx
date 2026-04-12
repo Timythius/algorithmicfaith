@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import RoseLoader from '@/components/RoseLoader'
 import JesusBeams from '@/components/JesusBeams'
+import JsonLd from '@/components/JsonLd'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -35,16 +36,16 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    locale: 'en_US',
-    // app/opengraph-image.tsx is auto-picked up by Next.js — no need to
-    // list images here, but Twitter card metadata below references the
-    // same generated file via the file convention.
+    locale: 'en_AU',
   },
   twitter: {
     card: 'summary_large_image',
@@ -66,6 +67,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${cinzel.variable}`}>
       <body className={outfit.className}>
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: SITE_NAME,
+            description: SITE_DESCRIPTION,
+            url: SITE_URL,
+            author: {
+              '@type': 'Person',
+              name: 'Tim Barrow',
+            },
+          }}
+        />
         <RoseLoader />
         <JesusBeams />
         <div className="min-h-screen flex flex-col relative z-10">

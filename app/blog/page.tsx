@@ -3,7 +3,7 @@ import BlogFilter from '@/components/BlogFilter'
 
 export const metadata = {
   title: 'Blog',
-  description: 'Faith creators, algorithm insights, and the tools changing the game',
+  description: 'Creator spotlights and honest takes on faith in the algorithm age',
 }
 
 export default function BlogPage() {

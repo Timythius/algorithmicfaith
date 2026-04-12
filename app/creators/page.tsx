@@ -2,7 +2,7 @@ import CreatorCard from '@/components/CreatorCard'
 
 export const metadata = {
   title: 'Creators',
-  description: 'Faith creators making waves on YouTube, TikTok, and beyond',
+  description: 'People and projects I actually know — faith creators on YouTube, TikTok, podcasts, and beyond',
 }
 
 export type Creator = {

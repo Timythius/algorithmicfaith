@@ -4,6 +4,11 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { format } from 'date-fns'
 import VideoEmbed from '@/components/VideoEmbed'
 import PasswordGate from '@/components/PasswordGate'
+import JsonLd from '@/components/JsonLd'
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
 type Props = {
   params: { slug: string }
@@ -20,9 +25,30 @@ export async function generateMetadata({ params }: Props) {
   const post = getPostBySlug(params.slug)
   if (!post) return { title: 'Post Not Found' }
 
+  const url = `${SITE_URL}/blog/${post.slug}`
+
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.excerpt,
+      url,
+      publishedTime: post.date,
+      authors: ['Tim Barrow'],
+      tags: post.tags,
+      ...(post.coverImage && { images: [{ url: post.coverImage }] }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      ...(post.coverImage && { images: [post.coverImage] }),
+    },
   }
 }
 
@@ -35,6 +61,31 @@ export default function PostPage({ params }: Props) {
 
   const articleContent = (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          url: `${SITE_URL}/blog/${post.slug}`,
+          author: {
+            '@type': 'Person',
+            name: 'Tim Barrow',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Algorithmic Faith',
+            url: SITE_URL,
+          },
+          ...(post.coverImage && {
+            image: post.coverImage,
+          }),
+          ...(post.tags && post.tags.length > 0 && {
+            keywords: post.tags.join(', '),
+          }),
+        }}
+      />
       <article className="max-w-4xl mx-auto px-6 py-12">
         {/* Header */}
         <header className="mb-12">
