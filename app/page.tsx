@@ -3,12 +3,35 @@ import PostCard from '@/components/PostCard'
 import Hero from '@/components/Hero'
 // import Newsletter from '@/components/Newsletter' // hidden until signup is wired up
 import RoseDivider from '@/components/RoseDivider'
+import JsonLd from '@/components/JsonLd'
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
 export default function Home() {
   const posts = getPublicPosts()
 
   return (
     <>
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Algorithmic Faith — Where Faith Meets the Feed',
+        description: 'Discovering faith creators who are shaping culture through YouTube, TikTok, and beyond.',
+        url: SITE_URL,
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', 'h2', '.cathedral-article'],
+        },
+        mainEntity: {
+          '@type': 'Blog',
+          name: 'Algorithmic Faith Blog',
+          url: `${SITE_URL}/blog`,
+          description: 'Creator spotlights and honest takes on faith in the algorithm age.',
+        },
+      }} />
+
       {/* Hero Section — cathedral wall */}
       <Hero />
 

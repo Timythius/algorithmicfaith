@@ -26,7 +26,7 @@ const SITE_URL =
 
 const SITE_NAME = 'Algorithmic Faith'
 const SITE_DESCRIPTION =
-  'Where faith meets the feed.'
+  'Where faith meets the feed. Creator spotlights, algorithm insights, and AI tools for the faith community.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -74,9 +74,26 @@ export default function RootLayout({
             name: SITE_NAME,
             description: SITE_DESCRIPTION,
             url: SITE_URL,
-            author: {
+            publisher: { '@id': `${SITE_URL}/#organization` },
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: `${SITE_URL}/blog?q={search_term_string}`,
+              'query-input': 'required name=search_term_string',
+            },
+          }}
+        />
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            '@id': `${SITE_URL}/#organization`,
+            name: SITE_NAME,
+            url: SITE_URL,
+            description: 'A platform spotlighting faith creators on YouTube, TikTok, and beyond — exploring how algorithms and AI intersect with faith content.',
+            founder: {
               '@type': 'Person',
               name: 'Tim Barrow',
+              url: `${SITE_URL}/about`,
             },
           }}
         />

@@ -1,12 +1,13 @@
 import CreatorCard from '@/components/CreatorCard'
+import JsonLd from '@/components/JsonLd'
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
 export const metadata = {
-  title: 'Creators',
-  description: 'People and projects I actually know — faith creators on YouTube, TikTok, podcasts, and beyond',
+  title: 'Faith Creators — YouTube, TikTok, Podcasts & Beyond',
+  description: 'People and projects I actually know — faith creators on YouTube, TikTok, podcasts, and beyond. Honest recommendations worth your time.',
   alternates: { canonical: `${SITE_URL}/creators` },
 }
 
@@ -64,6 +65,32 @@ const creators: Creator[] = [
 export default function CreatorsPage() {
   return (
     <div className="min-h-screen bg-dark-950">
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Faith Creators Directory',
+        description: 'Faith creators on YouTube, TikTok, podcasts, and beyond.',
+        itemListElement: creators.map((creator, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Person',
+            name: creator.name,
+            url: creator.url,
+            description: creator.description,
+            knowsAbout: creator.tags,
+          },
+        })),
+      }} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Creators', item: `${SITE_URL}/creators` },
+        ],
+      }} />
+
       {/* Hero Section */}
       <div className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950" />

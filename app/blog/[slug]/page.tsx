@@ -75,19 +75,23 @@ export default function PostPage({ params }: Props) {
       <JsonLd
         data={{
           '@context': 'https://schema.org',
-          '@type': 'Article',
+          '@type': 'BlogPosting',
           headline: post.title,
           description: post.excerpt,
           datePublished: post.date,
+          dateModified: post.date,
           url: `${SITE_URL}/blog/${post.slug}`,
           author: {
             '@type': 'Person',
             name: 'Tim Barrow',
+            url: `${SITE_URL}/about`,
           },
           publisher: {
-            '@type': 'Organization',
-            name: 'Algorithmic Faith',
-            url: SITE_URL,
+            '@id': `${SITE_URL}/#organization`,
+          },
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${SITE_URL}/blog/${post.slug}`,
           },
           ...(post.coverImage && {
             image: post.coverImage,
@@ -95,8 +99,10 @@ export default function PostPage({ params }: Props) {
           ...(post.tags && post.tags.length > 0 && {
             keywords: post.tags.join(', '),
           }),
+          ...(post.category && { articleSection: post.category }),
         }}
       />
+
       <article className="max-w-4xl mx-auto px-6 py-12">
         {/* Header */}
         <header className="mb-12">

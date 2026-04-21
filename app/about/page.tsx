@@ -1,16 +1,48 @@
+import JsonLd from '@/components/JsonLd'
+
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
 export const metadata = {
-  title: 'About',
-  description: 'The story behind Algorithmic Faith — why I started spotlighting faith creators in the algorithm age',
+  title: 'About Tim — Founder of Algorithmic Faith',
+  description: 'The story behind Algorithmic Faith — why Tim started spotlighting faith creators in the algorithm age.',
   alternates: { canonical: `${SITE_URL}/about` },
 }
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-dark-950">
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        mainEntity: {
+          '@type': 'Person',
+          name: 'Tim Barrow',
+          url: `${SITE_URL}/about`,
+          description: 'Creator of Algorithmic Faith — spotlighting faith creators and exploring how algorithms fit into it.',
+          knowsAbout: [
+            'Faith creators',
+            'YouTube algorithms',
+            'TikTok content strategy',
+            'AI tools for creators',
+            'Digital ministry',
+          ],
+          founder: {
+            '@type': 'Organization',
+            name: 'Algorithmic Faith',
+            url: SITE_URL,
+          },
+        },
+      }} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE_URL}/about` },
+        ],
+      }} />
       {/* Hero Section */}
       <div className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950" />
